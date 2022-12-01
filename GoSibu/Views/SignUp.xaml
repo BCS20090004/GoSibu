@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="GoSibu.Views.SignUp"
+             Title="SignUp"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid
+        Padding="20,50,20,0"
+        HorizontalOptions="FillAndExpand"
+        RowSpacing="20"
+        VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label
+            Grid.Row="0"
+            FontAttributes="Bold"
+            FontSize="24"
+            HorizontalOptions="CenterAndExpand"
+            Text="Registration"
+            TextColor="#1C375C" />
+        <Label
+            Grid.Row="1"
+            Margin="0,-15,0,0"
+            HorizontalOptions="CenterAndExpand"
+            Text="Register With Email"
+            TextColor="#1C375C" />
+        <Entry
+            Grid.Row="2"
+            Margin="0,20,0,0"
+            HorizontalOptions="FillAndExpand"
+            Placeholder="Email"
+            Text="{Binding Email}"
+            VerticalOptions="FillAndExpand" />
+        <Entry
+            Grid.Row="3"
+            HorizontalOptions="FillAndExpand"
+            IsPassword="True"
+            Placeholder="Password"
+            Text="{Binding Password}"
+            VerticalOptions="FillAndExpand" />
+        <Button
+            Grid.Row="4"
+            BackgroundColor="#1C375C"
+            Command="{Binding RegisterUser}"
+            CornerRadius="20"
+            Text="Register" />
+    </Grid>
+    <!--<Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Grid.Row="0">
+            <Image  Source="figma2.png" Margin="0,-110,0,0" WidthRequest="400" HeightRequest="450" HorizontalOptions="Center" VerticalOptions="Start" />
+
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="1">
+
+            <Image Source="gosibusingle2.png" Aspect="AspectFit" HeightRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+            <Label Text="SignUp To GoSibu" FontSize="24" TextColor="#666666" FontFamily="Alata" HorizontalOptions="Start" Margin="10,0,0,0"/>
+
+            <Label Text="Nice To meet You" TextColor="#666666" FontFamily="Alata" Margin="10,0,0,20"></Label>
+       
+            <Label Text="Your Email" TextColor="Black" Margin="10,0,0,0"/>
+            <Frame HasShadow="False" CornerRadius="10" Padding="1" Margin="20,0,0,20" BackgroundColor="Transparent" 
+                   WidthRequest="350"  HeightRequest="50" HorizontalOptions="Start" BorderColor="Black">
+                <Entry Placeholder="youremail@domain.com"  PlaceholderColor="DarkGray" TextColor="Black" Margin="10,0,10,0"></Entry>
+            </Frame>
+            
+            <Label Text="Password" TextColor="Black" Margin="10,0,0,0"/>
+            <Frame HasShadow="False" CornerRadius="10" Padding="1" Margin="20,0,0,20" BackgroundColor="Transparent" 
+                   WidthRequest="350"  HeightRequest="50" HorizontalOptions="Start" BorderColor="Black">
+                <Entry Placeholder="password" IsPassword="True" PlaceholderColor="DarkGray" TextColor="Black" Margin="10,0,10,0"></Entry>
+            </Frame>
+
+            <Label Text="Comfirm Password" TextColor="Black" Margin="10,0,0,0"/>
+            <Frame HasShadow="False" CornerRadius="10" Padding="1" Margin="20,0,0,20" BackgroundColor="Transparent" 
+                   WidthRequest="350"  HeightRequest="50" HorizontalOptions="Start" BorderColor="Black">
+                <Entry Placeholder="Comfirm Password" IsPassword="True" PlaceholderColor="DarkGray" TextColor="Black" Margin="10,0,10,0">
+                    <Entry.Behaviors>
+                        <mct:RequiredStringValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+            </Frame>
+
+       
+            <Button Text="Sign Up" BackgroundColor="#e8bc65" Margin="10,10,10,0" TextColor="Black" Clicked="CreateAccount_Clicked"/>
+
+
+            <HorizontalStackLayout  HorizontalOptions="CenterAndExpand" Margin="0,10,0,0">
+                <Label Text="Already Have an Account? " TextColor="Black"/>
+                <Label Text="SignIn" TextColor="#7d87f1" TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ICommandNavToSignInPage}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+            
+        </VerticalStackLayout>
+    </Grid>-->
+</ContentPage>

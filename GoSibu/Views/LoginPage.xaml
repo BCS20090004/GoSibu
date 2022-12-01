@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:renderers="clr-namespace:GoSibu.Renderers"
+             xmlns:behaviors="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="GoSibu.LoginPage"
+             Title="LoginPage"
+             NavigationPage.HasNavigationBar="False"
+             x:DataType="viewModels:LoginPageViewModel"
+             xmlns:viewModels="clr-namespace:GoSibu.ViewModels">
+
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0,0.2">
+                    <GradientStop Color="#F9DF55"
+                          Offset="0.06" />
+                    <GradientStop Color="#B752B3"
+                          Offset="0.96" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <StackLayout Grid.Row="0" HorizontalOptions="Center">
+                <Image
+                    Margin="0,20"
+                    Aspect="AspectFit"
+                    HeightRequest="150"
+                    Source="gosibu2.png"
+                    WidthRequest="800" />
+            </StackLayout>
+
+            <Frame
+                Grid.Row="1"
+                Margin="0,0,0,-40"
+                BorderColor="#1C375C"
+                CornerRadius="50"
+                HasShadow="True"
+                HeightRequest="700">
+                <Grid
+                    Padding="20,50,20,0"
+                    HorizontalOptions="FillAndExpand"
+                    RowSpacing="20"
+                    VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        FontAttributes="Bold"
+                        FontSize="24"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Welcome Back!"
+                        TextColor="#1C375C" />
+                    <Label
+                        Grid.Row="1"
+                        Margin="0,-15,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Login in to account"
+                        TextColor="#1C375C" />
+                    <Entry
+                        Grid.Row="2"
+                        Margin="0,20,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Username"
+                        Text="{Binding UserName}"
+                        VerticalOptions="FillAndExpand" />
+                    <Entry
+                        Grid.Row="3"
+                        HorizontalOptions="FillAndExpand"
+                        IsPassword="True"
+                        Placeholder="Password"
+                        Text="{Binding UserPassword}"
+                        VerticalOptions="FillAndExpand" />
+                    <Button
+                        Grid.Row="4"
+                        BackgroundColor="#1C375C"
+                        Command="{Binding LoginBtn}"
+                        CornerRadius="20"
+                        Text="Login" />
+
+                    <Button
+                        Grid.Row="5"
+                        BackgroundColor="#1C375C"
+                        Command="{Binding RegisterBtn}"
+                        CornerRadius="20"
+                        Text="Register using Email" />
+
+                    <Label
+                        Grid.Row="6"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="or signin with" />
+                    <StackLayout
+                        Grid.Row="7"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal"
+                        Spacing="40">
+                        <Image
+                            Aspect="AspectFit"
+                            HeightRequest="30"
+                            Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo626DNKJxdHM-VNRD0m7x_8Jim-r9kRalJQ"
+                            WidthRequest="30" />
+                        <Image
+                            Aspect="AspectFit"
+                            HeightRequest="30"
+                            Source="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png"
+                            WidthRequest="30" />
+                    </StackLayout>
+                    <Label
+                        Grid.Row="8"
+                        FontAttributes="Bold"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Forget Password" />
+                    <Label
+                        Grid.Row="9"
+                        Margin="0,-10,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Don't have an account? Sign up here" />
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+    <!--<Grid >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+
+        </Grid.RowDefinitions>
+        <Ellipse HeightRequest="1000" WidthRequest="800"  Margin="30,260,40,0" Rotation="0" Fill="white" Grid.Row="1" HorizontalOptions="FillAndExpand" />
+
+
+        <Image Grid.Row="0" Source="figma1.png" Margin="0,0,0,100" WidthRequest="400" HeightRequest="450" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+        <Image Grid.Row="0" Source="gosibusingle2.png" Aspect="AspectFit" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <VerticalStackLayout Grid.Row="1" Spacing="10">
+
+            <Label Text="Sign In To GoSibu" FontAttributes="Bold" FontSize="24" TextColor="#666666" FontFamily="Alata" HorizontalOptions="Start" Margin="20,0,0,0"/>
+
+            <Label Text="Welcome back" TextColor="#666666" FontFamily="Alata" Margin="20,0,0,20"></Label>
+
+            <Label Text="Your Email" FontAttributes="Bold" TextColor="Black" Margin="20,0,0,0"/>
+
+            <Frame HasShadow="False" CornerRadius="10" Padding="1" Margin="20,0,0,20" BackgroundColor="Transparent" 
+                   WidthRequest="350"  HeightRequest="50" HorizontalOptions="Start" BorderColor="Black" >
+                <Entry Placeholder="youremail@domain.com" Keyboard="Email" PlaceholderColor="DarkGray"  TextColor="Black"  Margin="10,0,10,0">
+                    <Entry.Behaviors>
+                        <behaviors:EmailValidationBehavior 
+                    Flags="ValidateOnValueChanged" 
+                    x:Name="emailValidator"/>
+                    </Entry.Behaviors>
+                </Entry>
+            </Frame>
+            <Label Margin="20,-10,0,0" IsVisible="{Binding Source={x:Reference emailValidator},
+                               Path=IsNotValid}" Text="Invalid Email" TextColor="Red"></Label>
+
+            <Label Text="Password" FontAttributes="Bold" TextColor="Black" Margin="20,0,0,0"/>
+
+            <Frame HasShadow="False" CornerRadius="10" Padding="1" Margin="20,0,0,20" BackgroundColor="Transparent" 
+                   WidthRequest="350"  HeightRequest="50" HorizontalOptions="Start" BorderColor="Black">
+                <renderers:CustomEntry  IsPassword="True" TextColor="Black" Placeholder="password"
+               Text="{Binding Password}">
+                    
+                    <Entry.Behaviors>
+                        <behaviors:CharactersValidationBehavior 
+                    Flags="ValidateOnValueChanged"
+                    MinimumLength="6"
+                    x:Name="passwordValidator"/>
+                    </Entry.Behaviors>
+                </renderers:CustomEntry>
+            </Frame>
+            <Label Margin="20,-10,0,0" IsVisible="{Binding Source={x:Reference passwordValidator},
+                               Path=IsNotValid}" Text="Password length must greater than 6" TextColor="Red"></Label>
+
+            <HorizontalStackLayout HorizontalOptions="End" Margin="0,0,20,0">
+            <Label Text="ForgetPassword?" TextColor="Black">
+                <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ICommandNavToForgetPasswordPage}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            </HorizontalStackLayout>
+            <Button Text="Log In" BackgroundColor="#e8bc65" Margin="10,10,10,0" TextColor="Black" Clicked="Login_Clicked"/>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Margin="0,10,0,0">
+                <Label Text="Dont Have an Account? " TextColor="Black"/>
+                <Label Text="Create Account" TextColor="#7d87f1" TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ICommandNavToSignUpPage}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Grid>-->
+</ContentPage>

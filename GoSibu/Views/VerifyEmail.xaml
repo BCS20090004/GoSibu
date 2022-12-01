@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoSibu.Views.VerifyEmail"
+             Title="VerifyEmail">
+    <Grid >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+
+        </Grid.RowDefinitions>
+
+        <Ellipse HeightRequest="1000" WidthRequest="800"  Margin="30,195,40,-50" Rotation="0" Fill="white" Grid.Row="1" HorizontalOptions="FillAndExpand" />
+
+        <Label Text="Verify Your Email" FontSize="30" Padding="10"></Label>
+
+        <Image Grid.Row="0" Source="figma4.png" Margin="0,0,0,100" WidthRequest="400" HeightRequest="450" HorizontalOptions="Center" VerticalOptions="Center" />
+        <Image Grid.Row="0" Source="gosibusingle2.png" Aspect="AspectFit" HeightRequest="180" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+        <VerticalStackLayout Grid.Row="1" Spacing="10">
+
+            <Label Text="Please Enter the 4-digit code sent to xxxgmail.com" FontSize="24" TextColor="#666666" 
+                   FontFamily="Alata" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Margin="10,0,0,30" 
+                   FontAutoScalingEnabled="True" VerticalTextAlignment="Center" />
+            <VerticalStackLayout Grid.Row="2">
+                <HorizontalStackLayout HorizontalOptions="Start">
+                    <Frame WidthRequest="80" HeightRequest="80" CornerRadius="10" Padding="1" Margin="15,0,0,0">
+                        <Entry FontSize="40" TextColor="Black" HorizontalTextAlignment="Center"></Entry>
+                    </Frame>
+                    <Frame WidthRequest="80" HeightRequest="80" CornerRadius="10" Padding="1" Margin="13,0,0,0">
+                        <Entry FontSize="40" TextColor="Black" HorizontalTextAlignment="Center"></Entry>
+                    </Frame>
+                    <Frame WidthRequest="80" HeightRequest="80" CornerRadius="10" Padding="1" Margin="13,0,0,0">
+                        <Entry FontSize="40" TextColor="Black" HorizontalTextAlignment="Center"></Entry>
+                    </Frame>
+                    <Frame WidthRequest="80" HeightRequest="80" CornerRadius="10" Padding="1" Margin="13,0,0,0">
+                        <Entry FontSize="40" TextColor="Black" HorizontalTextAlignment="Center"></Entry>
+                    </Frame>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>            
+            
+            <Button Text="Verify Email" BackgroundColor="#e8bc65" Margin="10,10,10,0" TextColor="Black" Clicked="VerifyEmail_Clicked"/>
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

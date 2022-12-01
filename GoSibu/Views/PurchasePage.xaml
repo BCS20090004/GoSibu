@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoSibu.Views.PurchasePage"
+             Title="PurchasePage">
+
+        <!--<Grid>
+            <Map x:Name="map"/>
+        </Grid>-->
+    <Grid >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Source="ellipse10.png" Margin="0,-500,0,-700" WidthRequest="700" HeightRequest="700" HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <VerticalStackLayout  Grid.Row="0" Margin="16,16,0,0">
+            <Label Text="Purchase Details" FontSize="27" FontFamily="PoetsenOne"></Label>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout  Grid.Row="1" Margin="0,15,0,0">
+
+            <Frame HasShadow="True" 
+                   BorderColor="Black" 
+                   CornerRadius="20" 
+                   HorizontalOptions="Center" 
+                   WidthRequest="320" 
+                   HeightRequest="590" 
+                   Margin="5" 
+                   BackgroundColor="LightYellow">
+
+                <VerticalStackLayout>
+                    <Image Source="map.png" HorizontalOptions="Center" HeightRequest="150" WidthRequest="130"  Margin="0,0,0,0"></Image>
+                    <VerticalStackLayout>
+                        <Label Text="Location" FontAttributes="Bold" FontSize="16" FontFamily="PoetsenOne" Margin="0,10,0,0"></Label>
+                        <Label Text="From Unicity TO Oishi Sibu - Del Posto - Win Hotel"></Label>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <Label Text="Duration" FontAttributes="Bold" FontSize="16" FontFamily="PoetsenOne" Margin="0,15,0,0"></Label>
+                        <Label Text="Unicity to Oishi Sibu - 7min"></Label>
+                        <Label Text="Del Posto to Win hotel - 2min"></Label>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <Label Text="Price" FontAttributes="Bold" FontSize="16" FontFamily="PoetsenOne" Margin="0,15,0,0"></Label>
+                        <Label Text="RM 10"></Label>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <Label Text="Disciption" FontAttributes="Bold" FontSize="16" FontFamily="PoetsenOne" Margin="0,15,0,0"></Label>
+                        <Label Text="This is a trip from unicity to oishi to delposto and back to win hotel"></Label>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout>
+                        <Label Text="Attention" FontAttributes="Bold" FontSize="16" FontFamily="PoetsenOne" Margin="0,15,0,0"></Label>
+                        <Label Text="This trip only for eat"></Label>
+                    </VerticalStackLayout>
+
+                    <Button Text="PURCHASE" 
+                            Margin="0,0,0,0"
+                            FontAttributes="Bold" 
+                            BackgroundColor="OrangeRed" 
+                            WidthRequest="280" 
+                            HeightRequest="45" 
+                            HorizontalOptions="Center" 
+                            TextColor="Black" 
+                            Clicked="Purchase_Clicked"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>
