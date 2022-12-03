@@ -1,11 +1,14 @@
 ﻿using Firebase.Auth;
+using GoSibu.Views;
 using System.ComponentModel;
-
+using System.Windows.Input;
 
 namespace GoSibu.ViewModels
 {
     internal class SignUpPageViewModel : INotifyPropertyChanged
     {
+        public ICommand ICommandNavToLoginPage { get; set; }
+
         public string webApiKey = "AIzaSyCmbHPjiVE5Uly9bnsBtxK5NGSB7qdteJ8";
 
         private INavigation _navigation;
@@ -42,11 +45,17 @@ namespace GoSibu.ViewModels
 
         public SignUpPageViewModel(INavigation navigation)
         {
+            ICommandNavToLoginPage = new Command(() => NavigateToLogInPage());
+
             this._navigation = navigation;
 
             RegisterUser = new Command(RegisterUserTappedAsync);
         }
 
+        private void NavigateToLogInPage()
+        {
+            App.Current.MainPage.Navigation.PushAsync(new LoginPage());
+        }
         private async void RegisterUserTappedAsync(object obj)
         {
             try

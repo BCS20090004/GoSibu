@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminPanelGoSibu.Views.PopupPage"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             CanBeDismissedByTappingOutsideOfPopup="False"
+             Color="WhiteSmoke">
+
+    <VerticalStackLayout Padding="10">
+        <Label 
+            Text="Saved"
+            FontSize="Medium"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label
+            Text="Voucher Detail has been entered into the database."
+            FontSize="Small"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            ></Label>
+        <Label
+            Text="Press Ok to view the Vaucher list, Cancel to continue editing."
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            ></Label>
+
+        <HorizontalStackLayout >
+            <Button Text="OK" 
+                    Clicked="OK_Clicked" 
+                    WidthRequest="100"
+                    Margin="20,0,20,0"/>
+            <Button Text="Cancel" 
+                    Clicked="Cancel_Clicked" 
+                    WidthRequest="100"
+                    Margin="20,0,20,0"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+        
+</mct:Popup>

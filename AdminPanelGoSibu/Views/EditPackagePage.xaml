@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminPanelGoSibu.EditPackagePage"
+             Title="EditPackagePage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <VerticalStackLayout  Grid.Row="0" Margin="16,16,0,0">
+            <Label Text="Edit Package Page" FontSize="27" FontFamily="PoetsenOne"></Label>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout  Grid.Row="1" Margin="0,25,0,0">
+
+            <Frame HasShadow="True" CornerRadius="20" HorizontalOptions="Center" WidthRequest="320" HeightRequest="590" Margin="5" BackgroundColor="LightYellow">
+
+                <VerticalStackLayout>
+                    <Image Source="map.png" HorizontalOptions="Center" HeightRequest="250" WidthRequest="200"  Margin="0,-55,0,0"></Image>
+                    <Label Text="Location:" FontSize="16" FontFamily="PoetsenOne" Margin="0,-50,0,0"></Label>
+                    <HorizontalStackLayout>
+                        <Frame HasShadow="False" CornerRadius="10" Padding="1" Margin="0,10,0,0" BackgroundColor="Transparent" WidthRequest="120"  HeightRequest="40" HorizontalOptions="Center" BorderColor="Black">
+                            <Entry Placeholder="From" HorizontalTextAlignment="Center" PlaceholderColor="DarkGray" TextColor="Black" Margin="10,0,10,0"></Entry>
+                        </Frame>
+                        <Frame HasShadow="False" CornerRadius="10" Padding="1" Margin="30,10,0,0" BackgroundColor="Transparent" WidthRequest="120"  HeightRequest="40" HorizontalOptions="Center" BorderColor="Black">
+                            <Entry Placeholder="To" HorizontalTextAlignment="Center" PlaceholderColor="DarkGray" TextColor="Black" Margin="10,0,10,0"></Entry>
+                        </Frame>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Margin="0,10,0,0">
+                        <Label Text="Duration:" FontSize="16" FontFamily="PoetsenOne" Margin="0,15,0,0"></Label>
+                        <Frame HasShadow="False" CornerRadius="10" Padding="1" Margin="10,10,0,0" BackgroundColor="Transparent" WidthRequest="70"  HeightRequest="40" HorizontalOptions="Center" BorderColor="Black">
+                            <Entry Placeholder="" HorizontalTextAlignment="Center" PlaceholderColor="DarkGray" TextColor="Black" Margin="10,0,10,0"></Entry>
+                        </Frame>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Margin="0,0,0,0">
+                        <Label Text="Price:" FontSize="16" FontFamily="PoetsenOne" Margin="25,15,0,0"></Label>
+                        <Frame HasShadow="False" CornerRadius="10" Padding="1" Margin="10,10,0,0" BackgroundColor="Transparent" WidthRequest="70"  HeightRequest="40" HorizontalOptions="Center" BorderColor="Black">
+                            <Entry Placeholder="" HorizontalTextAlignment="Center" PlaceholderColor="DarkGray" TextColor="Black" Margin="10,0,10,0"></Entry>
+                        </Frame>
+                    </HorizontalStackLayout>
+                    <Label Text="Description:" FontSize="16" FontFamily="PoetsenOne" Margin="0,10,0,0"></Label>
+                    <HorizontalStackLayout Margin="0,0,0,0">
+                        <Frame HasShadow="False" CornerRadius="10" Padding="1" Margin="10,10,0,0" BackgroundColor="Transparent" WidthRequest="250"  HeightRequest="100" HorizontalOptions="Center" BorderColor="Black">
+                            <Entry Placeholder="" HorizontalTextAlignment="Center" PlaceholderColor="DarkGray" TextColor="Black" Margin="10,0,10,0"></Entry>
+                        </Frame>
+                    </HorizontalStackLayout>
+
+                    <Button Text="Complete" FontAttributes="Bold" BackgroundColor="LightGrey" Margin="0,20,0,0" WidthRequest="250" HeightRequest="60" HorizontalOptions="Center" TextColor="Black" Clicked="Complete_Clicked"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+        </VerticalStackLayout>
+
+
+    </Grid>
+
+</ContentPage>

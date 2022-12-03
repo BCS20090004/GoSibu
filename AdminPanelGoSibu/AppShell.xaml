@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AdminPanelGoSibu.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AdminPanelGoSibu"
+    Shell.FlyoutBehavior="Disabled"
+    NavigationPage.HasNavigationBar="True">
+
+    <TabBar>
+        <Tab Title="Chat"
+             x:Name="chat"
+             Icon="chat.png">
+            <ShellContent             
+            ContentTemplate="{DataTemplate local:AdminChatPage}" />
+        </Tab>
+        <Tab Title="History"
+             x:Name="history"
+             Icon="history.png">
+            <ShellContent             
+            ContentTemplate="{DataTemplate local:AdminHistoryPage}" />
+        </Tab>
+        <Tab Title="Home"
+             x:Name="home"
+             Icon="home.png">
+            <ShellContent 
+            ContentTemplate="{DataTemplate local:MainPage}" 
+                Route="MainPage"/>
+        </Tab>
+        <Tab Title="Voucher"
+             x:Name="voucher"
+             Icon="coupon.png">
+            <ShellContent 
+            ContentTemplate="{DataTemplate local:AdminVoucherPage}"
+                Route="VoucherPage"/>
+        </Tab>
+        <Tab Title="Account"
+             x:Name="account"
+             Icon="user.png">
+            <ShellContent 
+            ContentTemplate="{DataTemplate local:AdminAccountPage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

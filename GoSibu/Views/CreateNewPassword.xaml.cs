@@ -11,4 +11,10 @@ public partial class Create_New_Password : ContentPage
     {
         Navigation.PushAsync(new LoginPage());
     }
+    async void OnTapGestureRecognizerTapped(object sender, EventArgs eventArgs)
+    {
+        Image g = (Image)sender;
+        await g.TranslateTo(-100, 0, 1000);
+
+    }
 }

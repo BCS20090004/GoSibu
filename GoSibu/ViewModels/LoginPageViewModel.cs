@@ -2,6 +2,7 @@
 using GoSibu.Views;
 using Newtonsoft.Json;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace GoSibu.ViewModels;
 
@@ -37,8 +38,10 @@ public class LoginPageViewModel : INotifyPropertyChanged
 
     public LoginPageViewModel(INavigation navigation)
     {
+        ICommandNavToSignUpPage = new Command(() => NavigateToSignUp());
+        ICommandNavToForgetPasswordPage = new Command(() => NavigateToForgetPassword());
         this._navigation = navigation;
-        RegisterBtn = new Command(RegisterBtnTappedAsync);
+        //RegisterBtn = new Command(RegisterBtnTappedAsync);
         LoginBtn = new Command(LoginBtnTappedAsync);
     }
 
@@ -51,7 +54,8 @@ public class LoginPageViewModel : INotifyPropertyChanged
             var content = await auth.GetFreshAuthAsync();
             var serializedContent = JsonConvert.SerializeObject(content);
             Preferences.Set("FreshFirebaseToken", serializedContent);
-            await this._navigation.PushAsync(new Dashboard());
+            Application.Current.MainPage = new AppShell();
+            await Shell.Current.GoToAsync("//MainPage");
         }
         catch (Exception ex)
         {
@@ -62,18 +66,27 @@ public class LoginPageViewModel : INotifyPropertyChanged
 
     }
 
-    private async void RegisterBtnTappedAsync(object obj)
-    {
-        await this._navigation.PushAsync(new SignUp());
-    }
+    //private async void RegisterBtnTappedAsync(object obj)
+    //{
+    //    await this._navigation.PushAsync(new SignUp());
+    //}
 
     private void RaisePropertyChanged(string v)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
     }
-    //public ICommand ICommandNavToSignUpPage { get; set; }
-    //public ICommand ICommandNavToForgetPasswordPage { get; set; }
+    public ICommand ICommandNavToSignUpPage { get; set; }
+    public ICommand ICommandNavToForgetPasswordPage { get; set; }
 
+    private void NavigateToSignUp()
+    {
+        App.Current.MainPage.Navigation.PushAsync(new SignUp());
+    }
+
+    private void NavigateToForgetPassword()
+    {
+        App.Current.MainPage.Navigation.PushAsync(new ForgetPassword());
+    }
     //public LoginPageViewModel()
     //{
     //    ICommandNavToSignUpPage = new Command(() => NavigateToSignUp());
@@ -96,10 +109,7 @@ public class LoginPageViewModel : INotifyPropertyChanged
     //    });
     //}
 
-    //private void NavigateToSignUp()
-    //{
-    //    App.Current.MainPage.Navigation.PushAsync(new SignUp());
-    //}
+
 
     //private void NavigateToForgetPassword()
     //{

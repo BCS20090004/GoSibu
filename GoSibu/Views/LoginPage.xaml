@@ -92,13 +92,7 @@
                         CornerRadius="20"
                         Text="Login" />
 
-                    <Button
-                        Grid.Row="5"
-                        BackgroundColor="#1C375C"
-                        Command="{Binding RegisterBtn}"
-                        CornerRadius="20"
-                        Text="Register using Email" />
-
+                   
                     <Label
                         Grid.Row="6"
                         HorizontalOptions="CenterAndExpand"
@@ -123,12 +117,20 @@
                         Grid.Row="8"
                         FontAttributes="Bold"
                         HorizontalOptions="CenterAndExpand"
-                        Text="Forget Password" />
+                        Text="Forget Password" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ICommandNavToForgetPasswordPage}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                     <Label
                         Grid.Row="9"
                         Margin="0,-10,0,0"
                         HorizontalOptions="CenterAndExpand"
-                        Text="Don't have an account? Sign up here" />
+                        Text="Don't have an account? Sign up here">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ICommandNavToSignUpPage}"/>
+                    </Label.GestureRecognizers>
+                    </Label>
                 </Grid>
             </Frame>
         </Grid>

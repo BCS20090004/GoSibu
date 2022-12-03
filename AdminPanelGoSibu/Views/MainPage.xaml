@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:AdminPanelGoSibu"
+             x:Class="AdminPanelGoSibu.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             x:DataType="vm:MainPageViewModel">
+
+
+    <Grid >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Grid.Row="0" Margin="16,16,0,0">
+            <Label HorizontalOptions="Start" Text="Welcome Back, Admin XXX," TextColor="Black" FontSize="27" FontFamily="PoetsenOne"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="1">
+            <Image Source="gosibu2.png"></Image>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="2">
+            <Label HorizontalOptions="CenterAndExpand" Text="Edit by Clicking the Package Below"></Label>
+        </VerticalStackLayout>
+
+        <ScrollView Grid.Row="3">
+            <VerticalStackLayout>
+                <Frame HasShadow="True" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="150" Margin="5">
+                    <HorizontalStackLayout>
+                        <Image Source="map.png"></Image>
+                        <VerticalStackLayout Margin="20,0,0,0">
+                            <Label Text="Location: From - to -"></Label>
+                            <Label Text="Duration: "></Label>
+                            <Label Text="Price: "></Label>
+                            <HorizontalStackLayout>
+                                <Label Text="EDIT" FontAttributes="Bold" Margin="0,30,0,0" HorizontalTextAlignment="Start">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ICommandNavToEditPackagePage}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label Text="DELETE" FontAttributes="Bold" Margin="120,30,0,0" HorizontalTextAlignment="End"></Label>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame HasShadow="True" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="150" Margin="5">
+                    <HorizontalStackLayout>
+                        <Image Source="map.png"></Image>
+                        <VerticalStackLayout Margin="20,0,0,0">
+                            <Label Text="Location: From - to -"></Label>
+                            <Label Text="Duration: "></Label>
+                            <Label Text="Price: "></Label>
+                            <HorizontalStackLayout>
+                                <Label Text="EDIT" FontAttributes="Bold" Margin="0,30,0,0" HorizontalTextAlignment="Start">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ICommandNavToEditPackagePage}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label Text="DELETE" FontAttributes="Bold" Margin="120,30,0,0" HorizontalTextAlignment="End"></Label>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame HasShadow="True" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="150" Margin="5">
+                    <HorizontalStackLayout>
+                        <Image Source="map.png"></Image>
+                        <VerticalStackLayout Margin="20,0,0,0">
+                            <Label Text="Location: From - to -"></Label>
+                            <Label Text="Duration: "></Label>
+                            <Label Text="Price: "></Label>
+                            <HorizontalStackLayout>
+                                <Label Text="EDIT" FontAttributes="Bold" Margin="0,30,0,0" HorizontalTextAlignment="Start">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ICommandNavToEditPackagePage}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label Text="DELETE" FontAttributes="Bold" Margin="120,30,0,0" HorizontalTextAlignment="End"></Label>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame HasShadow="True" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="150" Margin="5">
+                    <HorizontalStackLayout>
+                        <Image Source="map.png"></Image>
+                        <VerticalStackLayout Margin="20,0,0,0">
+                            <Label Text="Location: From - to -"></Label>
+                            <Label Text="Duration: "></Label>
+                            <Label Text="Price: "></Label>
+                            <HorizontalStackLayout>
+                                <Label Text="EDIT" FontAttributes="Bold" Margin="0,30,0,0" HorizontalTextAlignment="Start">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ICommandNavToEditPackagePage}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label Text="DELETE" FontAttributes="Bold" Margin="120,30,0,0" HorizontalTextAlignment="End"></Label>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

@@ -14,4 +14,10 @@ public partial class VerifyEmail : ContentPage
     }
     public ColumnDefinitionCollection ColumnDefinitions { get; }
 
+    async void OnTapGestureRecognizerTapped(object sender, EventArgs eventArgs)
+    {
+        Image g = (Image)sender;
+        await g.TranslateTo(-100, 0, 1000);
+
+    }
 }

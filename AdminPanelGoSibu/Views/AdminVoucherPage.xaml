@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminPanelGoSibu.AdminVoucherPage"
+             >
+    <StackLayout>
+        <Frame 
+            BackgroundColor="#1C375C" 
+            Padding="24" 
+            CornerRadius="0">
+            <Label 
+                Text="ADD/EDIT/SHOW Voucher" 
+                HorizontalTextAlignment="Center" 
+                TextColor="White" 
+                FontSize="36"/>
+        </Frame>
+        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
+        <Button 
+            BackgroundColor="#1C375C" 
+            Text="Add Voucher" 
+            x:Name="addvoucher" 
+            Clicked="addvoucher_Clicked" 
+            Margin="20,10,20,10" />
+        <Button 
+            BackgroundColor="#1C375C" 
+            Text="Show All Voucher" 
+            x:Name="showvoucher" 
+            Clicked="showvoucher_Clicked" 
+            Margin="20,10,20,10"/>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminPanelGoSibu.AdminAccountPage"
+             NavigationPage.HasNavigationBar="False">
+    <Grid >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <VerticalStackLayout  Grid.Row="0" Margin="16,16,0,0">
+            <Label Text="Admin Account Page" FontSize="27" FontFamily="PoetsenOne"></Label>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout  Grid.Row="1" Margin="0,25,0,0">
+
+            <Frame HasShadow="True" CornerRadius="50" HorizontalOptions="Center" WidthRequest="320" HeightRequest="550" Margin="5" BackgroundColor="LightYellow">
+
+                <VerticalStackLayout>
+                    <Image Source="accountuser.png" HorizontalOptions="CenterAndExpand" HeightRequest="90" WidthRequest="90"></Image>
+                    <Label Text="XXXXXXXX" FontSize="27" HorizontalOptions="Center"></Label>
+
+                    <Button Text="Edit Admin Account" FontAttributes="Bold" BackgroundColor="LightGrey" Margin="10,30,10,0" WidthRequest="250" HeightRequest="60" TextColor="Black"/>
+
+                    <Button Text="Change Email" FontAttributes="Bold" BackgroundColor="LightGrey" Margin="10,30,10,0" WidthRequest="250" HeightRequest="60" TextColor="Black"/>
+
+                    <Button Text="Change Password" FontAttributes="Bold" BackgroundColor="LightGrey" Margin="10,30,10,0" WidthRequest="250" HeightRequest="60" TextColor="Black"/>                      
+                    
+                </VerticalStackLayout>
+
+            </Frame>
+
+        </VerticalStackLayout>
+
+
+    </Grid>
+</ContentPage>
