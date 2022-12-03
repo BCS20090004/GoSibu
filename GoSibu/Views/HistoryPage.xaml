@@ -12,65 +12,135 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Image Source="myhistory.png" WidthRequest="500" HeightRequest="500" Margin="0,-170,0,0"></Image>
+        <Image 
+            Source="myhistory.png" 
+            WidthRequest="500" 
+            HeightRequest="500" 
+            Margin="0,-170,0,0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped"
+                                      NumberOfTapsRequired="2" />
+            </Image.GestureRecognizers>
+        </Image>
 
         <VerticalStackLayout  Grid.Row="0" Margin="16,16,0,0">
-            <Label Text="My History" FontSize="27" FontFamily="PoetsenOne"></Label>
+            <Label Text="My History" 
+                   FontSize="27" 
+                   FontFamily="PoetsenOne"></Label>
         </VerticalStackLayout>
 
         <ScrollView Grid.Row="1" Margin="0,-200,0,0">
 
             <VerticalStackLayout>
 
-                <Frame HasShadow="True" BorderColor="Black" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="100" Margin="5">
+                <Frame HasShadow="True" 
+                       BorderColor="Black"
+                       CornerRadius="50" 
+                       HorizontalOptions="StartAndExpand"
+                       WidthRequest="380"
+                       HeightRequest="100" 
+                       Margin="5">
                     <HorizontalStackLayout Margin="0,10,0,0">
-                        <Image Source="location.png" Margin="0,-10,0,0"></Image>
-                        <VerticalStackLayout Grid.Row="1" Margin="0,0,0,0" HorizontalOptions="Start">
-                            <Label Text="Route: Trip to Tanamas" FontSize="13" Margin="20,0,0,0"></Label>
-                            <Label Text="Date: 11/11/2022 11:11am" FontSize="13" Margin="20,5,0,0"></Label>
+                        <Image Source="location.png" 
+                               Margin="0,-10,0,0"></Image>
+                        <VerticalStackLayout Grid.Row="1" 
+                                             Margin="0,0,0,0" 
+                                             HorizontalOptions="Start">
+                            <Label Text="Route: Trip to Tanamas" 
+                                   FontSize="13" 
+                                   Margin="20,0,0,0"></Label>
+                            <Label Text="Date: 11/11/2022 11:11am"
+                                   FontSize="13" 
+                                   Margin="20,5,0,0"></Label>
                         </VerticalStackLayout>
-                        <Label Text="RM100.00" FontAttributes="Bold" FontSize="15" Margin="50,10,0,0"></Label>
+                        <Label Text="RM100.00" 
+                               FontAttributes="Bold" 
+                               FontSize="15"
+                               Margin="50,10,0,0"></Label>
                     </HorizontalStackLayout>
                 </Frame>
 
-                <Frame HasShadow="True" BorderColor="Black" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="100" Margin="5">
+                <Frame HasShadow="True" 
+                       BorderColor="Black" 
+                       CornerRadius="50"
+                       HorizontalOptions="StartAndExpand"
+                       WidthRequest="380" 
+                       HeightRequest="100" 
+                       Margin="5">
                     <HorizontalStackLayout Margin="0,10,0,0">
                         <Image Source="location.png" Margin="0,-10,0,0"></Image>
-                        <VerticalStackLayout Grid.Row="1" Margin="0,0,0,0" HorizontalOptions="Start">
-                            <Label Text="Route: Trip to Tanamas" FontSize="13" Margin="20,0,0,0"></Label>
-                            <Label Text="Date: 11/11/2022 11:11am" FontSize="13" Margin="20,5,0,0"></Label>
+                        <VerticalStackLayout 
+                            Grid.Row="1" 
+                            Margin="0,0,0,0" 
+                            HorizontalOptions="Start">
+                            <Label Text="Route: Trip to Tanamas" 
+                                   FontSize="13" 
+                                   Margin="20,0,0,0"></Label>
+                            <Label Text="Date: 11/11/2022 11:11am" 
+                                   FontSize="13" 
+                                   Margin="20,5,0,0"></Label>
                         </VerticalStackLayout>
-                        <Label Text="RM100.00" FontAttributes="Bold" FontSize="15" Margin="50,10,0,0"></Label>
+                        <Label Text="RM100.00" 
+                               FontAttributes="Bold" 
+                               FontSize="15" 
+                               Margin="50,10,0,0"></Label>
                     </HorizontalStackLayout>
                 </Frame>
 
-                <Frame HasShadow="True" BorderColor="Black" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="100" Margin="5">
+                <Frame HasShadow="True" 
+                       BorderColor="Black"
+                       CornerRadius="50" 
+                       HorizontalOptions="StartAndExpand"
+                       WidthRequest="380" 
+                       HeightRequest="100" 
+                       Margin="5">
                     <HorizontalStackLayout Margin="0,10,0,0">
                         <Image Source="location.png" Margin="0,-10,0,0"></Image>
-                        <VerticalStackLayout Grid.Row="1" Margin="0,0,0,0" HorizontalOptions="Start">
-                            <Label Text="Route: Trip to Tanamas" FontSize="13" Margin="20,0,0,0"></Label>
-                            <Label Text="Date: 11/11/2022 11:11am" FontSize="13" Margin="20,5,0,0"></Label>
+                        <VerticalStackLayout 
+                            Grid.Row="1" 
+                            Margin="0,0,0,0" 
+                            HorizontalOptions="Start">
+                            <Label Text="Route: Trip to Tanamas" 
+                                   FontSize="13" 
+                                   Margin="20,0,0,0"></Label>
+                            <Label Text="Date: 11/11/2022 11:11am" 
+                                   FontSize="13" 
+                                   Margin="20,5,0,0"></Label>
                         </VerticalStackLayout>
-                        <Label Text="RM100.00" FontAttributes="Bold" FontSize="15" Margin="50,10,0,0"></Label>
+                        <Label Text="RM100.00" 
+                               FontAttributes="Bold" 
+                               FontSize="15" 
+                               Margin="50,10,0,0"></Label>
                     </HorizontalStackLayout>
                 </Frame>
 
-                <Frame HasShadow="True" BorderColor="Black" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="100" Margin="5">
+                <Frame HasShadow="True" 
+                       BorderColor="Black" 
+                       CornerRadius="50" 
+                       HorizontalOptions="StartAndExpand"
+                       WidthRequest="380" 
+                       HeightRequest="100" 
+                       Margin="5">
                     <HorizontalStackLayout Margin="0,10,0,0">
-                        <Image Source="location.png" Margin="0,-10,0,0"></Image>
-                        <VerticalStackLayout Grid.Row="1" Margin="0,0,0,0" HorizontalOptions="Start">
-                            <Label Text="Route: Trip to Tanamas" FontSize="13" Margin="20,0,0,0"></Label>
-                            <Label Text="Date: 11/11/2022 11:11am" FontSize="13" Margin="20,5,0,0"></Label>
+                        <Image Source="location.png" 
+                               Margin="0,-10,0,0"></Image>
+                        <VerticalStackLayout Grid.Row="1" 
+                                             Margin="0,0,0,0" 
+                                             HorizontalOptions="Start">
+                            <Label Text="Route: Trip to Tanamas" 
+                                   FontSize="13" 
+                                   Margin="20,0,0,0"></Label>
+                            <Label Text="Date: 11/11/2022 11:11am"
+                                   FontSize="13" 
+                                   Margin="20,5,0,0"></Label>
                         </VerticalStackLayout>
-                        <Label Text="RM100.00" FontAttributes="Bold" FontSize="15" Margin="50,10,0,0"></Label>
+                        <Label Text="RM100.00"
+                               FontAttributes="Bold" 
+                               FontSize="15" 
+                               Margin="50,10,0,0"></Label>
                     </HorizontalStackLayout>
                 </Frame>
-
             </VerticalStackLayout>
-
         </ScrollView>
-
     </Grid>
-
-
 </ContentPage>

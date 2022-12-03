@@ -2,11 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             
              x:Class="GoSibu.Views.VoucherPage"
              Title="VoucherPage"
              NavigationPage.HasNavigationBar="False">
-    <Label Text="here"></Label>
     <!--xmlns:project="clr-namespace:AdminPanelGoSibu;assembly=AdminPanelGoSibu"
              xmlns:viewmodels="clr-namespace:AdminPanelGoSibu.ViewModels;assembly=AdminPanelGoSibu"
              xmlns:models="clr-namespace:AdminPanelGoSibu.Models;assembly=AdminPanelGoSibu"
@@ -50,7 +48,7 @@
 
         </StackLayout>
     </ContentPage.Content>-->
-    <!--Grid >
+    <Grid >
 
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -59,7 +57,16 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Image Source="myhistory.png" WidthRequest="900" HeightRequest="1100" Margin="0,-220,0,0"></Image>
+        <Image 
+            Source="myhistory.png" 
+            WidthRequest="900" 
+            HeightRequest="1100" 
+            Margin="0,-220,0,0">
+            <Image.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped"
+                                      NumberOfTapsRequired="2" />
+            </Image.GestureRecognizers>
+        </Image>
 
         <VerticalStackLayout  Grid.Row="0" Margin="16,16,0,0">
             <Label Text="My Voucher" FontSize="27" FontFamily="PoetsenOne"></Label>
@@ -84,7 +91,6 @@
                             </Frame.GestureRecognizers>
                             <Label Text="Use" Margin="0,0,0,0" FontSize="16" HorizontalOptions="Center" TextColor="Red" ></Label>
                         </Frame>
-
                     </HorizontalStackLayout>
                 </Frame>
 
@@ -129,7 +135,6 @@
                 </Frame>
 
             </VerticalStackLayout>
-        </ScrollView>-->
-
-
+        </ScrollView>
+    </Grid>
 </ContentPage>

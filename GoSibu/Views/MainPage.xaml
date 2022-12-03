@@ -17,66 +17,153 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Image Source="mainpage.png" WidthRequest="500" HeightRequest="500" Margin="0,-170,0,0"></Image>
+        <Image 
+            Source="mainpage.png" 
+            Aspect="AspectFit"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            WidthRequest="1000" 
+            HeightRequest="500" 
+            Margin="0,-180,0,0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped"
+                                      NumberOfTapsRequired="2" />
+            </Image.GestureRecognizers>
+        </Image>
         
 
         <VerticalStackLayout Grid.Row="0" Margin="16,16,0,0">
-            <Label HorizontalOptions="Start" Text="Welcome Back XXX," TextColor="Black" FontSize="27" FontFamily="PoetsenOne"/>
+            <Label 
+                HorizontalOptions="Start" 
+                Text="Welcome Back XXX," 
+                TextColor="Black"
+                FontSize="27" 
+                FontFamily="PoetsenOne"/>
         </VerticalStackLayout>
         <VerticalStackLayout Grid.Row="1" Margin="0,-250,0,0">
             <Image Source="gosibu2.png"></Image>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="2" Margin="0,-48,0,0">
-            <Label HorizontalOptions="CenterAndExpand" Text="Purchase by Clicking the Package" FontSize="15" FontAttributes="Bold"></Label>
+            <Label
+                HorizontalOptions="CenterAndExpand" 
+                Text="Purchase by Clicking the Package" 
+                FontSize="15" 
+                FontAttributes="Bold"></Label>
         </VerticalStackLayout>
 
         <ScrollView Grid.Row="3" Margin="0,-20,0,0">
         <VerticalStackLayout>
-                <Frame HasShadow="True" BackgroundColor="LightYellow" BorderColor="Black" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="170" Margin="5">
+                <Frame HasShadow="True" 
+                       BackgroundColor="LightYellow" 
+                       BorderColor="Black" 
+                       CornerRadius="50" 
+                       HorizontalOptions="StartAndExpand"
+                       WidthRequest="380"
+                       HeightRequest="170" 
+                       Margin="5">
                     <HorizontalStackLayout>
                         <Image Source="map.png"></Image>
                         <VerticalStackLayout Margin="50,0,0,0">
-                            <Label Text="Location: From - to -"  Margin="0,0,0,0"></Label>
-                            <Label Text="Duration: " Margin="0,5,0,0"></Label>
-                            <Label Text="Price: " Margin="0,5,0,0"></Label>
-                            <Frame HasShadow="False" BorderColor="DimGrey" BackgroundColor="LightGrey" CornerRadius="30" HorizontalOptions="Start" WidthRequest="110" HeightRequest="55" Margin="0,7,0,0">
+                            <Label Text="Location: From - to -"  
+                                   Margin="0,0,0,0"></Label>
+                            <Label Text="Duration: " 
+                                   Margin="0,5,0,0"></Label>
+                            <Label Text="Price: " 
+                                   Margin="0,5,0,0"></Label>
+                            <Frame HasShadow="False" 
+                                   BorderColor="DimGrey" 
+                                   BackgroundColor="LightGrey"
+                                   CornerRadius="30"
+                                   HorizontalOptions="Start" 
+                                   WidthRequest="110" 
+                                   HeightRequest="55" 
+                                   Margin="0,7,0,0">
                                 <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ICommandNavToPurchasePage}"/>
+                                    <TapGestureRecognizer 
+                                        Command="{Binding ICommandNavToPurchasePage}"/>
                                 </Frame.GestureRecognizers>
-                                <Label Text="PURCHASE" FontAttributes="Bold" Margin="0,0,0,0" HorizontalTextAlignment="Center"></Label>
+                                <Label Text="PURCHASE" 
+                                       FontAttributes="Bold" 
+                                       Margin="0,0,0,0"
+                                       HorizontalTextAlignment="Center"></Label>
                             </Frame>
                         </VerticalStackLayout>
                     </HorizontalStackLayout>
                 </Frame>
-                <Frame HasShadow="True" BackgroundColor="LightYellow" BorderColor="Black" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="170" Margin="5">
+                <Frame HasShadow="True" 
+                       BackgroundColor="LightYellow" 
+                       BorderColor="Black" 
+                       CornerRadius="50" 
+                       HorizontalOptions="StartAndExpand" 
+                       WidthRequest="380" 
+                       HeightRequest="170" 
+                       Margin="5">
                     <HorizontalStackLayout>
                         <Image Source="map.png"></Image>
                         <VerticalStackLayout Margin="50,0,0,0">
-                            <Label Text="Location: From - to -"  Margin="0,0,0,0"></Label>
-                            <Label Text="Duration: " Margin="0,5,0,0"></Label>
-                            <Label Text="Price: " Margin="0,5,0,0"></Label>
-                            <Frame HasShadow="False" BorderColor="DimGrey" BackgroundColor="LightGrey" CornerRadius="30" HorizontalOptions="Start" WidthRequest="110" HeightRequest="55" Margin="0,7,0,0">
+                            <Label 
+                                Text="Location: From - to -" 
+                                Margin="0,0,0,0"></Label>
+                            <Label 
+                                Text="Duration: " 
+                                Margin="0,5,0,0"></Label>
+                            <Label 
+                                Text="Price: " 
+                                Margin="0,5,0,0"></Label>
+                            <Frame 
+                                HasShadow="False" 
+                                BorderColor="DimGrey" 
+                                BackgroundColor="LightGrey" 
+                                CornerRadius="30" 
+                                HorizontalOptions="Start" 
+                                WidthRequest="110" 
+                                HeightRequest="55" 
+                                Margin="0,7,0,0">
                                 <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ICommandNavToPurchasePage}"/>
+                                    <TapGestureRecognizer 
+                                        Command="{Binding ICommandNavToPurchasePage}"/>
                                 </Frame.GestureRecognizers>
-                                <Label Text="PURCHASE" FontAttributes="Bold" Margin="0,0,0,0" HorizontalTextAlignment="Center"></Label>
+                                <Label Text="PURCHASE" 
+                                       FontAttributes="Bold" 
+                                       Margin="0,0,0,0" 
+                                       HorizontalTextAlignment="Center"></Label>
                             </Frame>
                         </VerticalStackLayout>
                     </HorizontalStackLayout>
                 </Frame>
-                <Frame HasShadow="True" BackgroundColor="LightYellow" BorderColor="Black" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="170" Margin="5">
+                <Frame HasShadow="True" 
+                       BackgroundColor="LightYellow" 
+                       BorderColor="Black" 
+                       CornerRadius="50" 
+                       HorizontalOptions="StartAndExpand" 
+                       WidthRequest="380"
+                       HeightRequest="170" 
+                       Margin="5">
                     <HorizontalStackLayout>
                         <Image Source="map.png"></Image>
                         <VerticalStackLayout Margin="50,0,0,0">
-                            <Label Text="Location: From - to -"  Margin="0,0,0,0"></Label>
-                            <Label Text="Duration: " Margin="0,5,0,0"></Label>
-                            <Label Text="Price: " Margin="0,5,0,0"></Label>
-                            <Frame HasShadow="False" BorderColor="DimGrey" BackgroundColor="LightGrey" CornerRadius="30" HorizontalOptions="Start" WidthRequest="110" HeightRequest="55" Margin="0,7,0,0">
+                            <Label Text="Location: From - to -"  
+                                   Margin="0,0,0,0"></Label>
+                            <Label Text="Duration: " 
+                                   Margin="0,5,0,0"></Label>
+                            <Label Text="Price: " 
+                                   Margin="0,5,0,0"></Label>
+                            <Frame HasShadow="False" 
+                                   BorderColor="DimGrey" 
+                                   BackgroundColor="LightGrey" 
+                                   CornerRadius="30" 
+                                   HorizontalOptions="Start" 
+                                   WidthRequest="110" 
+                                   HeightRequest="55" 
+                                   Margin="0,7,0,0">
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ICommandNavToPurchasePage}"/>
                                 </Frame.GestureRecognizers>
-                                <Label Text="PURCHASE" FontAttributes="Bold" Margin="0,0,0,0" HorizontalTextAlignment="Center"></Label>
+                                <Label Text="PURCHASE" 
+                                       FontAttributes="Bold" 
+                                       Margin="0,0,0,0" 
+                                       HorizontalTextAlignment="Center"></Label>
                             </Frame>
                         </VerticalStackLayout>
                     </HorizontalStackLayout>
