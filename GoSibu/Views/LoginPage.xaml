@@ -77,14 +77,36 @@
                         HorizontalOptions="FillAndExpand"
                         Placeholder="Username"
                         Text="{Binding UserName}"
-                        VerticalOptions="FillAndExpand" />
+                        VerticalOptions="FillAndExpand" >
+                    <Entry.Behaviors>
+                            <behaviors:EmailValidationBehavior 
+                             Flags="ValidateOnValueChanged" 
+                             x:Name="emailValidator"/>
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label  Grid.Row="2" 
+                           Margin="0,50,0,0" 
+                           IsVisible="{Binding Source={x:Reference emailValidator},
+                           Path=IsNotValid}" 
+                           Text="Invalid Email" 
+                           TextColor="Red"></Label>
                     <Entry
                         Grid.Row="3"
                         HorizontalOptions="FillAndExpand"
                         IsPassword="True"
                         Placeholder="Password"
                         Text="{Binding UserPassword}"
-                        VerticalOptions="FillAndExpand" />
+                        VerticalOptions="FillAndExpand" >
+                        <Entry.Behaviors>
+                            <behaviors:CharactersValidationBehavior 
+                    Flags="ValidateOnValueChanged"
+                    MinimumLength="6"
+                    x:Name="passwordValidator"/>
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label Grid.Row="3" Margin="0,50,0,0" 
+                           IsVisible="{Binding Source={x:Reference passwordValidator},
+                               Path=IsNotValid}" Text="Password length must greater than 6" TextColor="Red"></Label>
                     <Button
                         Grid.Row="4"
                         BackgroundColor="#1C375C"

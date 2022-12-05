@@ -116,29 +116,29 @@ public class LoginPageViewModel : INotifyPropertyChanged
     //    App.Current.MainPage.Navigation.PushAsync(new ForgetPassword());
     //}
 
-    //bool IsValidEmail(string email)
-    //{
-    //    var trimmedEmail = email.Trim();
+    bool IsValidEmail(string email)
+    {
+        var trimmedEmail = email.Trim();
 
-    //    if (trimmedEmail.EndsWith("."))
-    //    {
-    //        return false; // suggested by @TK-421
-    //    }
-    //    try
-    //    {
-    //        var addr = new System.Net.Mail.MailAddress(email);
-    //        return addr.Address == trimmedEmail;
-    //    }
-    //    catch
-    //    {
-    //        return false;
-    //    }
-    //}
+        if (trimmedEmail.EndsWith("."))
+        {
+            return false; // suggested by @TK-421
+        }
+        try
+        {
+            var addr = new System.Net.Mail.MailAddress(email);
+            return addr.Address == trimmedEmail;
+        }
+        catch
+        {
+            return false;
+        }
+    }
 
-    //public string Email { get; set; } = "";
-    //public string Password { get; set; } = "";
+    public string Email { get; set; } = "";
+    public string Password { get; set; } = "";
 
-    //public ICommand LogInCommand { get; }
-    //public bool CanLogIn => IsValidEmail(Email) && !string.IsNullOrWhiteSpace(Password);
+    public ICommand LogInCommand { get; }
+    public bool CanLogIn => IsValidEmail(Email) && !string.IsNullOrWhiteSpace(Password);
     //public event PropertyChangedEventHandler PropertyChanged;
 }
