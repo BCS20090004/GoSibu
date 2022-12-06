@@ -8,7 +8,7 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
-        BindingContext = new MainPageViewModel();
+       this.BindingContext = new MainPageViewModel();
     }
 
     async void OnTapGestureRecognizerTapped(object sender, EventArgs eventArgs)

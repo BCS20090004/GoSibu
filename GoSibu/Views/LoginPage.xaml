@@ -75,7 +75,7 @@
                         Grid.Row="2"
                         Margin="0,20,0,0"
                         HorizontalOptions="FillAndExpand"
-                        Placeholder="Username"
+                        Placeholder="youemail.gmail.com"
                         Text="{Binding UserName}"
                         VerticalOptions="FillAndExpand" >
                     <Entry.Behaviors>
@@ -99,14 +99,16 @@
                         VerticalOptions="FillAndExpand" >
                         <Entry.Behaviors>
                             <behaviors:CharactersValidationBehavior 
-                    Flags="ValidateOnValueChanged"
-                    MinimumLength="6"
-                    x:Name="passwordValidator"/>
+                             Flags="ValidateOnValueChanged"
+                             MinimumLength="6"
+                              x:Name="passwordValidator"/>
                         </Entry.Behaviors>
                     </Entry>
                     <Label Grid.Row="3" Margin="0,50,0,0" 
                            IsVisible="{Binding Source={x:Reference passwordValidator},
-                               Path=IsNotValid}" Text="Password length must greater than 6" TextColor="Red"></Label>
+                           Path=IsNotValid}" 
+                           Text="Password length must greater than 6" 
+                           TextColor="Red"></Label>
                     <Button
                         Grid.Row="4"
                         BackgroundColor="#1C375C"

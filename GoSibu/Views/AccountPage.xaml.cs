@@ -7,6 +7,12 @@ public partial class AccountPage : ContentPage
 
 
     private readonly UserEdit User;
+    async void OnTapGestureRecognizerTapped(object sender, EventArgs eventArgs)
+    {
+        Image g = (Image)sender;
+        await g.TranslateTo(-50, 0, 1000);
+
+    }
 
     public AccountPage()
     {

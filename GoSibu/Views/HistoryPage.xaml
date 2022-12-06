@@ -7,29 +7,31 @@
 
 
     <Grid >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
 
         <Image 
-            Source="myhistory.png" 
-            WidthRequest="500" 
-            HeightRequest="500" 
-            Margin="0,-170,0,0">
+            Source="ellipse9.png" 
+            WidthRequest="2000" 
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            HeightRequest="900"
+            Margin="0,-200,0,0">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped"
                                       NumberOfTapsRequired="2" />
             </Image.GestureRecognizers>
         </Image>
-
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
         <VerticalStackLayout  Grid.Row="0" Margin="16,16,0,0">
             <Label Text="My History" 
                    FontSize="27" 
                    FontFamily="PoetsenOne"></Label>
         </VerticalStackLayout>
 
-        <ScrollView Grid.Row="1" Margin="0,-200,0,0">
+        <ScrollView Grid.Row="1" Margin="0,0,0,0">
 
             <VerticalStackLayout>
 
@@ -142,5 +144,7 @@
                 </Frame>
             </VerticalStackLayout>
         </ScrollView>
+        </Grid>
+
     </Grid>
 </ContentPage>

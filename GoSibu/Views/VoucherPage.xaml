@@ -58,7 +58,7 @@
         </Grid.RowDefinitions>
 
         <Image 
-            Source="myhistory.png" 
+            Source="ellipse9.png" 
             WidthRequest="900" 
             HeightRequest="1100" 
             Margin="0,-220,0,0">

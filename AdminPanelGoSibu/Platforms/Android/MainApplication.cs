@@ -1,13 +1,11 @@
 ﻿using Android.App;
 using Android.Runtime;
+using MauiMapsSample;
 
 namespace AdminPanelGoSibu
 {
-    #if DEBUG
-    [Application(Debuggable = true)]
-    #else
-[Application(Debuggable = false)]
-    #endif
+    [Application]
+
     public class MainApplication : MauiApplication
     {
         public MainApplication(IntPtr handle, JniHandleOwnership ownership)

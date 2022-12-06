@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:vm="clr-namespace:GoSibu"
+             xmlns:models="clr-namespace:GoSibu.Model"
              x:Class="GoSibu.Views.MainPage"
              x:DataType="viewModels:MainPageViewModel"
              xmlns:viewModels="clr-namespace:GoSibu.ViewModels"
@@ -11,40 +12,63 @@
 
     <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-
+        
         <Image 
-            Source="mainpage.png" 
+            Source="ellipse8.png" 
             Aspect="AspectFit"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
-            WidthRequest="1000" 
-            HeightRequest="500" 
-            Margin="0,-180,0,0">
+            WidthRequest="800" 
+            HeightRequest="600" 
+            Margin="0,500,0,0">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped"
                                       NumberOfTapsRequired="2" />
             </Image.GestureRecognizers>
         </Image>
-        
-
         <VerticalStackLayout Grid.Row="0" Margin="16,16,0,0">
             <Label 
                 HorizontalOptions="Start" 
                 Text="Welcome Back XXX," 
                 TextColor="Black"
-                FontSize="27" 
+                FontSize="30" 
                 FontFamily="PoetsenOne"/>
         </VerticalStackLayout>
-        <VerticalStackLayout Grid.Row="1" Margin="0,-250,0,0">
-            <Image Source="gosibu2.png"></Image>
+        
+        <VerticalStackLayout Grid.Row="1" Margin="0,0,0,0">
+            <CarouselView Position="{Binding Position}" 
+                      IndicatorView="indicatorView" 
+                      Loop="False"
+                      HorizontalOptions="FillAndExpand" 
+                      VerticalOptions="FillAndExpand" 
+                      ItemsSource="{Binding MainPage}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate x:DataType="models:AdpageModel">
+                        <Grid RowDefinitions="300,0">
+                            <Image Source="{Binding IntroImage}" 
+                                   Grid.Row="0" 
+                                   MaximumHeightRequest="400" 
+                                   MaximumWidthRequest="500"/>
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <StackLayout  Orientation="Horizontal"  
+                      Grid.Row="1" >
+                <IndicatorView x:Name="indicatorView" 
+                           HorizontalOptions="CenterAndExpand"
+                           IndicatorSize="10"
+                           IndicatorColor="LightGray"  
+                           SelectedIndicatorColor="{x:StaticResource Primary}" />
+            </StackLayout>
         </VerticalStackLayout>
 
-        <VerticalStackLayout Grid.Row="2" Margin="0,-48,0,0">
+        <VerticalStackLayout Grid.Row="2">
             <Label
                 HorizontalOptions="CenterAndExpand" 
                 Text="Purchase by Clicking the Package" 
@@ -52,7 +76,7 @@
                 FontAttributes="Bold"></Label>
         </VerticalStackLayout>
 
-        <ScrollView Grid.Row="3" Margin="0,-20,0,0">
+        <ScrollView Grid.Row="3" Margin="0,0,0,0">
         <VerticalStackLayout>
                 <Frame HasShadow="True" 
                        BackgroundColor="LightYellow" 
