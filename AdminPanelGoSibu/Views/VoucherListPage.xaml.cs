@@ -4,7 +4,8 @@ namespace AdminPanelGoSibu.Views;
 
 public partial class VoucherListPage : ContentPage
 {
-	public VoucherListPage()
+    [Obsolete]
+    public VoucherListPage()
 	{
 		InitializeComponent();
         this.BindingContext = new VoucherListPageViewModel();

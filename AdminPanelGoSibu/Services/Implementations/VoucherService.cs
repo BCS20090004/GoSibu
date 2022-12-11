@@ -1,7 +1,7 @@
-﻿using Firebase.Database;
+﻿using AdminPanelGoSibu.Models;
+using Firebase.Database;
 using Firebase.Database.Query;
-using AdminPanelGoSibu.Models;
-using AdminPanelGoSibu.Services.Interfaces;
+using Gosibu.Shared.Models;
 
 namespace AdminPanelGoSibu.Services.Implementations
 {
@@ -12,7 +12,7 @@ namespace AdminPanelGoSibu.Services.Implementations
             AuthTokenAsyncFactory = () => Task.FromResult(Setting.FireBaseSeceret)
         });
 
-        public async Task<bool> AddOrUpdateVoucher(VoucherModel voucherModel)
+        public new async Task<bool> AddOrUpdateVoucher(VoucherModel voucherModel)
         {
             if (!string.IsNullOrWhiteSpace(voucherModel.Key))
             {

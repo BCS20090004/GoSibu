@@ -7,46 +7,42 @@
              Title="EditPackagePage"
              NavigationPage.HasNavigationBar="False">
 
-    <Grid >
 
-
-        <maps:Map x:Name="mappy" 
+    <maps:Map x:Name="mappy" 
                   IsTrafficEnabled="True" 
                   IsShowingUser="True"
                   MapType="Hybrid"
-                  Grid.Row="1"
                   IsZoomEnabled="True">
 
-            <x:Arguments>
-                <MapSpan>
-                    <x:Arguments>
-                        <loc:Location>
-                            <x:Arguments>
-                                <x:Double>2.287778</x:Double>
-                                <x:Double>111.830833</x:Double>
-                            </x:Arguments>
-                        </loc:Location>
-                        <x:Double>0.01</x:Double>
-                        <x:Double>0.01</x:Double>
-                    </x:Arguments>
-                </MapSpan>
-            </x:Arguments>
-            <maps:Map.Pins>
-                <maps:Pin Label="Santa Cruz"
+        <x:Arguments>
+            <MapSpan>
+                <x:Arguments>
+                    <loc:Location>
+                        <x:Arguments>
+                            <x:Double>2.287778</x:Double>
+                            <x:Double>111.830833</x:Double>
+                        </x:Arguments>
+                    </loc:Location>
+                    <x:Double>0.01</x:Double>
+                    <x:Double>0.01</x:Double>
+                </x:Arguments>
+            </MapSpan>
+        </x:Arguments>
+        <maps:Map.Pins>
+            <maps:Pin Label="Santa Cruz"
                       Address="The city with a boardwalk"
                       Type="Place">
-                    <maps:Pin.Location>
-                        <loc:Location>
-                            <x:Arguments>
-                                <x:Double>2.287778</x:Double>
-                                <x:Double>111.830833</x:Double>
-                            </x:Arguments>
-                        </loc:Location>
-                    </maps:Pin.Location>
-                </maps:Pin>
-            </maps:Map.Pins>
-        </maps:Map>
-    </Grid>
+                <maps:Pin.Location>
+                    <loc:Location>
+                        <x:Arguments>
+                            <x:Double>2.287778</x:Double>
+                            <x:Double>111.830833</x:Double>
+                        </x:Arguments>
+                    </loc:Location>
+                </maps:Pin.Location>
+            </maps:Pin>
+        </maps:Map.Pins>
+    </maps:Map>
     <!--<VerticalStackLayout  Grid.Row="2" Margin="0,25,0,0">
 
             <Frame HasShadow="True" 

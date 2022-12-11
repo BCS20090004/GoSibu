@@ -3,10 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GoSibu.Views.ChatPage"
              Title="ChatPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+      <Grid
+        RowDefinitions="Auto, 7*, Auto, Auto">
+        <Image Source="ellipse10.png" WidthRequest="1500" HeightRequest="800" Margin="0,-170,0,0"></Image>
+        <Entry
+            Margin="20,0,0,0"
+            x:Name="txtUsername"
+            Placeholder="Your name"
+            PlaceholderColor="DarkGray"/>
+
+        <ScrollView
+            Grid.Row="1">
+            <VerticalStackLayout 
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Label
+                x:Name="lblChat"
+                FontSize="18"
+                HorizontalOptions="StartAndExpand"
+                TextType="Html">
+                
+            </Label>  
+                
+                
+        <Entry
+            Margin="20,0,0,0"
+            Grid.Row="2"
+            x:Name="txtMessage"
+            Placeholder="Enter your message"
+            PlaceholderColor="DarkGray"/>
+
+        <Button
+            Grid.Row="3"
+            x:Name="btnSend"
+            Text="Send"
+            HorizontalOptions="FillAndExpand"
+            Clicked="btnSend_Clicked"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+      
+
+    </Grid>
 </ContentPage>

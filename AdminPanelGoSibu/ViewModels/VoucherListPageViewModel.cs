@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
-
-using AdminPanelGoSibu.Models;
-using AdminPanelGoSibu.Services.Interfaces;
-using AdminPanelGoSibu.Views;
+using AdminPanelGoSibu.Services;
+using Gosibu.Shared.Models;
 
 namespace AdminPanelGoSibu.ViewModels
 {
@@ -28,16 +21,17 @@ namespace AdminPanelGoSibu.ViewModels
         #endregion
 
         #region Constructor
+        [Obsolete]
         public VoucherListPageViewModel()
         {
             _voucherService = DependencyService.Resolve<IVoucherService>();
-            GetAllVoucher();
+            GetAllVoucherList();
         }
         #endregion
 
         #region Methods
         [Obsolete]
-        private void GetAllVoucher()
+        private void GetAllVoucherList()
         {
             IsBusy = true;
             Task.Run(async () =>
@@ -64,10 +58,11 @@ namespace AdminPanelGoSibu.ViewModels
 
         #region Commands
 
+        [Obsolete]
         public ICommand RefreshCommand => new Command(() =>
         {
             IsRefreshing = true;
-            GetAllVoucher();
+            GetAllVoucherList();
         });
 
         public ICommand SelectedVoucherCommand => new Command<VoucherModel>(async (voucher) =>
@@ -78,20 +73,20 @@ namespace AdminPanelGoSibu.ViewModels
 
                 if (response == "Update Voucher")
                 {
-                    await App.Current.MainPage.Navigation.PushAsync(new AddUpdateVoucherPage(voucher));
+                    await App.Current.MainPage.Navigation.PushAsync(new AddUpdateVoucherPage());
                 }
                 else if (response == "Delete Voucher")
                 {
                     IsBusy = true;
-                    bool deleteResponse = await _voucherService.DeleteVoucher(voucher.Key);
+                    bool deleteResponse = await _voucherService.DeleteAsync(voucher.Key);
                     if (deleteResponse)
                     {
-                        GetAllVoucher();
+                        GetAllVoucherList();
                     }
                 }
             }
         });
         #endregion
-    
+
     }
 }

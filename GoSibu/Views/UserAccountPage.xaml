@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoSibu.Views.UserAccountPage"
+             xmlns:vm="clr-namespace:GoSibu.Views"
+             NavigationPage.HasNavigationBar="False"
+             >
+
+    <Grid>
+        <Image Source="ellipse11.png" 
+           HeightRequest="700" 
+           VerticalOptions="FillAndExpand"
+           HorizontalOptions="FillAndExpand"
+           WidthRequest="750" 
+           Margin="0,-130,0,0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped"
+                                      NumberOfTapsRequired="2" />
+            </Image.GestureRecognizers>
+        </Image>
+
+        <!--<StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Preferences Sample" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Entry x:Name="RandomLabel" Margin="20" />
+            <Switch x:Name="RandomSwitch" Margin="20" />
+            <Button Text="Save Preferences" Clicked="Button_Clicked" />
+            <Button Text="Clear Preferences" Clicked="Button_Clicked_1" />
+        </StackLayout>-->
+        <Grid Margin="25">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*"></ColumnDefinition>
+                <ColumnDefinition Width=".6*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Stroke="#1C375C"
+                    StrokeThickness="4"
+                    StrokeShape="Ellipse"
+                    HeightRequest="200"
+                    WidthRequest="200"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" 
+                    Grid.ColumnSpan="2">
+            <Image  Source="cat.jpeg"
+                    Grid.ColumnSpan="2"
+                    Margin="10"
+                    WidthRequest="200"
+                    HeightRequest="200"
+                    VerticalOptions="Center"></Image>
+            </Border>
+            <Label 
+                    Text="UserName"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="Small"
+                    VerticalOptions="Center"></Label>
+            <Entry x:Name="UserNameEdit"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    VerticalOptions="Center"></Entry>
+            
+            <Label Text="Gender"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    FontSize="Small"
+                    VerticalOptions="Center"></Label>
+            <Entry x:Name="UserGender" 
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    FontSize="Small"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"></Entry>
+            
+            <Label
+                    Text="Email"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    FontSize="Small"></Label>
+            <Entry x:Name="UserEmail"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    FontSize="Small"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"></Entry>
+
+            <Label  
+                    Text="PhoneNumber"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    FontSize="Small"></Label>
+            <Entry x:Name="UserPhoneNumber"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    FontSize="Small"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                    Keyboard="Numeric"></Entry>
+            <Label  
+                    Text="Latest LogIn Time"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    FontSize="Small"></Label>
+            <Label  x:Name="lblname"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    FontSize="Small"></Label>
+
+            <Button 
+                    BackgroundColor="#1C375C"
+                    Clicked="Button_Clicked"
+                    Text="Save Profile"
+                    Grid.Row="6"
+                    Grid.ColumnSpan="2"
+                    Margin="0,20,0,20">
+            </Button>
+
+            <Button BackgroundColor="#1C375C"
+                    Clicked="Button_Clicked_1"
+                    Text="Clear Profile"
+                    Grid.Row="7"
+                    Grid.ColumnSpan="2"></Button>
+        </Grid>
+    </Grid>
+</ContentPage>

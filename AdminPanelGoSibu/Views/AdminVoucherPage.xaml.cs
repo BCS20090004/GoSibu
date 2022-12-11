@@ -1,6 +1,6 @@
 using AdminPanelGoSibu.Views;
-using Firebase.Database;
-using System.Collections.ObjectModel;
+using Gosibu.Shared.Models;
+using AdminPanelGoSibu.Services;
 
 namespace AdminPanelGoSibu;
 
@@ -11,14 +11,27 @@ public partial class AdminVoucherPage : ContentPage
         InitializeComponent();
     }
 
-    private void addvoucher_Clicked(object sender, EventArgs e)
+    private void Addvoucher_Clicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new AddUpdateVoucherPage());
     }
 
-    private void showvoucher_Clicked(object sender, EventArgs e)
+    private void Showvoucher_Clicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new VoucherListPage());
+    }
+
+    private async void OnCounterClicked(object sender, EventArgs e)
+    {
+        var service = new VoucherModel();
+        try
+        {
+            var VoucherList = await service.GetAllVoucher();
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine(exception);
+        }
     }
 }
 

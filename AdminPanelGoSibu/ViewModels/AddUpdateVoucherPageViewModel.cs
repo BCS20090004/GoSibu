@@ -1,12 +1,7 @@
-﻿using AdminPanelGoSibu.Models;
-using AdminPanelGoSibu.Services.Implementations;
-using AdminPanelGoSibu.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
+using VoucherModel = Gosibu.Shared.Models.VoucherModel;
+using AdminPanelGoSibu.Services;
+using Gosibu.Shared.Models;
 
 namespace AdminPanelGoSibu.ViewModels
 {
@@ -48,7 +43,7 @@ namespace AdminPanelGoSibu.ViewModels
         {
             if (IsBusy) return;
             IsBusy = true;
-            bool res = await _voucherService.AddOrUpdateVoucher(VoucherDetail);
+            HttpResponseMessage res = await _voucherService.AddOrUpdateVoucher(VoucherDetail); //from bool to HTTPRespnde Message
             if (res)
             {
 

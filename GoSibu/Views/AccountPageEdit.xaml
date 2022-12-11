@@ -5,7 +5,7 @@
              Title="My Account"
              NavigationPage.HasNavigationBar="False">
 <!--BackgroundColor="#D9D9D9" Opacity="0.3"-->
-    <Grid>
+    <!--<Grid>
         <Image Source="ellipse9.png" HeightRequest="900" Margin="0,-190,0,0"></Image>
 
     <ScrollView Margin="30" >
@@ -26,6 +26,7 @@
                     <ColumnDefinition Width=".5*"></ColumnDefinition>
                     <ColumnDefinition Width=".6*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+                
                 <Image x:Name="UserImage"
                     Grid.Column="0"
                     Grid.Row="0"
@@ -34,15 +35,18 @@
                     WidthRequest="100"
                     HeightRequest="100"
                     VerticalOptions="Center"></Image>
+                
                 <Label Text="UserName"
                     Grid.Row="1"
                     Grid.Column="0"
                     FontSize="Small"
                     VerticalOptions="Center"></Label>
+                
                 <Entry x:Name="UsernameEdit"
                     Grid.Row="1"
                     Grid.Column="1"
                     VerticalOptions="Center"></Entry>
+                
                 <Label Text="Gender"
                     Grid.Row="2"
                     Grid.Column="0"
@@ -93,8 +97,8 @@
                     Grid.Row="6"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"></Button>
-            </Grid>
+                </Grid>
         </Frame>
     </ScrollView>
-    </Grid>
+    </Grid>-->
 </ContentPage>

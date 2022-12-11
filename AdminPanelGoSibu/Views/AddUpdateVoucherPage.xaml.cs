@@ -1,5 +1,5 @@
 using AdminPanelGoSibu.ViewModels;
-using AdminPanelGoSibu.Models;
+using Gosibu.Shared.Models;
 
 namespace AdminPanelGoSibu;
 
@@ -15,11 +15,11 @@ public partial class AddUpdateVoucherPage : ContentPage
 
     }
 
-    public AddUpdateVoucherPage(VoucherModel voucher)
-    {
-        InitializeComponent();
-        this.BindingContext = new AddUpdateVoucherPageViewModel(voucher);
-    }
+    //public AddUpdateVoucherPage(VoucherModel voucher)
+    //{
+    //    InitializeComponent();
+    //    this.BindingContext = new AddUpdateVoucherPageViewModel(voucher);
+    //}
 
 
 

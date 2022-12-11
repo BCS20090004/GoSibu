@@ -47,7 +47,7 @@
                     RowSpacing="20"
                     VerticalOptions="FillAndExpand">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" /> 
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -73,7 +73,7 @@
                         TextColor="#1C375C" />
                     <Entry
                         Grid.Row="2"
-                        Margin="0,20,0,0"
+                        Margin="0,10,0,0"
                         HorizontalOptions="FillAndExpand"
                         Placeholder="youemail.gmail.com"
                         Text="{Binding UserName}"
@@ -118,11 +118,11 @@
 
                    
                     <Label
-                        Grid.Row="6"
+                        Grid.Row="5"
                         HorizontalOptions="CenterAndExpand"
                         Text="or signin with" />
                     <StackLayout
-                        Grid.Row="7"
+                        Grid.Row="6"
                         HorizontalOptions="CenterAndExpand"
                         Orientation="Horizontal"
                         Spacing="40">
@@ -138,7 +138,7 @@
                             WidthRequest="30" />
                     </StackLayout>
                     <Label
-                        Grid.Row="8"
+                        Grid.Row="7"
                         FontAttributes="Bold"
                         HorizontalOptions="CenterAndExpand"
                         Text="Forget Password" >
@@ -147,7 +147,7 @@
                         </Label.GestureRecognizers>
                     </Label>
                     <Label
-                        Grid.Row="9"
+                        Grid.Row="8"
                         Margin="0,-10,0,0"
                         HorizontalOptions="CenterAndExpand"
                         Text="Don't have an account? Sign up here">

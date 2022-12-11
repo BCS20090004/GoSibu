@@ -1,5 +1,5 @@
-﻿using AdminPanelGoSibu.Services.Implementations;
-using AdminPanelGoSibu.Services.Interfaces;
+﻿using AdminPanelGoSibu.Services;
+using AdminPanelGoSibu.Services.Implementations;
 
 namespace AdminPanelGoSibu
 {
@@ -11,7 +11,7 @@ namespace AdminPanelGoSibu
 
             MainPage = new AppShell();
 
-            DependencyService.Register<IVoucherService, VoucherService>();
+            //DepndencyService.Register<IVoucherService, VoucherService>();
 
         }
         protected override void OnStart()

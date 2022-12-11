@@ -4,10 +4,12 @@ using CommunityToolkit.Maui;
 namespace MauiMapsSample;
 public static class MauiProgram
 {
-    public static MauiApp CreateMauiApp()
+    public static Microsoft.Maui.Hosting.MauiApp CreateMauiApp()
     {
-        var builder = MauiApp.CreateBuilder();
-        builder.UseMauiApp<App>().ConfigureFonts(fonts =>
+        var builder = Microsoft.Maui.Hosting.MauiApp.CreateBuilder();
+        builder
+            .UseMauiApp<App>()
+            .ConfigureFonts(fonts =>
         {
             fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
             fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");

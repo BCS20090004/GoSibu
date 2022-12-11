@@ -37,7 +37,7 @@
              x:Name="account"
              Icon="user.png">
             <ShellContent 
-            ContentTemplate="{DataTemplate views:AccountPage}"
+            ContentTemplate="{DataTemplate views:UserAccountPage}"
                 Route="UserAccountPage"/>
         </Tab>
     </TabBar>
