@@ -23,7 +23,7 @@ public partial class AdminVoucherPage : ContentPage
 
     private async void OnCounterClicked(object sender, EventArgs e)
     {
-        var service = new VoucherModel();
+        var service = new IVoucherService(); // originally is VoucherModel
         try
         {
             var VoucherList = await service.GetAllVoucher();
