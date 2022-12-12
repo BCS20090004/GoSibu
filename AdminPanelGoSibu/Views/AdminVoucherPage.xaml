@@ -30,7 +30,7 @@
         <Button 
             BackgroundColor="#1C375C" 
             Text="Show All Voucher" 
-            x:Name="showvoucher" 
+            x:Name="viewvoucher" 
             Clicked="OnCounterClicked" 
             Margin="20,10,20,10"/>
     </StackLayout>

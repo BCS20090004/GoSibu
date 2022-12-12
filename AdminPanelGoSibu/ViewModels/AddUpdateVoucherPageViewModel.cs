@@ -43,8 +43,8 @@ namespace AdminPanelGoSibu.ViewModels
         {
             if (IsBusy) return;
             IsBusy = true;
-            HttpResponseMessage res = await _voucherService.AddOrUpdateVoucher(VoucherDetail); //from bool to HTTPRespnde Message
-            if (res)
+            var res = await _voucherService.AddOrUpdateVoucher(); //from bool to HTTPRespnde Message
+            if (res.IsSuccessStatusCode)
             {
 
                 if (!string.IsNullOrWhiteSpace(VoucherDetail.Key))
