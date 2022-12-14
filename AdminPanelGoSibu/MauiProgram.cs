@@ -1,4 +1,5 @@
 ﻿using AdminPanelGoSibu;
+using AdminPanelGoSibu.Services;
 using CommunityToolkit.Maui;
 
 namespace MauiMapsSample;
@@ -14,6 +15,7 @@ public static class MauiProgram
             fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
             fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
         }).UseMauiMaps().UseMauiCommunityToolkit();
+        DependencyService.RegisterSingleton<IVoucherService>(new IVoucherService());
         return builder.Build();
 
 

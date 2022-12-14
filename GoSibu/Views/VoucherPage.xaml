@@ -2,14 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewmodels="clr-namespace:GoSibu.ViewModels"
+             xmlns:models="clr-namespace:Gosibu.Shared.Models;assembly=Gosibu.Shared"
+             x:DataType="viewmodels:VoucherListPageViewModel"
              x:Class="GoSibu.Views.VoucherPage"
              Title="VoucherPage"
              NavigationPage.HasNavigationBar="False">
-    <!--xmlns:project="clr-namespace:AdminPanelGoSibu;assembly=AdminPanelGoSibu"
-             xmlns:viewmodels="clr-namespace:AdminPanelGoSibu.ViewModels;assembly=AdminPanelGoSibu"
-             xmlns:models="clr-namespace:AdminPanelGoSibu.Models;assembly=AdminPanelGoSibu"
-             x:DataType="viewmodels:VoucherListPageViewModel"-->
-    <!--<ContentPage.Content>
+    <ContentPage.Content>
         <StackLayout Margin="10,0,10,0">
             <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
 
@@ -37,9 +36,9 @@
                                 </StackLayout>
                                 <BoxView HeightRequest="1" Color="Gray" />
 
-                                <StackLayout.GestureRecognizers>
+                                <!--<StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewmodels:VoucherListPageViewModel}},Path=SelectedVoucherCommand}" CommandParameter="{Binding .}" />
-                                </StackLayout.GestureRecognizers>
+                                </StackLayout.GestureRecognizers>-->
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
@@ -47,94 +46,5 @@
             </RefreshView>
 
         </StackLayout>
-    </ContentPage.Content>-->
-    <Grid >
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition />
-        </Grid.RowDefinitions>
-
-        <Image 
-            Source="ellipse9.png" 
-            WidthRequest="900" 
-            HeightRequest="1100" 
-            Margin="0,-220,0,0">
-            <Image.GestureRecognizers>
-            <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped"
-                                      NumberOfTapsRequired="2" />
-            </Image.GestureRecognizers>
-        </Image>
-
-        <VerticalStackLayout  Grid.Row="0" Margin="16,16,0,0">
-            <Label Text="My Voucher" FontSize="27" FontFamily="PoetsenOne"></Label>
-        </VerticalStackLayout>
-
-        <ScrollView Grid.Row="3" Margin="0,-800,0,0">
-            <VerticalStackLayout>
-                <Frame HasShadow="True" HorizontalOptions="StartAndExpand" WidthRequest="370" HeightRequest="125" Margin="10">
-                    <HorizontalStackLayout>
-                        <Image Source="coupon.png"></Image>
-                        <VerticalStackLayout Margin="20,0,0,0">
-                            <Label Text="10% OFF"></Label>
-                            <Label Text="Min Spend RM30"></Label>
-                            <Label Text="Valid till 11/11/2022" Margin="0,30,0,0"></Label>
-                        </VerticalStackLayout>
-                        <VerticalStackLayout>
-                            <Label Text="T&amp;C" FontAttributes="Bold" Margin="63,68,0,0" HorizontalTextAlignment="Center"></Label>
-                        </VerticalStackLayout>
-                        <Frame HasShadow="False" BorderColor="Red" HorizontalOptions="End" WidthRequest="69" HeightRequest="57" Margin="-70,-20,0,0">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ICommandNavToUseVoucherPage}"/>
-                            </Frame.GestureRecognizers>
-                            <Label Text="Use" Margin="0,0,0,0" FontSize="16" HorizontalOptions="Center" TextColor="Red" ></Label>
-                        </Frame>
-                    </HorizontalStackLayout>
-                </Frame>
-
-                <Frame HasShadow="True" HorizontalOptions="StartAndExpand" WidthRequest="370" HeightRequest="125" Margin="10">
-                    <HorizontalStackLayout>
-                        <Image Source="coupon.png"></Image>
-                        <VerticalStackLayout Margin="20,0,0,0">
-                            <Label Text="10% OFF"></Label>
-                            <Label Text="Min Spend RM30"></Label>
-                            <Label Text="Valid till 11/11/2022" Margin="0,30,0,0"></Label>
-                        </VerticalStackLayout>
-                        <VerticalStackLayout>
-                            <Label Text="T&amp;C" FontAttributes="Bold" Margin="63,68,0,0" HorizontalTextAlignment="Center"></Label>
-                        </VerticalStackLayout>
-                        <Frame HasShadow="False" BorderColor="Red" HorizontalOptions="End" WidthRequest="69" HeightRequest="57" Margin="-70,-20,0,0">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ICommandNavToUseVoucherPage}"/>
-                            </Frame.GestureRecognizers>
-                            <Label Text="Use" Margin="0,0,0,0" FontSize="16" HorizontalOptions="Center" TextColor="Red" ></Label>
-                        </Frame>
-                    </HorizontalStackLayout>
-                </Frame>
-
-                <Frame HasShadow="True" HorizontalOptions="StartAndExpand" WidthRequest="370" HeightRequest="125" Margin="10">
-                    <HorizontalStackLayout>
-                        <Image Source="coupon.png"></Image>
-                        <VerticalStackLayout Margin="20,0,0,0">
-                            <Label Text="10% OFF"></Label>
-                            <Label Text="Min Spend RM30"></Label>
-                            <Label Text="Valid till 11/11/2022" Margin="0,30,0,0"></Label>
-                        </VerticalStackLayout>
-                        <VerticalStackLayout>
-                            <Label Text="T&amp;C" FontAttributes="Bold" Margin="63,68,0,0" HorizontalTextAlignment="Center"></Label>
-                        </VerticalStackLayout>
-                        <Frame HasShadow="False" BorderColor="Red" HorizontalOptions="End" WidthRequest="69" HeightRequest="57" Margin="-70,-20,0,0">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ICommandNavToUseVoucherPage}"/>
-                            </Frame.GestureRecognizers>
-                            <Label Text="Use" Margin="0,0,0,0" FontSize="16" HorizontalOptions="Center" TextColor="Red" ></Label>
-                        </Frame>
-                    </HorizontalStackLayout>
-                </Frame>
-
-            </VerticalStackLayout>
-        </ScrollView>
-    </Grid>
+    </ContentPage.Content>
 </ContentPage>

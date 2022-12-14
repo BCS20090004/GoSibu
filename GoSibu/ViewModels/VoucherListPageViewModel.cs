@@ -1,9 +1,9 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
-using AdminPanelGoSibu.Services;
+using GoSibu.Services;
 using Gosibu.Shared.Models;
 
-namespace AdminPanelGoSibu.ViewModels
+namespace GoSibu.ViewModels
 {
     public class VoucherListPageViewModel : BaseViewModel
     {
@@ -64,50 +64,8 @@ namespace AdminPanelGoSibu.ViewModels
             IsRefreshing = true;
             GetAllVoucherList();
         });
-
-        [Obsolete]
-        public ICommand SelectedVoucherCommand => new Command<VoucherModel>(async (voucher) =>
-        {
-            if (voucher != null)
-            {
-                var response = await App.Current.MainPage.DisplayActionSheet("Options!", "Cancel", null, "Update Voucher", "Delete Voucher");
-
-                if (response == "Update Voucher")
-                {
-                    await App.Current.MainPage.Navigation.PushAsync(new AddUpdateVoucherPage(voucher));
-                }
-                else if (response == "Delete Voucher")
-                {
-                    IsBusy = true;
-
-                 
-                    try
-                    {
-                        bool deleteResponse = await _voucherService.DeleteVoucher(voucher);
-                        if (deleteResponse)
-                        {
-                            //GetAllVoucherList();
-                            Vouchers.Remove(voucher);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Faile to remove voucher, try again.");
-                        }
-                    }
-                    catch(Exception)
-                    {
-                        Console.WriteLine("Error Occur with Http");
-
-                    }
-                    finally
-                    {
-                        IsBusy = false;
-
-                    }
-                }
-            }
-        });
         #endregion
+
 
     }
 }

@@ -1,13 +1,13 @@
-//using AdminPanelGoSibu.ViewModels;
 using GoSibu.ViewModels;
 namespace GoSibu.Views;
 
 public partial class VoucherPage : ContentPage
 {
+    [Obsolete]
     public VoucherPage()
     {
         InitializeComponent();
-        //BindingContext = new VoucherListPageViewModel();
+        BindingContext = new VoucherListPageViewModel();
     }
     async void OnTapGestureRecognizerTapped(object sender, EventArgs eventArgs)
     {

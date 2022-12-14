@@ -15,6 +15,13 @@ public partial class AddUpdateVoucherPage : ContentPage
 
     }
 
+    public AddUpdateVoucherPage(VoucherModel voucher)
+    {
+        InitializeComponent();
+        this.BindingContext = new AddUpdateVoucherPageViewModel(voucher);
+
+    }
+
     //public AddUpdateVoucherPage(VoucherModel voucher)
     //{
     //    InitializeComponent();

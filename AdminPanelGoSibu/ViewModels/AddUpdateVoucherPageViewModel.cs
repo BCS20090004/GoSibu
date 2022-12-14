@@ -43,7 +43,7 @@ namespace AdminPanelGoSibu.ViewModels
         {
             if (IsBusy) return;
             IsBusy = true;
-            var res = await _voucherService.AddOrUpdateVoucher(); //from bool to HTTPRespnde Message
+            var res = await _voucherService.AddOrUpdateVoucher(VoucherDetail); //from bool to HTTPRespnde Message
             if (res.IsSuccessStatusCode)
             {
 
@@ -57,9 +57,12 @@ namespace AdminPanelGoSibu.ViewModels
                     await App.Current.MainPage.DisplayAlert("Success!", "Record added successfully.", "Ok");
                 }
             }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Failed!", "Please try again later.", "Ok");
+            }
             IsBusy = false;
         });
         #endregion
     }
 }
-

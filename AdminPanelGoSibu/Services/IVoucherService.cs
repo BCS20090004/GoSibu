@@ -8,14 +8,18 @@ namespace AdminPanelGoSibu.Services
         
         public Task<List<VoucherModel>> GetAllVoucher()
         {
-            return GetTAsync<List<VoucherModel>>("VoucherModel");
+         
+            return GetTAsync<List<VoucherModel>>("VoucherService");
         }
 
         public Task<HttpResponseMessage> AddOrUpdateVoucher(VoucherModel voucherModel)
         {
-            return PostTAsync("VoucherModel", voucherModel);
-            return PutAsync("VoucherModel", voucherModel);
-            DeleteAsync("VoucherModel"); //DeleteVoucher???
+            return PutAsync("VoucherService", voucherModel);
+        }
+
+        public Task<bool> DeleteVoucher(VoucherModel voucherModel)
+        {
+            return DeleteAsync($"VoucherService?key={voucherModel.Key}");
         }
 
         //Task<bool> AddOrUpdateVoucher(VoucherModel voucherModel);
@@ -23,4 +27,37 @@ namespace AdminPanelGoSibu.Services
         //Task<List<VoucherModel>> GetAllVoucher();
     }
 
+    //public interface ITestService
+    //{
+    //    Task<List<VoucherModel>> GetAllVoucher();
+    //}
+
+    //public class MockTestService : ITestService
+    //{
+    //    public Task<List<VoucherModel>> GetAllVoucher()
+    //    {
+    //        return Task.FromResult(new List<VoucherModel>()
+    //        {
+    //            new VoucherModel
+    //            {
+    //                Description= "description",
+    //            },
+    //             new VoucherModel
+    //            {
+    //                Description= "description",
+    //            },
+    //        });
+    //    }
+    //}
+    //public class TestService : BaseApiService, ITestService
+    //{
+    //    public Task<List<VoucherModel>> GetAllVoucher()
+    //    {
+    //        return GetTAsync<List<VoucherModel>>("VoucherModel");
+    //    }
+    //}
+    //List<int> test = new();
+    //lambda expression
+    //linq
+    //test.Where(x => x == 1);
 }

@@ -22,7 +22,7 @@ namespace GoSibu.WebApi.Controllers
             _logger = logger;
         }
 
-        [HttpPut(Name = "GetAllVoucher")]
+        [HttpPut(Name = "AddorUpdateVoucher")]
 
         public async Task<bool> AddOrUpdateVoucher(VoucherModel voucherModel)
         {
@@ -53,7 +53,7 @@ namespace GoSibu.WebApi.Controllers
 
         }
 
-        [HttpDelete(Name = "GetAllVoucher")]
+        [HttpDelete(Name = "DeleteVoucher")]
         public async Task<bool> DeleteVoucher(string key)
         {
             try
