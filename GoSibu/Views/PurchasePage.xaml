@@ -11,47 +11,154 @@
             <Map x:Name="map"/>
         </Grid>-->
     <ScrollView>
-        <StackLayout>
-            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
 
-            <Label Text="Package Name:"></Label>
-            <Label Text="{Binding PackageDetail.PackageName}" />
+        <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/> <!--13-->
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,0.8">
+                <GradientStop Color="#84DCC6"
+                          Offset="0.3" />
+                <GradientStop Color="#95A3B3"
+                          Offset="1.5" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
+            <HorizontalStackLayout Grid.Row="0">
+                <Label Text="Package Name:"
+                   FontFamily="Roboto"
+                   FontSize="15"
+                   Margin="0,0,20,0">
+                </Label>
+                <Label Text="{Binding PackageDetail.PackageName}" 
+                   FontFamily="Roboto"
+                   FontSize="15"/>
+            </HorizontalStackLayout>
 
-            <Label Text="Departuren Location:"></Label>
-            <Label Text="{Binding PackageDetail.Departure}"  />
+            <HorizontalStackLayout Grid.Row="1">
+                <Label Text="Departuren Location:"
+                   FontFamily="Roboto"
+                   FontSize="15"
+                   Margin="0,0,20,0"></Label>
+                <Label Text="{Binding PackageDetail.Departure}"  
+                   FontFamily="Roboto"
+                   FontSize="15"/>
+            </HorizontalStackLayout>
 
-            <Label Text="Destination 1:"></Label>
-            <Label Text="{Binding PackageDetail.Destination1}"  />
+            <HorizontalStackLayout Grid.Row="2">
+                <Label Text="Destination 1:"
+                   FontFamily="Roboto"
+                   FontSize="15"
+                   Margin="0,0,20,0"></Label>
+                <Label Text="{Binding PackageDetail.Destination1}" 
+                   FontFamily="Roboto"
+                   FontSize="15"/>
+            </HorizontalStackLayout>
 
-            <Label Text="Destination 2:"></Label>
-            <Label Text="{Binding PackageDetail.Destination2}" />
+            <HorizontalStackLayout Grid.Row="3">
+                <Label Text="Destination 2:"
+                       FontFamily="Roboto"
+                   FontSize="15"
+                   Margin="0,0,20,0"></Label>
+                <Label Text="{Binding PackageDetail.Destination2}"
+                       FontFamily="Roboto"
+                   FontSize="15"/>
+            </HorizontalStackLayout>
 
-            <Label Text="Destination 3:"></Label>
-            <Label Text="{Binding PackageDetail.Destination3}"   />
+            <HorizontalStackLayout Grid.Row="4">
+                <Label Text="Destination 3:"
+                       FontFamily="Roboto"
+                   FontSize="15"
+                   Margin="0,0,20,0"></Label>
+                <Label Text="{Binding PackageDetail.Destination3}"
+                       FontFamily="Roboto"
+                   FontSize="15"/>
+            </HorizontalStackLayout>
 
-            <Label Text="Destination 4:"></Label>
-            <Label Text="{Binding PackageDetail.Destination4}"  />
+            <HorizontalStackLayout Grid.Row="5">
 
-            <Label Text="Duration:"></Label>
-            <Label Text="{Binding PackageDetail.Duration}"/>
+                <Label Text="Destination 4:"
+                       FontFamily="Roboto"
+                   FontSize="15"
+                   Margin="0,0,20,0"></Label>
+                <Label Text="{Binding PackageDetail.Destination4}"
+                   FontFamily="Roboto"
+                   FontSize="15"/>
+            </HorizontalStackLayout>
 
-            <Label Text="Package Price:"></Label>
-            <Label Text="{Binding PackageDetail.PackagePrice}"  />
+            <HorizontalStackLayout Grid.Row="6">
+                <Label Text="Duration:"
+                   FontFamily="Roboto"
+                   FontSize="15"
+                   Margin="0,0,20,0"></Label>
+                <Label Text="{Binding PackageDetail.Duration}"
+                   FontFamily="Roboto"
+                   FontSize="15"/>
+            </HorizontalStackLayout>
 
-            <Label Text="Person In Chargee:"></Label>
-            <Label Text="{Binding PackageDetail.PersonInCharge}"  />
+            <HorizontalStackLayout Grid.Row="7">
+                <Label Text="Package Price:"
+                   FontFamily="Roboto"
+                   FontSize="15"
+                   Margin="0,0,20,0"></Label>
+                <Label Text="{Binding PackageDetail.PackagePrice}" 
+                   FontFamily="Roboto"
+                   FontSize="15"/>
+            </HorizontalStackLayout>
 
-            <Label Text="Person In Charge Mobile Number:"></Label>
-            <Label Text="{Binding PackageDetail.PICMobileumber}" />
+            <HorizontalStackLayout Grid.Row="8">
+                <Label Text="Person In Chargee:"
+                   FontFamily="Roboto"
+                   FontSize="15"
+                   Margin="0,0,20,0"></Label>
+                <Label Text="{Binding PackageDetail.PersonInCharge}"
+                   FontFamily="Roboto"
+                   FontSize="15"/>
+            </HorizontalStackLayout>
 
-            <Label Text="Discription:"></Label>
-            <Label Text="{Binding PackageDetail.Discription}"   />
+            <HorizontalStackLayout Grid.Row="9">
+                <Label Text="Person In Charge Mobile Number:"
+                   FontFamily="Roboto"
+                   FontSize="15"
+                   Margin="0,0,20,0"></Label>
+                <Label Text="{Binding PackageDetail.PICMobileumber}"
+                   FontFamily="Roboto"
+                   FontSize="15"/>
+            </HorizontalStackLayout>
 
-            <Label Text="Attention:"></Label>
-            <Label Text="{Binding PackageDetail.Attention}"  />
-        </StackLayout>
+            <HorizontalStackLayout Grid.Row="10">
+                <Label Text="Discription:"
+                   FontFamily="Roboto"
+                   FontSize="15"
+                   Margin="0,0,20,0"></Label>
+                <Label Text="{Binding PackageDetail.Discription}"
+                   FontFamily="Roboto"
+                   FontSize="15"/>
+            </HorizontalStackLayout>
+
+        <HorizontalStackLayout Grid.Row="11">
+            <Label Text="Attention:"
+                   FontFamily="Roboto"
+                   FontSize="15"
+                   Margin="0,0,20,0"></Label>
+            <Label Text="{Binding PackageDetail.Attention}"
+                   FontFamily="Roboto"
+                   FontSize="15"/>
+        </HorizontalStackLayout>
+    </Grid>
     </ScrollView>
-
-      
 
 </ContentPage>

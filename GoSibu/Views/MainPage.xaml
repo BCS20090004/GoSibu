@@ -33,9 +33,9 @@
         <VerticalStackLayout Grid.Row="0" Margin="16,16,0,0">
             <Label 
                 HorizontalOptions="Start" 
-                Text="Welcome Back XXX," 
+                Text="Welcome Back ," 
                 TextColor="Black"
-                FontSize="30" 
+                FontSize="26" 
                 FontFamily="PoetsenOne"/>
         </VerticalStackLayout>
         
@@ -71,7 +71,8 @@
             <Label
                 HorizontalOptions="CenterAndExpand" 
                 Text="Purchase by Clicking the Package" 
-                FontSize="15" 
+                FontSize="15"
+                TextColor="#222222"
                 FontAttributes="Bold"></Label>
         </VerticalStackLayout>
 
@@ -85,24 +86,25 @@
                         <CollectionView.ItemTemplate >
                            
                             <DataTemplate x:DataType="models:PackageModel" >
-                                <Border Padding="55,10"
-                                        Background="#2B0B98"
+                                <Border Padding="50,12"
+                                        Background="#FFFFFF"
                                         HeightRequest="90"
                                         WidthRequest="300"
-                                        StrokeShape="RoundRectangle 40,10,10,40"                                        
+                                        StrokeShape="RoundRectangle 40,0,0,40"                                        
                                         StrokeThickness="2.5"
                                         >
                                     <Border.Stroke>
                                         <LinearGradientBrush EndPoint="0,1">
-                                            <GradientStop Color="Orange" Offset="0.1" />
-                                            <GradientStop Color="Brown" Offset="1.0" />
+                                            <GradientStop Color="#95A3B3" Offset="0.1" />
+                                            <GradientStop Color="#222222" Offset="1.0" />
                                         </LinearGradientBrush>
                                     </Border.Stroke>
                                     <StackLayout Margin="10,5,10,10">
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="{Binding PackageName}"
-                                               FontSize="18"
-                                                   TextColor="WhiteSmoke"
+                                               FontSize="17"
+                                                   FontFamily="Roboto"
+                                                   TextColor="Black"
                                                    HorizontalTextAlignment="Center"
                                                    VerticalTextAlignment="Center"
                                                    HorizontalOptions="Center"/>
@@ -110,8 +112,9 @@
 
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="{Binding PackagePrice}" 
-                                               FontSize="18"
-                                                   TextColor="WhiteSmoke"
+                                               FontSize="17"
+                                                   TextColor="Black"
+                                                   FontFamily="Roboto"
                                                    HorizontalTextAlignment="Center"
                                                    VerticalTextAlignment="Center"
                                                    HorizontalOptions="Center"/>
