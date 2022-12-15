@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gosibu.Shared.Models
+﻿namespace Gosibu.Shared.Models
 {
-    public class Package
+    public class PackageModel
     {
         public string Key { get; set; }
         public string PackageName { get; set; }
@@ -21,6 +15,7 @@ namespace Gosibu.Shared.Models
         public string PICMobileumber { get; set; }
         public string Discription { get; set; }
         public string Attention { get; set; }
+        public string IntroImage { get; set; }
 
     }
 }

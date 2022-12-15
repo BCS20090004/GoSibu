@@ -28,42 +28,14 @@
             <Label HorizontalOptions="CenterAndExpand" Text="Edit by Clicking the Package Below"></Label>
         </VerticalStackLayout>
 
-        <ScrollView Grid.Row="3">
-            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
+        <StackLayout Grid.Row="3">
 
-            <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" >
-                <CollectionView ItemsSource="{Binding Vouchers}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="models:VoucherModel">
-                            <StackLayout Margin="10,30,10,0">
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Offer Name: " />
-                                    <Label Text="{Binding OfferName}" />
-                                </StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Offer: " />
-                                    <Label Text="{Binding Offer}" />
-                                </StackLayout>
-
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Duration: " />
-                                    <Label Text="{Binding Duration}" />
-                                </StackLayout>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Description: " />
-                                    <Label Text="{Binding Description}" />
-                                </StackLayout>
-                                <BoxView HeightRequest="1" Color="Gray" />
-
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewmodels:VoucherListPageViewModel}},Path=SelectedVoucherCommand}" CommandParameter="{Binding .}" />
-                                </StackLayout.GestureRecognizers>
-                            </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </RefreshView>
-        </ScrollView>
+            <Label Text="Edit the Package below" FontSize="Title" Padding="30,10,30,10"/>
+            <Button Text="Add Package" x:Name="addPackage" Clicked="addPackage_Clicked" 
+                    Margin="20,10,20,10"/>
+            <Button Text="Show All Package" x:Name="showPackage" Clicked="showPackage_Clicked" 
+                    Margin="20,10,20,10"/>
+        </StackLayout>
     </Grid>
 
 </ContentPage>

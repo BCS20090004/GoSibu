@@ -60,12 +60,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\AddUpdatePackagePage.xaml.cs">
+	    <DependentUpon>AddUpdatePackagePage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\AddUpdateVoucherPage.xaml.cs">
 	    <DependentUpon>AddUpdateVoucherPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\AddUpdatePackagePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\AdminAccountPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -85,6 +91,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PackageList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\PopupPage.xaml">

@@ -2,11 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             xmlns:vm="clr-namespace:GoSibu"
-             xmlns:models="clr-namespace:GoSibu.Model"
              x:Class="GoSibu.Views.MainPage"
-             x:DataType="viewModels:MainPageViewModel"
+             x:DataType="viewModels:PackageListPageViewModel"
              xmlns:viewModels="clr-namespace:GoSibu.ViewModels"
+             xmlns:models="clr-namespace:Gosibu.Shared.Models;assembly=Gosibu.Shared"
              NavigationPage.HasNavigationBar="False"
              >
 
@@ -48,7 +47,7 @@
                       VerticalOptions="FillAndExpand" 
                       ItemsSource="{Binding MainPage}">
                 <CarouselView.ItemTemplate>
-                    <DataTemplate x:DataType="models:AdpageModel">
+                    <DataTemplate x:DataType="models:PackageModel">
                         <Grid RowDefinitions="300,0">
                             <Image Source="{Binding IntroImage}" 
                                    Grid.Row="0" 
@@ -76,123 +75,59 @@
                 FontAttributes="Bold"></Label>
         </VerticalStackLayout>
 
-        <ScrollView Grid.Row="3" Margin="0,0,0,0">
-        <VerticalStackLayout>
-                <Frame HasShadow="True" 
-                       BackgroundColor="LightYellow" 
-                       BorderColor="Black" 
-                       CornerRadius="50" 
-                       HorizontalOptions="StartAndExpand"
-                       WidthRequest="380"
-                       HeightRequest="170" 
-                       Margin="5">
-                    <HorizontalStackLayout>
-                        <Image Source="map.png"></Image>
-                        <VerticalStackLayout Margin="50,0,0,0">
-                            <Label Text="Location: From - to -"  
-                                   Margin="0,0,0,0"></Label>
-                            <Label Text="Duration: " 
-                                   Margin="0,5,0,0"></Label>
-                            <Label Text="Price: " 
-                                   Margin="0,5,0,0"></Label>
-                            <Frame HasShadow="False" 
-                                   BorderColor="DimGrey" 
-                                   BackgroundColor="LightGrey"
-                                   CornerRadius="30"
-                                   HorizontalOptions="Start" 
-                                   WidthRequest="110" 
-                                   HeightRequest="55" 
-                                   Margin="0,7,0,0">
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer 
-                                        Command="{Binding ICommandNavToPurchasePage}"/>
-                                </Frame.GestureRecognizers>
-                                <Label Text="PURCHASE" 
-                                       FontAttributes="Bold" 
-                                       Margin="0,0,0,0"
-                                       HorizontalTextAlignment="Center"></Label>
-                            </Frame>
-                        </VerticalStackLayout>
-                    </HorizontalStackLayout>
-                </Frame>
-                <Frame HasShadow="True" 
-                       BackgroundColor="LightYellow" 
-                       BorderColor="Black" 
-                       CornerRadius="50" 
-                       HorizontalOptions="StartAndExpand" 
-                       WidthRequest="380" 
-                       HeightRequest="170" 
-                       Margin="5">
-                    <HorizontalStackLayout>
-                        <Image Source="map.png"></Image>
-                        <VerticalStackLayout Margin="50,0,0,0">
-                            <Label 
-                                Text="Location: From - to -" 
-                                Margin="0,0,0,0"></Label>
-                            <Label 
-                                Text="Duration: " 
-                                Margin="0,5,0,0"></Label>
-                            <Label 
-                                Text="Price: " 
-                                Margin="0,5,0,0"></Label>
-                            <Frame 
-                                HasShadow="False" 
-                                BorderColor="DimGrey" 
-                                BackgroundColor="LightGrey" 
-                                CornerRadius="30" 
-                                HorizontalOptions="Start" 
-                                WidthRequest="110" 
-                                HeightRequest="55" 
-                                Margin="0,7,0,0">
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer 
-                                        Command="{Binding ICommandNavToPurchasePage}"/>
-                                </Frame.GestureRecognizers>
-                                <Label Text="PURCHASE" 
-                                       FontAttributes="Bold" 
-                                       Margin="0,0,0,0" 
-                                       HorizontalTextAlignment="Center"></Label>
-                            </Frame>
-                        </VerticalStackLayout>
-                    </HorizontalStackLayout>
-                </Frame>
-                <Frame HasShadow="True" 
-                       BackgroundColor="LightYellow" 
-                       BorderColor="Black" 
-                       CornerRadius="50" 
-                       HorizontalOptions="StartAndExpand" 
-                       WidthRequest="380"
-                       HeightRequest="170" 
-                       Margin="5">
-                    <HorizontalStackLayout>
-                        <Image Source="map.png"></Image>
-                        <VerticalStackLayout Margin="50,0,0,0">
-                            <Label Text="Location: From - to -"  
-                                   Margin="0,0,0,0"></Label>
-                            <Label Text="Duration: " 
-                                   Margin="0,5,0,0"></Label>
-                            <Label Text="Price: " 
-                                   Margin="0,5,0,0"></Label>
-                            <Frame HasShadow="False" 
-                                   BorderColor="DimGrey" 
-                                   BackgroundColor="LightGrey" 
-                                   CornerRadius="30" 
-                                   HorizontalOptions="Start" 
-                                   WidthRequest="110" 
-                                   HeightRequest="55" 
-                                   Margin="0,7,0,0">
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ICommandNavToPurchasePage}"/>
-                                </Frame.GestureRecognizers>
-                                <Label Text="PURCHASE" 
-                                       FontAttributes="Bold" 
-                                       Margin="0,0,0,0" 
-                                       HorizontalTextAlignment="Center"></Label>
-                            </Frame>
-                        </VerticalStackLayout>
-                    </HorizontalStackLayout>
-                </Frame>
-            </VerticalStackLayout>
+        <ScrollView Grid.Row="3" Margin="10,20,10,0">
+                <StackLayout >
+                    <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
+
+                    <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" >
+      
+                    <CollectionView ItemsSource="{Binding Packages}" >
+                        <CollectionView.ItemTemplate >
+                           
+                            <DataTemplate x:DataType="models:PackageModel" >
+                                <Border Padding="55,10"
+                                        Background="#2B0B98"
+                                        HeightRequest="90"
+                                        WidthRequest="300"
+                                        StrokeShape="RoundRectangle 40,10,10,40"                                        
+                                        StrokeThickness="2.5"
+                                        >
+                                    <Border.Stroke>
+                                        <LinearGradientBrush EndPoint="0,1">
+                                            <GradientStop Color="Orange" Offset="0.1" />
+                                            <GradientStop Color="Brown" Offset="1.0" />
+                                        </LinearGradientBrush>
+                                    </Border.Stroke>
+                                    <StackLayout Margin="10,5,10,10">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding PackageName}"
+                                               FontSize="18"
+                                                   TextColor="WhiteSmoke"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalTextAlignment="Center"
+                                                   HorizontalOptions="Center"/>
+                                    </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding PackagePrice}" 
+                                               FontSize="18"
+                                                   TextColor="WhiteSmoke"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalTextAlignment="Center"
+                                                   HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:PackageListPageViewModel}},Path=SelectedPackageCommand}" CommandParameter="{Binding .}" />
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </RefreshView>
+
+            </StackLayout>
         </ScrollView>
     </Grid>
 </ContentPage>

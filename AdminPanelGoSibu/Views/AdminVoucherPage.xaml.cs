@@ -21,18 +21,18 @@ public partial class AdminVoucherPage : ContentPage
         Navigation.PushAsync(new VoucherListPage());
     }
 
-    private async void OnCounterClicked(object sender, EventArgs e)
-    {
-        var service = new IVoucherService(); // originally is VoucherModel
-        try
-        {
-            var VoucherList = await service.GetAllVoucher();
-        }
-        catch (Exception exception)
-        {
-            Console.WriteLine(exception);
-        }
-    }
+    //private async void OnCounterClicked(object sender, EventArgs e)
+    //{
+    //    var service = new IVoucherService(); // originally is VoucherModel
+    //    try
+    //    {
+    //        var VoucherList = await service.GetAllVoucher();
+    //    }
+    //    catch (Exception exception)
+    //    {
+    //        Console.WriteLine(exception);
+    //    }
+    //}
 }
 
     

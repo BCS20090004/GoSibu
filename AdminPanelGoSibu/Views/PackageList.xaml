@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:viewmodels="clr-namespace:AdminPanelGoSibu.ViewModels"
+             xmlns:models="clr-namespace:Gosibu.Shared.Models;assembly=Gosibu.Shared"
+             x:DataType="viewmodels:PackageListPageViewModel"
+             x:Class="AdminPanelGoSibu.Views.PackageList"
+             Title="PackageList">
+    <ContentPage.Content>
+        <StackLayout Margin="10,0,10,0">
+            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
+
+            <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" >
+                <CollectionView ItemsSource="{Binding Packages}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:PackageModel">
+                            <StackLayout Margin="10,5,10,0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="PackageName: " />
+                                    <Label Text="{Binding PackageName}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Departure: " />
+                                    <Label Text="{Binding Departure}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Destination1: " />
+                                    <Label Text="{Binding Destination1}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Destination2: " />
+                                    <Label Text="{Binding Destination2}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Destination3: " />
+                                    <Label Text="{Binding Destination3}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Destination4: " />
+                                    <Label Text="{Binding Destination4}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Duration: " />
+                                    <Label Text="{Binding Duration}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="PackagePrice: " />
+                                    <Label Text="{Binding PackagePrice}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="PersonInCharge: " />
+                                    <Label Text="{Binding PersonInCharge}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="PICMobileumber: " />
+                                    <Label Text="{Binding PICMobileumber}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Discription: " />
+                                    <Label Text="{Binding Discription}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Attention: " />
+                                    <Label Text="{Binding Attention}" />
+                                </StackLayout>
+                                <BoxView HeightRequest="1" Color="Gray" />
+
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewmodels:PackageListPageViewModel}},Path=SelectedPackageCommand}" CommandParameter="{Binding .}" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

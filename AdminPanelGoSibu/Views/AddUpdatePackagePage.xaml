@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:viewmodels="clr-namespace:AdminPanelGoSibu.ViewModels"
+             x:DataType="viewmodels:AddUpdatePackagePageViewModel"
+             x:Class="AdminPanelGoSibu.Views.AddUpdatePackagePage"
+             Title="AddUpdatePackagePage">
+    <ScrollView>
+        <StackLayout>
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
+
+        <Label Text="Package Name:"></Label>
+        <Entry Placeholder="Package Name" Text="{Binding PackageDetail.PackageName}" />
+
+        <Label Text="Departuren Location:"></Label>
+        <Entry Placeholder="Departure Location" Text="{Binding PackageDetail.Departure}"  />
+
+        <Label Text="Destination 1:"></Label>
+        <Entry Placeholder="Destination 1" Text="{Binding PackageDetail.Destination1}"  />
+
+        <Label Text="Destination 2:"></Label>
+        <Entry Placeholder="Destination 2" Text="{Binding PackageDetail.Destination2}" />
+
+        <Label Text="Destination 3:"></Label>
+        <Entry Placeholder="Destination 3" Text="{Binding PackageDetail.Destination3}"   />
+
+        <Label Text="Destination 4:"></Label>
+        <Entry Placeholder="Destination 4" Text="{Binding PackageDetail.Destination4}"  />
+
+        <Label Text="Duration:"></Label>
+        <Entry Placeholder="Duration" Text="{Binding PackageDetail.Duration}"  Keyboard="Numeric" />
+
+        <Label Text="Package Price:"></Label>
+        <Entry Placeholder="Package Price" Text="{Binding PackageDetail.PackagePrice}"  />
+
+        <Label Text="Person In Chargee:"></Label>
+        <Entry Placeholder="Person In Charge" Text="{Binding PackageDetail.PersonInCharge}"  />
+
+        <Label Text="Person In Charge Mobile Number:"></Label>
+        <Entry Placeholder="Person In Charge Mobile Number" Text="{Binding PackageDetail.PICMobileumber}"  Keyboard="Numeric" />
+
+        <Label Text="Discription:"></Label>
+        <Entry Placeholder="Discription" Text="{Binding PackageDetail.Discription}"   />
+
+        <Label Text="Attention:"></Label>
+        <Entry Placeholder="Attention" Text="{Binding PackageDetail.Attention}"  />
+
+        <Button Text="Save Details" Command="{Binding SavePackageCommand}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

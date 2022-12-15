@@ -1,11 +1,20 @@
-﻿namespace AdminPanelGoSibu;
+﻿using AdminPanelGoSibu.Views;
+
+namespace AdminPanelGoSibu;
 
 public partial class MainPage : ContentPage
 {
     public MainPage()
     {
         InitializeComponent();
-        BindingContext = new MainPageViewModel();
+    }
+    private void addPackage_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new AddUpdatePackagePage());
     }
 
+    private void showPackage_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new PackageList());
+    }
 }

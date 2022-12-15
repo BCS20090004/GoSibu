@@ -1,6 +1,6 @@
 ﻿using Gosibu.Shared.Models;
 
-namespace AdminPanelGoSibu.Services
+namespace GoSibu.Services
 {
     public class PackageService : BaseApiService
     {
@@ -15,9 +15,5 @@ namespace AdminPanelGoSibu.Services
             return PutAsync("PackageService", packageModel);
         }
 
-        public Task<bool> DeletePackage(PackageModel packageModel)
-        {
-            return DeleteAsync($"PackageService?key={packageModel.Key}");
-        }
     }
 }

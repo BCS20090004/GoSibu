@@ -3,6 +3,7 @@ using System.Windows.Input;
 using AdminPanelGoSibu.Services;
 using Gosibu.Shared.Models;
 
+
 namespace AdminPanelGoSibu.ViewModels
 {
     public class VoucherListPageViewModel : BaseViewModel
@@ -80,7 +81,6 @@ namespace AdminPanelGoSibu.ViewModels
                 {
                     IsBusy = true;
 
-                 
                     try
                     {
                         bool deleteResponse = await _voucherService.DeleteVoucher(voucher);
