@@ -75,6 +75,7 @@ namespace GoSibu.WebApi.Controllers
                 OfferName = f.Object.OfferName,
                 Duration = f.Object.Duration,
                 Offer = f.Object.Offer,
+                OfferPercent = f.Object.OfferPercent,
                 Description = f.Object.Description,
                 Key = f.Key
             })

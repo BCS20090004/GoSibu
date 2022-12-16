@@ -86,7 +86,7 @@
                         <CollectionView.ItemTemplate >
                            
                             <DataTemplate x:DataType="models:PackageModel" >
-                                <Border Padding="50,12"
+                                <Border Padding="40,12"
                                         Background="#FFFFFF"
                                         HeightRequest="90"
                                         WidthRequest="300"
@@ -99,31 +99,38 @@
                                             <GradientStop Color="#222222" Offset="1.0" />
                                         </LinearGradientBrush>
                                     </Border.Stroke>
-                                    <StackLayout Margin="10,5,10,10">
+                                    <StackLayout >
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="{Binding PackageName}"
-                                               FontSize="17"
                                                    FontFamily="Roboto"
-                                                   TextColor="Black"
+                                                   TextColor="#222222"
                                                    HorizontalTextAlignment="Center"
-                                                   VerticalTextAlignment="Center"
                                                    HorizontalOptions="Center"/>
-                                    </StackLayout>
-
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding DateandTIme}" 
+                                                   TextColor="#222222"
+                                                   FontFamily="Roboto"
+                                                   HorizontalTextAlignment="Center"
+                                                   HorizontalOptions="Center"/>
+                                        </StackLayout>
+                                        
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="{Binding PackagePrice}" 
-                                               FontSize="17"
-                                                   TextColor="Black"
+                                                   TextColor="#222222"
                                                    FontFamily="Roboto"
                                                    HorizontalTextAlignment="Center"
-                                                   VerticalTextAlignment="Center"
                                                    HorizontalOptions="Center"/>
                                     </StackLayout>
-                                    <StackLayout.GestureRecognizers>
+                                        <BoxView HeightRequest="1.5" Color="#4B4E6D" />
+
+                                        <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:PackageListPageViewModel}},Path=SelectedPackageCommand}" CommandParameter="{Binding .}" />
                                     </StackLayout.GestureRecognizers>
                                 </StackLayout>
+                                    
                                 </Border>
+                                
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>

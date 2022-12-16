@@ -10,7 +10,7 @@ public partial class UserAccountPage : ContentPage
     async void OnTapGestureRecognizerTapped(object sender, EventArgs eventArgs)
     {
         Image g = (Image)sender;
-        await g.TranslateTo(-50, 0, 1000);
+        await g.TranslateTo(-30, 0, 500);
 
     }
 

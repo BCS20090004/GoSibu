@@ -80,8 +80,8 @@ namespace GoSibu.WebApi.Controllers
                 Destination4 = f.Object.Destination4,
                 Duration = f.Object.Duration,
                 PackagePrice = f.Object.PackagePrice,
-                PersonInCharge = f.Object.PersonInCharge,
-                PICMobileumber = f.Object.PICMobileumber,
+                PersonLimit = f.Object.PersonLimit,
+                DateandTIme = f.Object.DateandTIme,
                 Discription =f.Object.Discription,
                 Key = f.Key
             })

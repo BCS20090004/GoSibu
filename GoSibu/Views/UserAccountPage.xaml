@@ -3,31 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GoSibu.Views.UserAccountPage"
              xmlns:vm="clr-namespace:GoSibu.Views"
-             NavigationPage.HasNavigationBar="False"
-             >
+             NavigationPage.HasNavigationBar="False">
 
     <Grid>
         <Image Source="ellipse11.png" 
-           HeightRequest="700" 
-           VerticalOptions="FillAndExpand"
+           HeightRequest="800" 
+           WidthRequest="1200" 
+           Aspect="AspectFit"
            HorizontalOptions="FillAndExpand"
-           WidthRequest="750" 
-           Margin="0,-130,0,0">
+           VerticalOptions="FillAndExpand"           
+           Margin="0,0,0,200">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped"
                                       NumberOfTapsRequired="2" />
             </Image.GestureRecognizers>
         </Image>
 
-        <!--<StackLayout>
-            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label Text="Preferences Sample" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-            </Frame>
-            <Entry x:Name="RandomLabel" Margin="20" />
-            <Switch x:Name="RandomSwitch" Margin="20" />
-            <Button Text="Save Preferences" Clicked="Button_Clicked" />
-            <Button Text="Clear Preferences" Clicked="Button_Clicked_1" />
-        </StackLayout>-->
         <Grid Margin="25">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>

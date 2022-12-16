@@ -6,159 +6,303 @@
              x:DataType="viewmodels:ShowPackagePageViewModel"
              x:Class="GoSibu.Views.PurchasePage"
              Title="PurchasePage">
-
-        <!--<Grid>
+    <!--<Grid>
             <Map x:Name="map"/>
         </Grid>-->
-    <ScrollView>
+    <ScrollView >
+        <Grid Padding="20" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <!--9-->
+            </Grid.RowDefinitions>
 
-        <Grid Padding="20">
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/> <!--13-->
-        </Grid.RowDefinitions>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,0.8">
-                <GradientStop Color="#84DCC6"
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,0.8">
+                    <GradientStop Color="#84DCC6"
                           Offset="0.3" />
-                <GradientStop Color="#95A3B3"
+                    <GradientStop Color="#95A3B3"
                           Offset="1.5" />
-            </LinearGradientBrush>
-        </Grid.Background>
-        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
-            <HorizontalStackLayout Grid.Row="0">
-                <Label Text="Package Name:"
+                </LinearGradientBrush>
+            </Grid.Background>
+            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
+            <StackLayout HorizontalOptions="CenterAndExpand" 
+                         VerticalOptions="CenterAndExpand"
+                         Spacing="10">
+                <Border StrokeShape="RoundRectangle 10,10,10,10"
+                    Padding="16"
+                    Grid.Row="0">
+                    <Border.Shadow>
+                        <Shadow Brush="#222222"
+                            Offset="19,16"
+                            Radius="20"
+                            Opacity="0.5" >
+                        </Shadow>
+                    </Border.Shadow>
+                    <Border.Stroke>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#95A3B3" Offset="0.6" />
+                            <GradientStop Color="#222222" Offset="1.1" />
+                        </LinearGradientBrush>
+                    </Border.Stroke>
+                    <HorizontalStackLayout Grid.Row="0">
+                        <Label Text="Package Name:"
                    FontFamily="Roboto"
                    FontSize="15"
                    Margin="0,0,20,0">
-                </Label>
-                <Label Text="{Binding PackageDetail.PackageName}" 
+                        </Label>
+                        <Label Text="{Binding PackageDetail.PackageName}" 
                    FontFamily="Roboto"
                    FontSize="15"/>
-            </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
 
-            <HorizontalStackLayout Grid.Row="1">
-                <Label Text="Departuren Location:"
+                <Border StrokeShape="RoundRectangle 10,10,10,10"
+                    Padding="16"
+                    Grid.Row="1">
+                    <Border.Shadow>
+                        <Shadow Brush="#222222"
+                            Offset="19,16"
+                            Radius="20"
+                            Opacity="0.5" >
+                        </Shadow>
+                    </Border.Shadow>
+                    <Border.Stroke>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#95A3B3" Offset="1.1" />
+                            <GradientStop Color="#222222" Offset="0.1" />
+                        </LinearGradientBrush>
+                    </Border.Stroke>
+                    <HorizontalStackLayout Grid.Row="1">
+                        <Label  Text="Departuren Location:"
+                            FontFamily="Roboto"
+                            FontSize="15"
+                            Margin="0,0,20,0"></Label>
+                        <Label  Text="{Binding PackageDetail.Departure}"  
+                            FontFamily="Roboto"
+                            FontSize="15"/>
+                    </HorizontalStackLayout>
+                </Border>
+
+                <Border StrokeShape="RoundRectangle 10,10,10,10"
+                            Padding="16"
+                            Grid.Row="2">
+                    <Border.Shadow>
+                        <Shadow Brush="#222222"
+                            Offset="19,16"
+                            Radius="20"
+                            Opacity="0.5" >
+                        </Shadow>
+                    </Border.Shadow>
+                    <Border.Stroke>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#95A3B3" Offset="0.6" />
+                            <GradientStop Color="#222222" Offset="1.1" />
+                        </LinearGradientBrush>
+                    </Border.Stroke>
+                    <ScrollView Orientation ="Both" 
+                            VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand">
+                        <!--scrollview cannot work-->
+                        <StackLayout>
+                            <HorizontalStackLayout >
+                                <Label Text="Destination 1:"
+                                   FontFamily="Roboto"
+                                   FontSize="15"
+                                   Margin="0,0,20,0"></Label>
+                                <Label Text="{Binding PackageDetail.Destination1}" 
+                                    FontFamily="Roboto"
+                                    FontSize="15"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout >
+                                <Label Text="Destination 2:"
+                                    FontFamily="Roboto"
+                                    FontSize="15"
+                                    Margin="0,0,20,0"></Label>
+                                <Label Text="{Binding PackageDetail.Destination2}"
+                                    FontFamily="Roboto"
+                                    FontSize="15"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout >
+                                <Label Text="Destination 3:"
+                                    FontFamily="Roboto"
+                                    FontSize="15"
+                                    Margin="0,0,20,0"></Label>
+                                <Label Text="{Binding PackageDetail.Destination3}"
+                                    FontFamily="Roboto"
+                                    FontSize="15"/>
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout >
+                                <Label Text="Destination 4:"
+                                    FontFamily="Roboto"
+                                    FontSize="15"
+                                    Margin="0,0,20,0"></Label>
+                                <Label Text="{Binding PackageDetail.Destination4}"
+                                    FontFamily="Roboto"
+                                    FontSize="15"/>
+                            </HorizontalStackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                </Border>
+
+                <Border StrokeShape="RoundRectangle 10,10,10,10"
+                        Padding="16"
+                        Grid.Row="3">
+                    <Border.Shadow>
+                        <Shadow Brush="#222222"
+                            Offset="19,16"
+                            Radius="20"
+                            Opacity="0.5" >
+                        </Shadow>
+                    </Border.Shadow>
+                    <Border.Stroke>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#95A3B3" Offset="1.1" />
+                            <GradientStop Color="#222222" Offset="0.1" />
+                        </LinearGradientBrush>
+                    </Border.Stroke>
+                    <ScrollView HorizontalOptions="FillAndExpand" 
+                            VerticalOptions="FillAndExpand" 
+                            Orientation="Both">
+                        <StackLayout >
+                            <HorizontalStackLayout>
+                                <Label Text="Duration:"
+                                        FontFamily="Roboto"
+                                        FontSize="15"
+                                        Margin="0,0,20,0"></Label>
+                                <Label Text="{Binding PackageDetail.Duration}"
+                                        FontFamily="Roboto"
+                                        FontSize="15"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout >
+                                <Label Text="Date AND Time:"
+                                        FontFamily="Roboto"
+                                        FontSize="15"
+                                        Margin="0,0,20,0"></Label>
+                                <Label Text="{Binding PackageDetail.DateandTIme}"
+                                        FontFamily="Roboto"
+                                        FontSize="15"/>
+                            </HorizontalStackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                </Border>
+
+                <Border StrokeShape="RoundRectangle 10,10,10,10"
+                    Padding="16"
+                    Grid.Row="4">
+                    <Border.Shadow>
+                        <Shadow Brush="#222222"
+                            Offset="19,16"
+                            Radius="20"
+                            Opacity="0.5" >
+                        </Shadow>
+                    </Border.Shadow>
+                    <Border.Stroke>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#95A3B3" Offset="0.6" />
+                            <GradientStop Color="#222222" Offset="1.1" />
+                        </LinearGradientBrush>
+                    </Border.Stroke>
+                    <HorizontalStackLayout Grid.Row="7">
+                        <Label Text="Package Price:"
                    FontFamily="Roboto"
                    FontSize="15"
                    Margin="0,0,20,0"></Label>
-                <Label Text="{Binding PackageDetail.Departure}"  
+                        <Label Text="{Binding PackageDetail.PackagePrice}" 
                    FontFamily="Roboto"
                    FontSize="15"/>
-            </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
 
-            <HorizontalStackLayout Grid.Row="2">
-                <Label Text="Destination 1:"
+                <Border StrokeShape="RoundRectangle 10,10,10,10"
+                    Padding="16"
+                    Grid.Row="5">
+                    <Border.Shadow>
+                        <Shadow Brush="#222222"
+                            Offset="19,16"
+                            Radius="20"
+                            Opacity="0.5" >
+                        </Shadow>
+                    </Border.Shadow>
+                    <Border.Stroke>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#95A3B3" Offset="1.1" />
+                            <GradientStop Color="#222222" Offset="0.1" />
+                        </LinearGradientBrush>
+                    </Border.Stroke>
+                    <HorizontalStackLayout Grid.Row="8">
+                        <Label Text="Person Limit:"
                    FontFamily="Roboto"
                    FontSize="15"
                    Margin="0,0,20,0"></Label>
-                <Label Text="{Binding PackageDetail.Destination1}" 
+                        <Label Text="{Binding PackageDetail.PersonLimit}"
                    FontFamily="Roboto"
                    FontSize="15"/>
-            </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
 
-            <HorizontalStackLayout Grid.Row="3">
-                <Label Text="Destination 2:"
-                       FontFamily="Roboto"
-                   FontSize="15"
-                   Margin="0,0,20,0"></Label>
-                <Label Text="{Binding PackageDetail.Destination2}"
-                       FontFamily="Roboto"
-                   FontSize="15"/>
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Grid.Row="4">
-                <Label Text="Destination 3:"
-                       FontFamily="Roboto"
-                   FontSize="15"
-                   Margin="0,0,20,0"></Label>
-                <Label Text="{Binding PackageDetail.Destination3}"
-                       FontFamily="Roboto"
-                   FontSize="15"/>
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Grid.Row="5">
-
-                <Label Text="Destination 4:"
-                       FontFamily="Roboto"
-                   FontSize="15"
-                   Margin="0,0,20,0"></Label>
-                <Label Text="{Binding PackageDetail.Destination4}"
-                   FontFamily="Roboto"
-                   FontSize="15"/>
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Grid.Row="6">
-                <Label Text="Duration:"
+                <Border StrokeShape="RoundRectangle 10,10,10,10"
+                    Padding="16"
+                    Grid.Row="6">
+                    <Border.Shadow>
+                        <Shadow Brush="#222222"
+                            Offset="19,16"
+                            Radius="20"
+                            Opacity="0.5" >
+                        </Shadow>
+                    </Border.Shadow>
+                    <Border.Stroke>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#95A3B3" Offset="0.6" />
+                            <GradientStop Color="#222222" Offset="1.1" />
+                        </LinearGradientBrush>
+                    </Border.Stroke>
+                    <HorizontalStackLayout Grid.Row="10">
+                        <Label Text="Discription:"
                    FontFamily="Roboto"
                    FontSize="15"
                    Margin="0,0,20,0"></Label>
-                <Label Text="{Binding PackageDetail.Duration}"
+                        <Label Text="{Binding PackageDetail.Discription}"
                    FontFamily="Roboto"
                    FontSize="15"/>
-            </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
 
-            <HorizontalStackLayout Grid.Row="7">
-                <Label Text="Package Price:"
+                <Border StrokeShape="RoundRectangle 10,10,10,10"
+                    Padding="16"
+                    Grid.Row="7">
+                    <Border.Shadow>
+                        <Shadow Brush="#222222"
+                            Offset="19,16"
+                            Radius="20"
+                            Opacity="0.5" >
+                        </Shadow>
+                    </Border.Shadow>
+                    <Border.Stroke>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#95A3B3" Offset="1.1" />
+                            <GradientStop Color="#222222" Offset="0.1" />
+                        </LinearGradientBrush>
+                    </Border.Stroke>
+                    <HorizontalStackLayout Grid.Row="11">
+                        <Label Text="Attention:"
                    FontFamily="Roboto"
                    FontSize="15"
                    Margin="0,0,20,0"></Label>
-                <Label Text="{Binding PackageDetail.PackagePrice}" 
+                        <Label Text="{Binding PackageDetail.Attention}"
                    FontFamily="Roboto"
                    FontSize="15"/>
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Grid.Row="8">
-                <Label Text="Person In Chargee:"
-                   FontFamily="Roboto"
-                   FontSize="15"
-                   Margin="0,0,20,0"></Label>
-                <Label Text="{Binding PackageDetail.PersonInCharge}"
-                   FontFamily="Roboto"
-                   FontSize="15"/>
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Grid.Row="9">
-                <Label Text="Person In Charge Mobile Number:"
-                   FontFamily="Roboto"
-                   FontSize="15"
-                   Margin="0,0,20,0"></Label>
-                <Label Text="{Binding PackageDetail.PICMobileumber}"
-                   FontFamily="Roboto"
-                   FontSize="15"/>
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Grid.Row="10">
-                <Label Text="Discription:"
-                   FontFamily="Roboto"
-                   FontSize="15"
-                   Margin="0,0,20,0"></Label>
-                <Label Text="{Binding PackageDetail.Discription}"
-                   FontFamily="Roboto"
-                   FontSize="15"/>
-            </HorizontalStackLayout>
-
-        <HorizontalStackLayout Grid.Row="11">
-            <Label Text="Attention:"
-                   FontFamily="Roboto"
-                   FontSize="15"
-                   Margin="0,0,20,0"></Label>
-            <Label Text="{Binding PackageDetail.Attention}"
-                   FontFamily="Roboto"
-                   FontSize="15"/>
-        </HorizontalStackLayout>
-    </Grid>
+                    </HorizontalStackLayout>
+                </Border>
+            </StackLayout>
+        </Grid>
     </ScrollView>
-
 </ContentPage>

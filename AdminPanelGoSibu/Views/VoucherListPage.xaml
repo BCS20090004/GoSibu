@@ -23,7 +23,10 @@
                                     <Label Text="Offer: " />
                                     <Label Text="{Binding Offer}" />
                                 </StackLayout>
-
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="OfferPercent: " />
+                                    <Label Text="{Binding OfferPercent}" />
+                                </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Duration: " />
                                     <Label Text="{Binding Duration}" />

@@ -9,10 +9,5 @@ public partial class VoucherPage : ContentPage
         InitializeComponent();
         BindingContext = new VoucherListPageViewModel();
     }
-    async void OnTapGestureRecognizerTapped(object sender, EventArgs eventArgs)
-    {
-        Image g = (Image)sender;
-        await g.TranslateTo(-50, 0, 1000);
 
-    }
 }

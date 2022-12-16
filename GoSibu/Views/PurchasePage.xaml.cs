@@ -9,7 +9,7 @@ public partial class PurchasePage : ContentPage
     {
         InitializeComponent();
         this.BindingContext = new ShowPackagePageViewModel(package);
-
+       
     }
 
 }

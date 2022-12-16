@@ -1,17 +1,15 @@
+using Gosibu.Shared.Models;
+using GoSibu.ViewModels;
+
 namespace GoSibu.Views;
 
 public partial class UseVoucherPage : ContentPage
 {
-    public UseVoucherPage()
+    public UseVoucherPage(VoucherModel voucher)
     {
         InitializeComponent();
-    }
+        this.BindingContext = new ShowVoucherPageViewModel(voucher);
 
-    private async void UseVoucher_Clicked(object sender, EventArgs e)
-    {
-        Application.Current.MainPage = new AppShell();
-        await Shell.Current.GoToAsync("//MainPage");
     }
-
 
 }

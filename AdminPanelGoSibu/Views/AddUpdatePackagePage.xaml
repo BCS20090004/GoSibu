@@ -28,16 +28,16 @@
         <Entry Placeholder="Destination 4" Text="{Binding PackageDetail.Destination4}"  />
 
         <Label Text="Duration:"></Label>
-        <Entry Placeholder="Duration" Text="{Binding PackageDetail.Duration}"  Keyboard="Numeric" />
+        <Entry Placeholder="Duration" Text="{Binding PackageDetail.Duration}"  />
 
         <Label Text="Package Price:"></Label>
         <Entry Placeholder="Package Price" Text="{Binding PackageDetail.PackagePrice}"  />
 
-        <Label Text="Person In Chargee:"></Label>
-        <Entry Placeholder="Person In Charge" Text="{Binding PackageDetail.PersonInCharge}"  />
+            <Label Text="Person Limit:"></Label>
+            <Entry Placeholder="PersonLimit" Text="{Binding PackageDetail.PersonLimit}"  />
 
-        <Label Text="Person In Charge Mobile Number:"></Label>
-        <Entry Placeholder="Person In Charge Mobile Number" Text="{Binding PackageDetail.PICMobileumber}"  Keyboard="Numeric" />
+        <Label Text="Date and Time:"></Label>
+        <Entry Placeholder="Date and Time" Text="{Binding PackageDetail.DateandTIme}"  />
 
         <Label Text="Discription:"></Label>
         <Entry Placeholder="Discription" Text="{Binding PackageDetail.Discription}"   />

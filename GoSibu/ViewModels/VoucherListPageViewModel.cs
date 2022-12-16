@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using GoSibu.Services;
 using Gosibu.Shared.Models;
+using GoSibu.Views;
 
 namespace GoSibu.ViewModels
 {
@@ -64,8 +65,16 @@ namespace GoSibu.ViewModels
             IsRefreshing = true;
             GetAllVoucherList();
         });
-        #endregion
 
+        public ICommand SelectedPackageCommand => new Command<VoucherModel>(async (voucher) =>
+        {
+            if (voucher != null)
+            {
+                await App.Current.MainPage.Navigation.PushAsync(new UseVoucherPage(voucher));
+
+            }
+        });
+        #endregion
 
     }
 }

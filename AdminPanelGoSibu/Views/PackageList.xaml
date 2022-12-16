@@ -48,12 +48,12 @@
                                     <Label Text="{Binding PackagePrice}" />
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="PersonInCharge: " />
-                                    <Label Text="{Binding PersonInCharge}" />
+                                    <Label Text="PersonLimit: " />
+                                    <Label Text="{Binding PersonLimit}" />
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="PICMobileumber: " />
-                                    <Label Text="{Binding PICMobileumber}" />
+                                    <Label Text="DateandTIme: " />
+                                    <Label Text="{Binding DateandTIme}" />
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Discription: " />

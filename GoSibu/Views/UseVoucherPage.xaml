@@ -1,57 +1,121 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Gosibu.Shared.Models;assembly=Gosibu.Shared"
+             xmlns:viewmodels="clr-namespace:GoSibu.ViewModels"
+             x:DataType="viewmodels:ShowVoucherPageViewModel"
              x:Class="GoSibu.Views.UseVoucherPage"
              Title="UseVoucherPage">
 
-    <Grid >
+    <ScrollView >
+        <Grid Padding="20" >
+ 
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,0.8">
+                    <GradientStop Color="#84DCC6"
+                                  Offset="0.3" />
+                    <GradientStop Color="#95A3B3"
+                                  Offset="1.5" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
+            <Border StrokeShape="RoundRectangle 10,10,10,10"
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="FillAndExpand"
+                    Padding="16">
+                <Border.Shadow>
+                    <Shadow Brush="#222222"
+                            Offset="19,16"
+                            Radius="20"
+                            Opacity="0.5" >
+                    </Shadow>
+                </Border.Shadow>
+                <Border.Stroke>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#95A3B3" Offset="0.6" />
+                        <GradientStop Color="#222222" Offset="1.1" />
+                    </LinearGradientBrush>
+                </Border.Stroke>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition />
-        </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="250"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="voucher.png" 
+                           Grid.ColumnSpan="2"
+                           Grid.Row="0"
+                           ></Image>
+                    <Border WidthRequest="55"
+                            StrokeShape="RoundRectangle 10,10,10,10"
+                            StrokeThickness="3"
+                            HeightRequest="55"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            BackgroundColor="#222222"
+                            Margin="155,195,0,0">
+                        <Border.Stroke>
+                            <LinearGradientBrush EndPoint="0,1">
+                                <GradientStop Color="#84DCC6" Offset="0.6" />
+                                <GradientStop Color="#95A3B3" Offset="1.1" />
+                            </LinearGradientBrush>
+                        </Border.Stroke>
+                        <Label Text="{Binding VoucherDetail.OfferPercent}" 
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               TextColor="WhiteSmoke" >
+                        </Label>
+                    </Border>
+                    
+                    <Label Text="{Binding VoucherDetail.OfferName}" 
+                               FontFamily="Blippo"
+                               FontSize="27"
+                               Grid.Row="1"
+                               Grid.ColumnSpan="2"
+                               FontAttributes="Bold">
+                    </Label>
 
-        <Image Grid.Row="0" Source="figma3.png" Margin="0,-500,0,-700" WidthRequest="700" HeightRequest="700" HorizontalOptions="Center" VerticalOptions="Center" />
-        
-        <VerticalStackLayout  Grid.Row="0" Margin="16,16,0,0">
-            <Label Text="Voucher Details" FontSize="27" FontFamily="PoetsenOne"></Label>
-        </VerticalStackLayout>
+                    <Label  Text="{Binding VoucherDetail.Offer}"  
+                                FontFamily="Blippo"
+                                FontSize="23"
+                                Grid.Row="2"
+                                Grid.Column="1"/>
 
-        <VerticalStackLayout  Grid.Row="1" Margin="0,15,0,0">
+                    <Label Text="Available Time:"
+                               FontFamily="Blippo"
+                               FontSize="20"
+                               Grid.Row="3"
+                               Grid.ColumnSpan="2"></Label>
+                    <Label Text="{Binding VoucherDetail.Duration}" 
+                               FontFamily="Blippo"
+                               FontSize="20"
+                               Grid.Row="4"
+                               Grid.ColumnSpan="2"
+                               FontAttributes="Italic"/>
 
-            <Frame HasShadow="True" BorderColor="Black" CornerRadius="20" HorizontalOptions="Center" WidthRequest="320" HeightRequest="590" Margin="5" BackgroundColor="LightYellow">
-
-                <VerticalStackLayout>
-                    <Image Source="coupon.png" HorizontalOptions="Center" HeightRequest="150" WidthRequest="150"  Margin="0,-25,0,0"></Image>
-                    <VerticalStackLayout>
-                        <Label Text="Offer Percentage" FontAttributes="Bold" FontSize="16" FontFamily="PoetsenOne" Margin="0,10,0,0"></Label>
-                        <Label Text="10% Discount! Grab this chance and don't miss it!"></Label>
-                    </VerticalStackLayout>
-                    <VerticalStackLayout>
-                        <Label Text="Discount Limit" FontAttributes="Bold" FontSize="16" FontFamily="PoetsenOne" Margin="0,15,0,0"></Label>
-                        <Label Text="Maximum discount cap at RM20"></Label>
-                    </VerticalStackLayout>
-                    <VerticalStackLayout>
-                        <Label Text="Valid Time" FontAttributes="Bold" FontSize="16" FontFamily="PoetsenOne" Margin="0,15,0,0"></Label>
-                        <Label Text="11-11-2022 00:00 to 11-11-2022 23:59"></Label>
-                    </VerticalStackLayout>
-                    <VerticalStackLayout>
-                        <Label Text="Requirement" FontAttributes="Bold" FontSize="16" FontFamily="PoetsenOne" Margin="0,15,0,0"></Label>
-                        <Label Text="Minimum spent RM100"></Label>
-                    </VerticalStackLayout>
-                    <VerticalStackLayout>
-                        <Label Text="Description" FontAttributes="Bold" FontSize="16" FontFamily="PoetsenOne" Margin="0,15,0,0"></Label>
-                        <Label Text="To celebrate GoSibu App launch"></Label>
-                    </VerticalStackLayout>
-
-                    <Button Text="Use Voucher" FontAttributes="Bold" BackgroundColor="OrangeRed" Margin="0,80,0,0" WidthRequest="280" HeightRequest="45" HorizontalOptions="Center" TextColor="Black" Clicked="UseVoucher_Clicked"/>
-
-                </VerticalStackLayout>
-
-            </Frame>
-
-        </VerticalStackLayout>
-
-    </Grid>
-
+                    <Label Text="Description:"
+                                   FontFamily="Blippo"
+                                   FontSize="18"
+                                   Grid.ColumnSpan="2"
+                                   Grid.Row="5"></Label>
+                        <Label Text="{Binding VoucherDetail.Description}"
+                               FontFamily="Blippo"
+                               FontSize="16"
+                               Grid.Row="6"
+                               Grid.ColumnSpan="2"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </ScrollView>
 </ContentPage>

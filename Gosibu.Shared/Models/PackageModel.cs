@@ -11,8 +11,8 @@
         public string Destination4 { get; set; }
         public string Duration { get; set; }
         public string PackagePrice { get; set; }
-        public string PersonInCharge { get; set; }
-        public string PICMobileumber { get; set; }
+        public string PersonLimit { get; set; }
+        public string DateandTIme { get; set; }
         public string Discription { get; set; }
         public string Attention { get; set; }
         public string IntroImage { get; set; }

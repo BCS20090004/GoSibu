@@ -37,8 +37,8 @@ namespace AdminPanelGoSibu.ViewModels
                 Destination4 = packageResponse.Destination4,
                 Duration = packageResponse.Duration,
                 PackagePrice = packageResponse.PackagePrice,
-                PersonInCharge = packageResponse.PersonInCharge,
-                PICMobileumber = packageResponse.PICMobileumber,
+                PersonLimit = packageResponse.PersonLimit,
+                DateandTIme = packageResponse.DateandTIme,
                 Discription = packageResponse.Discription,
                 Attention = packageResponse.Attention,
 

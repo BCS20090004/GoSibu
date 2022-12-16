@@ -31,6 +31,7 @@ namespace AdminPanelGoSibu.ViewModels
             {
                 OfferName = voucherResponse.OfferName,
                 Offer = voucherResponse.Offer,
+                OfferPercent = voucherResponse.OfferPercent,
                 Key = voucherResponse.Key,
                 Duration = voucherResponse.Duration,
                 Description = voucherResponse.Description,

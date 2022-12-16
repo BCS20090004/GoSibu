@@ -10,6 +10,7 @@
         <StackLayout Margin="20,30,20,0">
             <Entry Placeholder="OfferName" Text="{Binding VoucherDetail.OfferName}" />
             <Entry Placeholder="Offer" Text="{Binding VoucherDetail.Offer}"  />
+            <Entry Placeholder="OfferPercent" Text="{Binding VoucherDetail.OfferPercent}"  />
             <Entry Placeholder="Duration" Text="{Binding VoucherDetail.Duration}" />
             <Entry Placeholder="Description" Text="{Binding VoucherDetail.Description}"  />
 
