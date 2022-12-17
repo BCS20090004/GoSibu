@@ -110,7 +110,8 @@
             <Label  x:Name="lblname"
                     Grid.Row="5"
                     Grid.Column="1"
-                    FontSize="Small"></Label>
+                    FontSize="Small"
+                    VerticalOptions="Center"></Label>
 
             <Button 
                     BackgroundColor="#1C375C"
