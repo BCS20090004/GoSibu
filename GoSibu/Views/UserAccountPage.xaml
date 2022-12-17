@@ -4,29 +4,18 @@
              x:Class="GoSibu.Views.UserAccountPage"
              xmlns:vm="clr-namespace:GoSibu.Views"
              NavigationPage.HasNavigationBar="False">
-
+ 
     <Grid>
-        <Image Source="ellipse11.png" 
-           HeightRequest="800" 
-           WidthRequest="1200" 
-           Aspect="AspectFit"
-           HorizontalOptions="FillAndExpand"
-           VerticalOptions="FillAndExpand"           
-           Margin="0,0,0,200">
-            <Image.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped"
-                                      NumberOfTapsRequired="2" />
-            </Image.GestureRecognizers>
-        </Image>
-
+ 
         <Grid Margin="25">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition ></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
@@ -34,13 +23,27 @@
                 <ColumnDefinition Width=".5*"></ColumnDefinition>
                 <ColumnDefinition Width=".6*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Border Stroke="#1C375C"
+                <Image Source="ellipse11.png" 
+                       HeightRequest="900"
+                       WidthRequest="1500"
+                       Aspect="AspectFit"
+                       HorizontalOptions="FillAndExpand"
+                       Grid.RowSpan="9"
+                       Grid.ColumnSpan="2"
+                       VerticalOptions="FillAndExpand"           
+                       Margin="0,-200,0,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped"
+                                      NumberOfTapsRequired="2" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Border Stroke="#1C375C"
                     StrokeThickness="4"
                     StrokeShape="Ellipse"
                     HeightRequest="200"
                     WidthRequest="200"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center" 
+                    VerticalOptions="Center"
                     Grid.ColumnSpan="2">
             <Image  Source="cat.jpeg"
                     Grid.ColumnSpan="2"
@@ -76,7 +79,8 @@
                     Text="Email"
                     Grid.Row="3"
                     Grid.Column="0"
-                    FontSize="Small"></Label>
+                    FontSize="Small"
+                    VerticalOptions="Center"></Label>
             <Entry x:Name="UserEmail"
                     Grid.Row="3"
                     Grid.Column="1"
@@ -88,7 +92,8 @@
                     Text="PhoneNumber"
                     Grid.Row="4"
                     Grid.Column="0"
-                    FontSize="Small"></Label>
+                    FontSize="Small"
+                    VerticalOptions="Center"></Label>
             <Entry x:Name="UserPhoneNumber"
                     Grid.Row="4"
                     Grid.Column="1"
@@ -100,7 +105,8 @@
                     Text="Latest LogIn Time"
                     Grid.Row="5"
                     Grid.Column="0"
-                    FontSize="Small"></Label>
+                    FontSize="Small"
+                    VerticalOptions="Center"></Label>
             <Label  x:Name="lblname"
                     Grid.Row="5"
                     Grid.Column="1"
