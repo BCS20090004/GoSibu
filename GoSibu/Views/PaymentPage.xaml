@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoSibu.Views.PaymentPage"
+             Title="PaymentPage">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,0.8">
+                <GradientStop Color="#84DCC6"
+                                  Offset="0.3" />
+                <GradientStop Color="#95A3B3"
+                                  Offset="1.5" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label 
+            Text="THIS IS PAYMENT PAGE!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </Grid>
+</ContentPage>

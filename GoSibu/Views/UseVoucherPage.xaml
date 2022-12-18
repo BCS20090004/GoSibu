@@ -64,7 +64,7 @@
                             Grid.Row="0"
                             Grid.Column="1"
                             BackgroundColor="#222222"
-                            Margin="155,195,0,0">
+                            Margin="120,210,0,0">
                         <Border.Stroke>
                             <LinearGradientBrush EndPoint="0,1">
                                 <GradientStop Color="#84DCC6" Offset="0.6" />

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
              xmlns:models="clr-namespace:Gosibu.Shared.Models;assembly=Gosibu.Shared"
              xmlns:viewmodels="clr-namespace:GoSibu.ViewModels"
              x:DataType="viewmodels:ShowPackagePageViewModel"
@@ -10,7 +11,170 @@
             <Map x:Name="map"/>
         </Grid>-->
     <ScrollView >
-        <Grid Padding="20" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,0.8">
+                    <GradientStop Color="#84DCC6"
+                                  Offset="0.3" />
+                    <GradientStop Color="#95A3B3"
+                                  Offset="1.5" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
+
+            <maps:Map x:Name="mappy" 
+                      IsShowingUser="True" 
+                      IsTrafficEnabled="True" 
+                      MapType="Hybrid"
+                      Grid.Row="0"
+                      Grid.ColumnSpan="2"
+                      MapClicked="OnMapClicked"></maps:Map>
+
+                <StackLayout Grid.Row="1"
+                             Grid.ColumnSpan="2">
+                <Label Text="{Binding PackageDetail.PackageName}" 
+                       FontFamily="Roboto"
+                       FontSize="30"
+                       HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"></Label>
+            </StackLayout>
+
+            <HorizontalStackLayout Grid.Row="2" 
+                                   Grid.Column="1"
+                                   HorizontalOptions="Center">
+                <Label Text="{Binding PackageDetail.PackagePrice}" 
+                       FontSize="35"
+                       FontAttributes="Bold"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout Grid.Row="3" 
+                                   Grid.Column="1" 
+                                   HorizontalOptions="Start"
+                                   Padding="10,5">
+                <Label Text="Person Limit:"
+                   FontFamily="Roboto"
+                   FontSize="16"></Label>
+                <Label Text="{Binding PackageDetail.PersonLimit}"
+                   FontFamily="Roboto"
+                   FontSize="14"/>
+            </HorizontalStackLayout>
+
+            <Border StrokeShape="RoundRectangle 10,10,10,10"
+                    Grid.Row="4" 
+                    Grid.ColumnSpan="2">
+                <Border.Shadow>
+                    <Shadow Brush="#222222"
+                            Offset="19,16"
+                            Radius="20"
+                            Opacity="0.5" >
+                    </Shadow>
+                </Border.Shadow>
+                <Border.Stroke>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#95A3B3" Offset="0.6" />
+                        <GradientStop Color="#222222" Offset="1.1" />
+                    </LinearGradientBrush>
+                </Border.Stroke>
+                <VerticalStackLayout Padding="20">
+                <Label Text="FROM : " Padding="10"></Label>
+                    <HorizontalStackLayout Padding="5">
+                        <Label  Text="Departuren Location:"
+                                FontFamily="Roboto"
+                                FontSize="15"></Label>
+                        <Label  Text="{Binding PackageDetail.Departure}"  
+                                FontFamily="Roboto"
+                                FontSize="15"/>
+                    </HorizontalStackLayout>
+                <Label Text="TO : " Padding="10"></Label>
+                <HorizontalStackLayout >
+                    <Label Text="Destination 1:"
+                           FontFamily="Roboto"
+                           FontSize="15"></Label>
+                    <Label Text="{Binding PackageDetail.Destination1}" 
+                           FontFamily="Roboto"
+                           FontSize="15"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout >
+                     <Label Text="Destination 2:"
+                             FontFamily="Roboto"
+                             FontSize="15"></Label>
+                     <Label Text="{Binding PackageDetail.Destination2}"
+                            FontFamily="Roboto"
+                            FontSize="15"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout >
+                     <Label Text="Destination 3:"
+                            FontFamily="Roboto"
+                            FontSize="15"></Label>
+                     <Label Text="{Binding PackageDetail.Destination3}"
+                            FontFamily="Roboto"
+                            FontSize="15"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout >
+                     <Label Text="Destination 4:"
+                            FontFamily="Roboto"
+                            FontSize="15"></Label>
+                     <Label Text="{Binding PackageDetail.Destination4}"
+                            FontFamily="Roboto"
+                            FontSize="15"/>
+                </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <VerticalStackLayout Grid.Row="5" 
+                                 Grid.ColumnSpan="2"
+                                 HorizontalOptions="Center"
+                                 Margin="0,20,0,0">
+                <Label Text="Discription:"
+                       FontFamily="Roboto"
+                       FontSize="18"
+                       HorizontalTextAlignment="Center"></Label>
+                <Label Text="{Binding PackageDetail.Discription}"
+                       FontFamily="Roboto"
+                       FontSize="16"
+                       HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout  Grid.Row="6" 
+                                  Grid.ColumnSpan="2"
+                                  HorizontalOptions="Center"
+                                  Padding="0,10">
+                <Label Text="Attention:"
+                        FontFamily="Roboto"
+                        FontSize="18"
+                        Margin="0,0,20,0"
+                       HorizontalTextAlignment="Center"></Label>
+                
+                <Label Text="{Binding PackageDetail.Attention}"
+                        FontFamily="Roboto"
+                        FontSize="16"
+                       HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+
+            <Button Text="PURCHASE"
+                    BackgroundColor="#95A3B3"
+                    BorderColor="White"
+                    TextColor="Black"
+                    Grid.Row="7"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="PaymentButton_Click"></Button>
+        </Grid>
+        <!--<Grid Padding="20" >
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -21,7 +185,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <!--9-->
+                --><!--9--><!--
             </Grid.RowDefinitions>
 
             <Grid.Background>
@@ -110,7 +274,7 @@
                     <ScrollView Orientation ="Both" 
                             VerticalOptions="FillAndExpand"
                             HorizontalOptions="FillAndExpand">
-                        <!--scrollview cannot work-->
+                        --><!--scrollview cannot work--><!--
                         <StackLayout>
                             <HorizontalStackLayout >
                                 <Label Text="Destination 1:"
@@ -303,6 +467,6 @@
                     </HorizontalStackLayout>
                 </Border>
             </StackLayout>
-        </Grid>
+        </Grid>-->
     </ScrollView>
 </ContentPage>
