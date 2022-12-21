@@ -20,8 +20,9 @@ public partial class AddUpdatePackagePage : ContentPage
     }
     async void OnMapClicked(object sender, MapClickedEventArgs e)
     {
-        await App.Current.MainPage.DisplayAlert("Success!", $"MapClick: {e.Location.Latitude}, {e.Location.Longitude}", "Ok");
+        await App.Current.MainPage.DisplayAlert("Coordinate!", $"MapClick: {e.Location.Latitude}, {e.Location.Longitude}", "Ok");
     }
+
     protected async override void OnAppearing()
     {
         await Permissions.RequestAsync<Permissions.LocationWhenInUse>();

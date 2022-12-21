@@ -4,9 +4,6 @@ namespace GoSibu.Views;
 
 public partial class UserAccountPage : ContentPage
 {
-
-
-    private readonly UserEdit User;
     async void OnTapGestureRecognizerTapped(object sender, EventArgs eventArgs)
     {
         Image g = (Image)sender;

@@ -19,7 +19,7 @@ public partial class ChatPage : ContentPage
         }
 
         hubConnection = new HubConnectionBuilder()
-            .WithUrl($"{baseUrl}:5063/chatHub")
+            .WithUrl($"{baseUrl}:5007/chatHub")
             .Build();
 
         hubConnection.On<string, string>("ReceiveMessage", (user, message) =>

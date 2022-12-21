@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoSibu", "GoSibu\GoSibu.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminPanelGoSibu", "AdminPanelGoSibu\AdminPanelGoSibu.csproj", "{F1782279-7325-4FAF-9546-C1526C0D3A3C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRServer", "SignalRServer\SignalRServer.csproj", "{3C5B7DD7-6F45-46CD-98CC-F07A9DD9B683}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoSibu.WebApi", "GoSibu.WebApi\GoSibu.WebApi.csproj", "{584FE3B6-4238-4A10-BF9F-DD37C64333D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoSibu.WebApi", "GoSibu.WebApi\GoSibu.WebApi.csproj", "{584FE3B6-4238-4A10-BF9F-DD37C64333D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gosibu.Shared", "Gosibu.Shared\Gosibu.Shared.csproj", "{268CC097-C9B3-480C-BCF8-8305664CA95B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gosibu.Shared", "Gosibu.Shared\Gosibu.Shared.csproj", "{268CC097-C9B3-480C-BCF8-8305664CA95B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRServer", "SignalRServer\SignalRServer\SignalRServer.csproj", "{26353565-8F4F-40B7-988F-D53533C45703}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +31,6 @@ Global
 		{F1782279-7325-4FAF-9546-C1526C0D3A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1782279-7325-4FAF-9546-C1526C0D3A3C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F1782279-7325-4FAF-9546-C1526C0D3A3C}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{3C5B7DD7-6F45-46CD-98CC-F07A9DD9B683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C5B7DD7-6F45-46CD-98CC-F07A9DD9B683}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C5B7DD7-6F45-46CD-98CC-F07A9DD9B683}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C5B7DD7-6F45-46CD-98CC-F07A9DD9B683}.Release|Any CPU.Build.0 = Release|Any CPU
 		{584FE3B6-4238-4A10-BF9F-DD37C64333D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{584FE3B6-4238-4A10-BF9F-DD37C64333D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{584FE3B6-4238-4A10-BF9F-DD37C64333D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,6 +39,10 @@ Global
 		{268CC097-C9B3-480C-BCF8-8305664CA95B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{268CC097-C9B3-480C-BCF8-8305664CA95B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{268CC097-C9B3-480C-BCF8-8305664CA95B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26353565-8F4F-40B7-988F-D53533C45703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26353565-8F4F-40B7-988F-D53533C45703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26353565-8F4F-40B7-988F-D53533C45703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26353565-8F4F-40B7-988F-D53533C45703}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

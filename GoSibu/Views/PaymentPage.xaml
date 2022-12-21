@@ -12,9 +12,17 @@
                                   Offset="1.5" />
             </LinearGradientBrush>
         </Grid.Background>
-        <Label 
+        
+        <Label HorizontalOptions="Center"
             Text="THIS IS PAYMENT PAGE!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            VerticalOptions="Center"   />
+        
+        <Button Text="APLLY VOUCHER"
+                Clicked="ApplyVoucher_clicked"
+                VerticalOptions="EndAndExpand"
+                HeightRequest="50"
+                BackgroundColor="White"
+                TextColor="Black"
+                Margin="20"></Button>
     </Grid>
 </ContentPage>

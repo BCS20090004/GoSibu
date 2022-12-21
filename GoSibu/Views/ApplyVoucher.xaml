@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoSibu.Views.ApplyVoucher"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewmodels="clr-namespace:GoSibu.ViewModels"
+             xmlns:models="clr-namespace:Gosibu.Shared.Models;assembly=Gosibu.Shared"
+             x:DataType="viewmodels:VoucherListPageViewModel"
+             Title="ApplyVoucher">
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0.5,0.8">
+            <GradientStop Color="#84DCC6"
+                          Offset="0.3" />
+            <GradientStop Color="#95A3B3"
+                          Offset="1.5" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ContentPage.Content>
+
+        <StackLayout Margin="10,10,10,0">
+
+            <Label Text="Chooose A Voucher to apply for your package. Only ONE Voucher can apply for one package."
+                   FontSize="18"
+                   FontFamily="Roboto"
+                   VerticalOptions="Center"
+                   Padding="10"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"></Label>
+            
+            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
+
+            <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" >
+                <CollectionView ItemsSource="{Binding Vouchers}" >
+                    <CollectionView.ItemTemplate >
+                        <DataTemplate x:DataType="models:VoucherModel">
+                            <Border Padding="15,0"
+                                        Background="#FFFFFF"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="FillAndExpand"
+                                        StrokeShape="RoundRectangle 40,0,0,40"                                        
+                                        StrokeThickness="2.5">
+                                <Border.Stroke>
+                                    <LinearGradientBrush EndPoint="0,1">
+                                        <GradientStop Color="#95A3B3" Offset="0.1" />
+                                        <GradientStop Color="#222222" Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Border.Stroke>
+
+                                <Grid >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="coupon.png"
+                                           Margin="20"
+                                           WidthRequest="50"
+                                           Grid.RowSpan="2"
+                                           Grid.Column="0"></Image>
+                                    
+                                        <StackLayout Orientation="Horizontal"
+                                                     Margin="0,15,0,0"
+                                                     HorizontalOptions="FillAndExpand"
+                                                     VerticalOptions="FillAndExpand"
+                                                     Grid.Row="0"
+                                                     Grid.Column="1">
+                                            <Label Text="{Binding OfferName}" FontSize="15"
+                                                    HorizontalOptions="FillAndExpand"
+                                                     VerticalOptions="FillAndExpand"/>
+                                        </StackLayout>
+                                    
+                                        <StackLayout Orientation="Horizontal"
+                                                     Margin="0,15,0,10"
+                                                     HorizontalOptions="FillAndExpand"
+                                                     VerticalOptions="FillAndExpand"
+                                                     Grid.Row="1"
+                                                     Grid.Column="1">
+                                            <Label Text="{Binding OfferPercent}" FontSize="15"
+                                                    HorizontalOptions="FillAndExpand"
+                                                     VerticalOptions="FillAndExpand"/>
+                                        </StackLayout>
+                                    
+                                    <Button Text="Use"
+                                            Grid.RowSpan="2"
+                                            Grid.Column="2"
+                                            TextColor="Black"
+                                            BackgroundColor="Transparent"
+                                            WidthRequest="60"
+                                            BorderColor="Black"
+                                            BorderWidth="2"
+                                            HeightRequest="50"
+                                            HorizontalOptions="End"
+                                            Clicked="Applied"
+                                            VerticalOptions="CenterAndExpand">
+                                    </Button>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewmodels:VoucherListPageViewModel}},Path=SelectedPackageCommand}" CommandParameter="{Binding .}" />
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

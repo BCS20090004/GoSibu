@@ -8,7 +8,122 @@
              Title="UseVoucherPage">
 
     <ScrollView >
-        <Grid Padding="20" >
+        <Grid Padding="10,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="470"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,0.8">
+                    <GradientStop Color="#84DCC6"
+                                  Offset="0.3" />
+                    <GradientStop Color="#95A3B3"
+                                  Offset="1.5" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Frame BackgroundColor="#1C375C"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   Margin="-20">
+                
+            </Frame>
+            <Border Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    BackgroundColor="White"
+                    Margin="20,-50,20,50"
+                    StrokeShape="RoundRectangle 5,5,5,5"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.6*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Stroke="#84DCC6"
+                            BackgroundColor="#84DCC6"
+                            Padding="10"
+                            Grid.Column="0"
+                            StrokeThickness="3"
+                            HorizontalOptions="FillAndExpand">
+                        <Image Source="coupon1.png"
+                               Aspect="AspectFit"/>
+                    </Border>
+                    <Label Text="{Binding VoucherDetail.OfferName}"
+                           Grid.Column="1"
+                           Padding="5"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           FontFamily="roboto">
+                    </Label>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1"
+                    StrokeShape="Ellipse"
+                    WidthRequest="65"
+                    HeightRequest="65"
+                    BackgroundColor="Black">
+                <Label Text="{Binding VoucherDetail.OfferPercent}"
+                       HorizontalOptions="Center"
+                       FontSize="18"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"></Label>
+            </Border>
+            <Border Grid.Row="2" 
+                    Grid.ColumnSpan="2"
+                    Margin="-20,0,-20,0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                <VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="2" 
+                                 Margin="20"
+                                 Spacing="5">
+            <Label Text="Offer"
+                   FontAttributes="Bold"
+                   FontSize="18"
+                   FontFamily="roboto"></Label>
+            <Label Text="{Binding VoucherDetail.Offer}"
+                   FontSize="18"
+                   FontFamily="roboto">
+            </Label>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="3" 
+                                 Margin="20"
+                                 Spacing="5">
+                <Label Text="Valid Time"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       FontFamily="roboto"></Label>
+                <Label Text="{Binding VoucherDetail.Duration}"
+                       FontSize="18"
+                       FontFamily="roboto"></Label>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="4" 
+                                 Margin="20"
+                                 Spacing="5">
+                <Label Text="Description"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       FontFamily="roboto"></Label>
+                <Label Text="{Binding VoucherDetail.Description}"
+                       FontFamily="roboto"                               
+                       FontSize="18"/>
+            </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+        <!--<Grid Padding="20" >
  
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,0.8">
@@ -55,6 +170,7 @@
                            Grid.ColumnSpan="2"
                            Grid.Row="0"
                            ></Image>
+                    <Label Text="{Binding VoucherDetail.OfferName}" ></Label>
                     <Border WidthRequest="55"
                             StrokeShape="RoundRectangle 10,10,10,10"
                             StrokeThickness="3"
@@ -116,6 +232,6 @@
                                Grid.ColumnSpan="2"/>
                 </Grid>
             </Border>
-        </Grid>
+        </Grid>-->
     </ScrollView>
 </ContentPage>

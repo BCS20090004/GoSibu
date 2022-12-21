@@ -22,7 +22,6 @@ namespace SignalRServer.Controllers
         {
             return View();
         }
-
         public ViewResult ChatDemo()
         {
             return View();
