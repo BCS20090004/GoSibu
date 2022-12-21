@@ -96,36 +96,65 @@
                                             <GradientStop Color="#222222" Offset="1.0" />
                                         </LinearGradientBrush>
                                     </Border.Stroke>
-                                    <StackLayout Margin="10">
-                                        <StackLayout Orientation="Horizontal">
+                                    <Grid Padding="-5,0,-5,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="160"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="star.png"
+                                               Grid.Row="0"
+                                               Grid.Column="0"
+                                               HorizontalOptions="Center"
+                                               WidthRequest="40"
+                                               HeightRequest="40"
+                                               VerticalOptions="Center"></Image>
                                             <Label Text="{Binding PackageName}"
-                                                   FontSize="Body"
+                                                   Padding="5"
+                                                   Grid.Row="0"
+                                                   Grid.Column="1"
+                                                   FontSize="20"
+                                                   FontAttributes="Bold"
                                                    FontFamily="Roboto"
-                                                   TextColor="#222222"
-                                                   HorizontalTextAlignment="Center"
-                                                   HorizontalOptions="Center"/>
-                                        </StackLayout>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding DateandTIme}" 
-                                                   TextColor="#222222"
-                                                   FontFamily="Roboto"
-                                                   HorizontalTextAlignment="Center"
-                                                   HorizontalOptions="Center"/>
-                                        </StackLayout>
+                                                   TextColor="#222222"/>
                                         
-                                        <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding PackagePrice}" 
+                                            <Label Text="{Binding DateandTIme}" 
+                                                   Grid.Row="1"
+                                                   Grid.Column="1"
                                                    TextColor="#222222"
+                                                   FontFamily="Roboto"
+                                                   FontSize="18"
+                                                   HorizontalTextAlignment="Start"
+                                                   VerticalOptions="StartAndExpand"
+                                                   VerticalTextAlignment="Start"
+                                                   HorizontalOptions="Start"/>
+
+                                        <Border  Grid.Row="1"
+                                                 Grid.Column="2"
+                                                 StrokeShape="RoundRectangle 20,20,20,20"
+                                                 BackgroundColor="Black"
+                                                 WidthRequest="80"
+                                                 HeightRequest="50"
+                                                 HorizontalOptions="CenterAndExpand"
+                                                 VerticalOptions="CenterAndExpand">
+                                            
+                                            <Label Text="{Binding PackagePrice}" 
+                                                   TextColor="White"
                                                    FontSize="Subtitle"
                                                    FontFamily="Roboto"
-                                                   HorizontalOptions="EndAndExpand"/>
-                                        </StackLayout>
-                                        <BoxView HeightRequest="1" Color="#4B4E6D" />
-
-                                        <StackLayout.GestureRecognizers>
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalTextAlignment="Center"
+                                                   HorizontalOptions="FillAndExpand"
+                                                   VerticalOptions="FillAndExpand"/>
+                                        </Border>
+                                        <Grid.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:PackageListPageViewModel}},Path=SelectedPackageCommand}" CommandParameter="{Binding .}" />
-                                    </StackLayout.GestureRecognizers>
-                                </StackLayout>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
                                     
                                 </Border>
                                 

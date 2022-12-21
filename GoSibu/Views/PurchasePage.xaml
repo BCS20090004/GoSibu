@@ -90,7 +90,8 @@
                         Stroke="black"
                         StrokeThickness="3"
                         HorizontalOptions="FillAndExpand">
-                    <HorizontalStackLayout Padding="10" Spacing="10">
+                    <HorizontalStackLayout Padding="10" Spacing="10"
+                                           HorizontalOptions="CenterAndExpand">
                         <Label  Text="{Binding PackageDetail.Departure}"  
                                 FontFamily="Roboto"
                                 FontSize="25"

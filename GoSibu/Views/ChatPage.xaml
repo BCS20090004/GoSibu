@@ -3,11 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GoSibu.Views.ChatPage"
              Title="ChatPage">
-    <Grid
-        RowDefinitions="Auto, 7*, Auto, Auto">
+    <Grid RowDefinitions="Auto, 7*, Auto, Auto">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,3.1">
+                <GradientStop Color="#84DCC6"
+                          Offset="0.06" />
+                <GradientStop Color="#4B4E6D"
+                          Offset="0.30" />
+            </LinearGradientBrush>
+        </Grid.Background>
         <Entry
             x:Name="txtUsername"
-            Placeholder="Your name"/>
+            Placeholder="Your name"
+            FontFamily="roboto"
+            FontAttributes="Bold"
+            FontSize="18"/>
 
         <ScrollView
             Grid.Row="1">
@@ -21,6 +31,8 @@
         <Entry
             Grid.Row="2"
             x:Name="txtMessage"
+            FontSize="18"
+            
             Placeholder="Enter your message"/>
 
         <Button
