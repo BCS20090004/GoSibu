@@ -40,25 +40,48 @@
                                     </LinearGradientBrush>
                                 </Border.Stroke>
 
-                                <HorizontalStackLayout Margin="10,30,10,0"
-                                                       HorizontalOptions="FillAndExpand"
-                                                       VerticalOptions="FillAndExpand">
+                                <Grid >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
                                     <Image Source="coupon.png"
+                                           Margin="20"
                                            WidthRequest="50"
-                                           Margin="5,0,20,30"></Image>
-                                    <VerticalStackLayout >
-                                        <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding OfferName}" FontSize="15"/>
-                                        </StackLayout>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding Offer}" FontSize="15"/>
-                                        </StackLayout>
-                                    </VerticalStackLayout>
-                                    <HorizontalStackLayout.GestureRecognizers>
+                                           Grid.RowSpan="2"
+                                           Grid.Column="0"></Image>
+
+                                    <StackLayout Orientation="Horizontal"
+                                                     Margin="0,15,0,0"
+                                                     HorizontalOptions="FillAndExpand"
+                                                     VerticalOptions="FillAndExpand"
+                                                     Grid.Row="0"
+                                                     Grid.Column="1">
+                                        <Label Text="{Binding OfferName}" FontSize="15"
+                                                    HorizontalOptions="FillAndExpand"
+                                                     VerticalOptions="FillAndExpand"/>
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal"
+                                                     Margin="0,15,0,10"
+                                                     HorizontalOptions="FillAndExpand"
+                                                     VerticalOptions="FillAndExpand"
+                                                     Grid.Row="1"
+                                                     Grid.Column="1">
+                                        <Label Text="{Binding Offer}" FontSize="15"
+                                                    HorizontalOptions="FillAndExpand"
+                                                     VerticalOptions="FillAndExpand"/>
+                                    </StackLayout>
+
+                                    <Grid.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewmodels:VoucherListPageViewModel}},Path=SelectedPackageCommand}" CommandParameter="{Binding .}" />
-                                    </HorizontalStackLayout.GestureRecognizers>
-                                </HorizontalStackLayout>
-                                
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+
                             </Border>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
