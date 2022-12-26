@@ -35,4 +35,5 @@ public partial class UserAccountPage : ContentPage
         Preferences.Clear();
     }
 
+
 }

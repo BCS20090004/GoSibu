@@ -3,10 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AdminPanelGoSibu.AdminChatPage"
              Title="AdminChatPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    
+    <Grid RowDefinitions="Auto, 7*, Auto, Auto">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,3.1">
+                <GradientStop Color="#84DCC6"
+                          Offset="0.06" />
+                <GradientStop Color="#4B4E6D"
+                          Offset="0.30" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Entry
+            x:Name="txtUsername"
+            Placeholder="Your name"
+            FontFamily="roboto"
+            FontAttributes="Bold"
+            FontSize="18"/>
+
+        <ScrollView
+            Grid.Row="1">
+            <Label
+                x:Name="lblChat"
+                FontSize="18"
+                HorizontalOptions="StartAndExpand"
+                TextType="Html"></Label>
+        </ScrollView>
+
+        <Entry
+            Grid.Row="2"
+            x:Name="txtMessage"
+            FontSize="18"
+            Placeholder="Enter your message"/>
+
+        <Button
+            Grid.Row="3"
+            x:Name="btnSend"
+            Text="Send"
+            HorizontalOptions="FillAndExpand"
+            Clicked="btnSend_Clicked"/>
+
+    </Grid>
 </ContentPage>

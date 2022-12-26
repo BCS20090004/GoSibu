@@ -17,7 +17,7 @@ namespace GoSibu.Services
             {
                 if (internalApi)
                 {
-                    //Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
+                    Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
                     url = baseServiceUrl + url;
                 }
                 else
@@ -31,7 +31,7 @@ namespace GoSibu.Services
                     {
                         PropertyNameCaseInsensitive = true
                     });
-                    //T result = JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
+                    T AuthenticationResult = JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());  //result change to AuthenticationResult
                     return result;
                 }
                 else
@@ -61,7 +61,7 @@ namespace GoSibu.Services
             {
                 if (internalApi)
                 {
-                    //Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
+                    Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
                     url = baseServiceUrl + url;
                 }
                 else
@@ -75,7 +75,7 @@ namespace GoSibu.Services
                     {
                         PropertyNameCaseInsensitive = true
                     });
-                    //T result = JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
+                    T AuthenticationResult = JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
                     return result;
                 }
                 else
@@ -98,7 +98,7 @@ namespace GoSibu.Services
         {
             try
             {
-                //Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
+                Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
                 var itemJson = JsonConvert.SerializeObject(item);
                 var content = new StringContent(itemJson, Encoding.UTF8, "application/json");
                 var response = await Client.PostAsync(baseServiceUrl + url, content);
@@ -127,7 +127,7 @@ namespace GoSibu.Services
         {
             try
             {
-                //Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
+                Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
                 MultipartFormDataContent multiContent = new MultipartFormDataContent();
                 var itemJson = JsonConvert.SerializeObject(item);
                 var content = new StringContent(itemJson, Encoding.UTF8, "application/json");
@@ -167,7 +167,7 @@ namespace GoSibu.Services
         {
             try
             {
-                //Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
+                Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
                 var content = new StringContent(JsonConvert.SerializeObject(item), Encoding.UTF8, "application/json");
                 var response = await Client.PutAsync(baseServiceUrl + url, content);
                 if (!response.IsSuccessStatusCode)
@@ -195,7 +195,7 @@ namespace GoSibu.Services
         {
             try
             {
-                //Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
+                Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
                 MultipartFormDataContent multiContent = new MultipartFormDataContent();
                 var itemJson = JsonConvert.SerializeObject(item);
                 var content = new StringContent(itemJson, Encoding.UTF8, "application/json");
@@ -235,7 +235,7 @@ namespace GoSibu.Services
         {
             try
             {
-                //Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
+                Client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await SecureStorage.GetAsync(Setting.AccessTokenKey));
                 var response = await Client.DeleteAsync(baseServiceUrl + url);
                 if (!response.IsSuccessStatusCode)
                 {

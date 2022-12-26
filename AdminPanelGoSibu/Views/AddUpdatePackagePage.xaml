@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:AdminPanelGoSibu.ViewModels"
              xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             xmlns:loc="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
+             xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
              x:DataType="viewmodels:AddUpdatePackagePageViewModel"
              x:Class="AdminPanelGoSibu.Views.AddUpdatePackagePage"
              Title="AddUpdatePackagePage">
@@ -17,7 +19,9 @@
                       Grid.Row="0"
                       Grid.ColumnSpan="2"
                       MapClicked="OnMapClicked"
-                      HeightRequest="500"></maps:Map>
+                      HeightRequest="500">
+            </maps:Map>
+
 
             <Label Text="Package Name:"></Label>
         <Entry Placeholder="Package Name" Text="{Binding PackageDetail.PackageName}" />
