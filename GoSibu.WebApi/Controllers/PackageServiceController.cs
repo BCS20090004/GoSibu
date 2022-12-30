@@ -3,11 +3,14 @@ using Gosibu.Shared.Models;
 using Firebase.Database;
 using Firebase.Database.Query;
 using GoSibu.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GoSibu.WebApi.Controllers
-{
+{ 
+    //Attribute, data annotation
     [ApiController]
     [Route("[controller]")]
+    //[Authorize("Admin")]
     public class PackageServiceController : ControllerBase
     {
         FirebaseClient firebase = new FirebaseClient(Setting.FireBaseDatabaseUrl, new FirebaseOptions

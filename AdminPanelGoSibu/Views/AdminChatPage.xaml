@@ -13,7 +13,7 @@
                           Offset="0.30" />
             </LinearGradientBrush>
         </Grid.Background>
-        <Entry
+        <!--<Entry
             x:Name="txtUsername"
             Placeholder="Your name"
             FontFamily="roboto"
@@ -40,7 +40,7 @@
             x:Name="btnSend"
             Text="Send"
             HorizontalOptions="FillAndExpand"
-            Clicked="btnSend_Clicked"/>
+            Clicked="btnSend_Clicked"/>-->
 
     </Grid>
 </ContentPage>

@@ -13,11 +13,12 @@ namespace AdminPanelGoSibu.Views;
 
 public partial class AddUpdatePackagePage : ContentPage
 {
+    private AddUpdatePackagePageViewModel _viewModel;
     public AddUpdatePackagePage()
     {
         InitializeComponent();
-        this.BindingContext = new AddUpdatePackagePageViewModel();
-
+        this.BindingContext = _viewModel=new AddUpdatePackagePageViewModel();
+        //delegate
     }
 
     async void OnMapClicked(Object sender, MapClickedEventArgs e)
@@ -30,10 +31,9 @@ public partial class AddUpdatePackagePage : ContentPage
             Label = $"MapClick: {e.Location.Latitude}, {e.Location.Longitude}",
             Location = new Location(e.Location.Latitude, e.Location.Longitude),
         };
-         
-        //pin.MarkerClicked += Map_PinClicked;
 
-        mappy.Pins.Add(pin);
+        _viewModel.Pins.Add(pin);
+        //mappy.Pins.Add(pin);
 
         pin.MarkerClicked += async (s, args) =>
         {
@@ -42,7 +42,7 @@ public partial class AddUpdatePackagePage : ContentPage
             var response = await DisplayActionSheet("Pin Clicked", "OK", "Remove Button", $"{pinName}" );
             if(response == "Remove Button")
             {
-                mappy.Pins.Remove(pin);
+                _viewModel.Pins.Remove(pin);
                 BuildPath();
             }
         };

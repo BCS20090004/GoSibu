@@ -8,10 +8,15 @@
 
     <ContentPage.Content>
         <StackLayout Margin="20,30,20,0">
+            <Label Text="Offer Name"></Label>
             <Entry Placeholder="OfferName" Text="{Binding VoucherDetail.OfferName}" />
+            <Label Text="Offer"></Label>
             <Entry Placeholder="Offer" Text="{Binding VoucherDetail.Offer}"  />
+            <Label Text="Offer Percent"></Label>
             <Entry Placeholder="OfferPercent" Text="{Binding VoucherDetail.OfferPercent}"  />
+            <Label Text="Duration"></Label>
             <Entry Placeholder="Duration" Text="{Binding VoucherDetail.Duration}" />
+            <Label Text="Discription"></Label>
             <Entry Placeholder="Description" Text="{Binding VoucherDetail.Description}"  />
 
             <Button

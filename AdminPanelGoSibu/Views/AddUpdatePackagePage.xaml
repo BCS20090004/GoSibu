@@ -12,14 +12,23 @@
         <StackLayout>
         <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
 
-            <maps:Map x:Name="mappy" 
-                      IsShowingUser="True" 
+            <maps:Map x:Name="mappy"
+                      x:DataType="Pin"
+                      IsShowingUser="True"
                       IsTrafficEnabled="True" 
                       MapType="Hybrid"
                       Grid.Row="0"
                       Grid.ColumnSpan="2"
                       MapClicked="OnMapClicked"
-                      HeightRequest="500">
+                      HeightRequest="500"
+                      ItemsSource="{Binding Pins}">
+                <maps:Map.ItemTemplate>
+                    <DataTemplate>
+                        <maps:Pin 
+                                  Location="{Binding Location}"
+                                  Label="{Binding Label}"></maps:Pin>
+                    </DataTemplate>
+                </maps:Map.ItemTemplate>
             </maps:Map>
 
 
@@ -29,17 +38,14 @@
         <Label Text="Departuren Location:"></Label>
         <Entry Placeholder="Departure Location" Text="{Binding PackageDetail.Departure}"  />
 
-        <Label Text="Destination 1:"></Label>
-        <Entry Placeholder="Destination 1" Text="{Binding PackageDetail.Destination1}"  />
-
-        <Label Text="Destination 2:"></Label>
-        <Entry Placeholder="Destination 2" Text="{Binding PackageDetail.Destination2}" />
-
-        <Label Text="Destination 3:"></Label>
-        <Entry Placeholder="Destination 3" Text="{Binding PackageDetail.Destination3}"   />
-
-        <Label Text="Destination 4:"></Label>
-        <Entry Placeholder="Destination 4" Text="{Binding PackageDetail.Destination4}"  />
+            <StackLayout BindableLayout.ItemsSource="{Binding Pins}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Pins}">
+                        </Label>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
 
         <Label Text="Duration:"></Label>
         <Entry Placeholder="Duration" Text="{Binding PackageDetail.Duration}"  />

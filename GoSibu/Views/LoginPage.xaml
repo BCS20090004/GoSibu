@@ -84,8 +84,8 @@
                              x:Name="emailValidator"/>
                         </Entry.Behaviors>
                     </Entry>
-                    <Label  Grid.Row="2" 
-                           Margin="0,50,0,0" 
+                    <Label  Grid.Row="3" 
+                           Margin="0,40,0,0" 
                            IsVisible="{Binding Source={x:Reference emailValidator},
                            Path=IsNotValid}" 
                            Text="Invalid Email" 

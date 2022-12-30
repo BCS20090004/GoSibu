@@ -14,7 +14,7 @@ namespace GoSibu.Views
 
         private void GetProfileInfo()
         {
-            var userInfo = JsonConvert.DeserializeObject<Firebase.Auth.FirebaseAuth>(Preferences.Get("FreshFirebaseToken", ""));
+            var userInfo = JsonConvert.DeserializeObject<Firebase.Auth.FirebaseAuth>(Preferences.Get("FreshFirebaseToken", "AccessTokenKey"));
             UserEmail.Text = userInfo.User.Email;
         }
     }

@@ -1,20 +1,26 @@
 ﻿using AdminPanelGoSibu.Services;
 using System.Windows.Input;
 using Gosibu.Shared.Models;
+using System.Collections.ObjectModel;
+using Microsoft.Maui.Controls.Maps;
 
 namespace AdminPanelGoSibu.ViewModels
 {
-    public class AddUpdatePackagePageViewModel :BaseViewModel
+    public class AddUpdatePackagePageViewModel :BaseViewModel 
     {
+        //list of new model containing lat,long,name
         #region Properties
         private readonly PackageService _packageService;
 
         private PackageModel _packageDetail = new PackageModel();
+
+        public ObservableCollection<Pin> Pins { get; set; } = new();
         public PackageModel PackageDetail
-        {
+        {   
             get => _packageDetail;
             set => SetProperty(ref _packageDetail, value);
         }
+
         #endregion
 
         #region Constructor
@@ -41,9 +47,9 @@ namespace AdminPanelGoSibu.ViewModels
                 DateandTIme = packageResponse.DateandTIme,
                 Discription = packageResponse.Discription,
                 Attention = packageResponse.Attention,
-
             };
         }
+
         #endregion
 
         #region Commands

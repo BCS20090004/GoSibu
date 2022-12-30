@@ -1,49 +1,49 @@
-using Microsoft.AspNetCore.SignalR.Client;
+//using Microsoft.AspNetCore.SignalR.Client;
 
-namespace AdminPanelGoSibu;
+//namespace AdminPanelGoSibu;
 
-public partial class AdminChatPage : ContentPage
-{
-    private readonly HubConnection hubConnection;
+//public partial class AdminChatPage : ContentPage
+//{
+//    private readonly HubConnection hubConnection;
 
-    public AdminChatPage()
-    {
-        InitializeComponent();
+//    public AdminChatPage()
+//    {
+//        InitializeComponent();
 
-        var baseUrl = "http://localhost";
+//        var baseUrl = "http://localhost";
 
-        // Android can't connect to localhost
-        if (DeviceInfo.Current.Platform == DevicePlatform.Android)
-        {
-            baseUrl = "http://10.0.2.2";
-        }
+//        // Android can't connect to localhost
+//        if (DeviceInfo.Current.Platform == DevicePlatform.Android)
+//        {
+//            baseUrl = "http://10.0.2.2";
+//        }
 
-        hubConnection = new HubConnectionBuilder()
-            .WithUrl($"{baseUrl}:5007/chatHub")
-            .Build();
+//        hubConnection = new HubConnectionBuilder()
+//            .WithUrl($"{baseUrl}:5007/chatHub")
+//            .Build();
 
-        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
-        {
-            lblChat.Text += $"<b>{user}</b>: {message}<br/>";
-        });
+//        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+//        {
+//            lblChat.Text += $"<b>{user}</b>: {message}<br/>";
+//        });
 
-        Task.Run(() =>
-        {
-            Dispatcher.Dispatch(async () =>
-            {
-                await hubConnection.StartAsync();
-            });
-        });
-    }
+//        Task.Run(() =>
+//        {
+//            Dispatcher.Dispatch(async () =>
+//            {
+//                await hubConnection.StartAsync();
+//            });
+//        });
+//    }
 
-    private async void btnSend_Clicked(object sender, EventArgs e)
-    {
-        await hubConnection.InvokeCoreAsync("SendMessageToAll", args: new[]
-        {
-                txtUsername.Text,
-                txtMessage.Text
-            });
+//    private async void btnSend_Clicked(object sender, EventArgs e)
+//    {
+//        await hubConnection.InvokeCoreAsync("SendMessageToAll", args: new[]
+//        {
+//                txtUsername.Text,
+//                txtMessage.Text
+//            });
 
-        txtMessage.Text = String.Empty;
-    }
-}
+//        txtMessage.Text = String.Empty;
+//    }
+//}
