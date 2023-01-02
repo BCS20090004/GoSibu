@@ -13,7 +13,6 @@
         <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
 
             <maps:Map x:Name="mappy"
-                      x:DataType="Pin"
                       IsShowingUser="True"
                       IsTrafficEnabled="True" 
                       MapType="Hybrid"
@@ -24,9 +23,11 @@
                       ItemsSource="{Binding Pins}">
                 <maps:Map.ItemTemplate>
                     <DataTemplate>
-                        <maps:Pin 
-                                  Location="{Binding Location}"
-                                  Label="{Binding Label}"></maps:Pin>
+                        <maps:Pin
+                            x:DataType="Pin"
+                            Location="{Binding Location}"
+                            Label="{Binding Label}">
+                        </maps:Pin>
                     </DataTemplate>
                 </maps:Map.ItemTemplate>
             </maps:Map>
@@ -41,8 +42,22 @@
             <StackLayout BindableLayout.ItemsSource="{Binding Pins}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <Label Text="{Binding Pins}">
-                        </Label>
+                        <Frame>
+                            <StackLayout x:DataType="Pin">
+                                <Label Text="Location Name:"/>
+                                <Entry 
+                                    Text="{Binding Label}">
+                                </Entry>
+                                <Label Text="Latitude:"/>
+                                <Entry 
+                                    Text="{Binding Location.Latitude}">
+                                </Entry>
+                                <Label Text="Longitude"/>
+                                <Entry 
+                                    Text="{Binding Location.Longitude}">
+                                </Entry>
+                            </StackLayout>
+                        </Frame>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
