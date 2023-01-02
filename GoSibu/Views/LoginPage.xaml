@@ -55,7 +55,8 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Label
@@ -84,14 +85,14 @@
                              x:Name="emailValidator"/>
                         </Entry.Behaviors>
                     </Entry>
-                    <Label  Grid.Row="3" 
-                           Margin="0,40,0,0" 
+                    <Label  Grid.Row="3"
+                           Margin="0,-20,0,0" 
                            IsVisible="{Binding Source={x:Reference emailValidator},
                            Path=IsNotValid}" 
                            Text="Invalid Email" 
                            TextColor="Red"></Label>
                     <Entry
-                        Grid.Row="3"
+                        Grid.Row="4"
                         HorizontalOptions="FillAndExpand"
                         IsPassword="True"
                         Placeholder="Password"
@@ -104,13 +105,14 @@
                               x:Name="passwordValidator"/>
                         </Entry.Behaviors>
                     </Entry>
-                    <Label Grid.Row="3" Margin="0,50,0,0" 
+                    <Label Grid.Row="5" 
+                           Margin="0,-20,0,0" 
                            IsVisible="{Binding Source={x:Reference passwordValidator},
                            Path=IsNotValid}" 
                            Text="Password length must greater than 6" 
                            TextColor="Red"></Label>
                     <Button
-                        Grid.Row="4"
+                        Grid.Row="6"
                         BackgroundColor="#1C375C"
                         Command="{Binding LoginBtn}"
                         CornerRadius="20"
@@ -118,11 +120,11 @@
 
 
                     <Label
-                        Grid.Row="5"
+                        Grid.Row="8"
                         HorizontalOptions="CenterAndExpand"
                         Text="or signin with" />
                     <StackLayout
-                        Grid.Row="6"
+                        Grid.Row="9"
                         HorizontalOptions="CenterAndExpand"
                         Orientation="Horizontal"
                         Spacing="40">
@@ -147,8 +149,8 @@
                         </Label.GestureRecognizers>
                     </Label>
                     <Label
-                        Grid.Row="8"
-                        Margin="0,-10,0,0"
+                        Grid.Row="10"
+                        Margin="0,0,0,0"
                         HorizontalOptions="CenterAndExpand"
                         Text="Don't have an account? Sign up here">
                         <Label.GestureRecognizers>

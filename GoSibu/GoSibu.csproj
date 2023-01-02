@@ -32,10 +32,10 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\newgosibu1.png" /><MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\newgosibu1.png" ForegroundFile="Resources\AppIcon\newgosibu1.png" Color="#FFFFFF" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\newgosibu1.png" Color="#FFFFFF" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\newgosibu1.png" Color="#FFFFFF" BaseSize="328,328" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
