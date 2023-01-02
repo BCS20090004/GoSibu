@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using GoSibu.Services;
-using Gosibu.Shared.Models;
+using Shared.GoSibu.Models;
 using GoSibu.Views;
 
 namespace GoSibu.ViewModels

@@ -1,12 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
-using Gosibu.Shared.Models;
+using Shared.GoSibu.Models;
 using Firebase.Database;
 using Firebase.Database.Query;
 using GoSibu.WebApi.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace GoSibu.WebApi.Controllers
-{ 
+{
     //Attribute, data annotation
     [ApiController]
     [Route("[controller]")]

@@ -1,6 +1,6 @@
 using AdminPanelGoSibu.ViewModels;
 //using Android.Gms.Maps.Model;
-using Gosibu.Shared.Models;
+using Shared.GoSibu.Models; 
 using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls.Maps;
 using System.Drawing;

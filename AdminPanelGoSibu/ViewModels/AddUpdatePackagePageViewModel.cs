@@ -1,6 +1,6 @@
 ﻿using AdminPanelGoSibu.Services;
 using System.Windows.Input;
-using Gosibu.Shared.Models;
+using Shared.GoSibu.Models;
 using System.Collections.ObjectModel;
 using Microsoft.Maui.Controls.Maps;
 

@@ -1,6 +1,6 @@
 ﻿using AdminPanelGoSibu.Services;
 using AdminPanelGoSibu.Views;
-using Gosibu.Shared.Models;
+using Shared.GoSibu.Models;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 

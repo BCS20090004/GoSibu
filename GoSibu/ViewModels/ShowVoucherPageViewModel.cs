@@ -1,5 +1,5 @@
 ﻿using GoSibu.Services;
-using Gosibu.Shared.Models;
+using Shared.GoSibu.Models;
 
 namespace GoSibu.ViewModels
 {

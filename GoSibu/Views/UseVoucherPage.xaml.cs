@@ -1,4 +1,4 @@
-using Gosibu.Shared.Models;
+using Shared.GoSibu.Models;
 using GoSibu.ViewModels;
 
 namespace GoSibu.Views;

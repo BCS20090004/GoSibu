@@ -5,7 +5,7 @@
              x:Class="GoSibu.Views.MainPage"
              x:DataType="viewModels:PackageListPageViewModel"
              xmlns:viewModels="clr-namespace:GoSibu.ViewModels"
-             xmlns:models="clr-namespace:Gosibu.Shared.Models;assembly=Gosibu.Shared"
+             xmlns:models="clr-namespace:Shared.GoSibu.Models;assembly=Shared.GoSibu"
              NavigationPage.HasNavigationBar="False"
              >
 

@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
-using VoucherModel = Gosibu.Shared.Models.VoucherModel;
+using VoucherModel = Shared.GoSibu.Models.VoucherModel;
 using AdminPanelGoSibu.Services;
-using Gosibu.Shared.Models;
+using Shared.GoSibu.Models;
 
 namespace AdminPanelGoSibu.ViewModels
 {

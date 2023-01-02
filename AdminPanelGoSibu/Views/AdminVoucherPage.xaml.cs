@@ -1,6 +1,6 @@
 using AdminPanelGoSibu.Views;
-using Gosibu.Shared.Models;
-using AdminPanelGoSibu.Services;
+using Shared.GoSibu.Models;
+using AdminPanelGoSibu.Services;    
 
 namespace AdminPanelGoSibu;
 

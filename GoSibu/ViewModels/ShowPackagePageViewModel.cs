@@ -1,5 +1,7 @@
 ﻿using GoSibu.Services;
-using Gosibu.Shared.Models;
+using Microsoft.Maui.Controls.Maps;
+using Shared.GoSibu.Models;
+using System.Collections.ObjectModel;
 
 namespace GoSibu.ViewModels
 {
@@ -9,6 +11,8 @@ namespace GoSibu.ViewModels
         private readonly PackageService _packageService;
 
         private PackageModel _packageDetail = new PackageModel();
+        public ObservableCollection<Pin> Pins { get; set; } = new();
+
         public PackageModel PackageDetail
         {
             get => _packageDetail;

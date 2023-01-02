@@ -1,4 +1,4 @@
-﻿using Gosibu.Shared.Models;
+﻿using Shared.GoSibu.Models;
 
 namespace AdminPanelGoSibu.Services
 {

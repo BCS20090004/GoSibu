@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Gosibu.Shared.Models;
-using Firebase.Database;
+using Shared.GoSibu.Models;
+using Firebase.Database;    
 using Firebase.Database.Query;
 using GoSibu.WebApi.Models;
 

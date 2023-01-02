@@ -58,8 +58,10 @@
 	  <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.49" />
 	</ItemGroup>
 
+
+
 	<ItemGroup>
-	  <ProjectReference Include="..\Gosibu.Shared\Gosibu.Shared.csproj" />
+	  <ProjectReference Include="..\Shared.GoSibu\Shared.GoSibu.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

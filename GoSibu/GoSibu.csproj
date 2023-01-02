@@ -61,7 +61,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Gosibu.Shared\Gosibu.Shared.csproj" />
+	  <ProjectReference Include="..\Shared.GoSibu\Shared.GoSibu.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
