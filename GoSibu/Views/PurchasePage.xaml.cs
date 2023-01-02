@@ -13,12 +13,6 @@ public partial class PurchasePage : ContentPage
         InitializeComponent();
         this.BindingContext = _viewModel=new ShowPackagePageViewModel(package);
 
-        mappy.Pins.Add(new Microsoft.Maui.Controls.Maps.Pin
-        {
-            Label = "Sibu Is Here",
-            Location = new Location(2.287778, 111.830833),
-        });
-
     }
     async void OnMapClicked(Object sender, MapClickedEventArgs e)
     {

@@ -103,7 +103,7 @@
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="auto"/>
-                                            <ColumnDefinition Width="160"/>
+                                            <ColumnDefinition Width="140"/>
                                             <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
                                         <Image Source="star.png"
@@ -139,8 +139,8 @@
                                                  BackgroundColor="Black"
                                                  WidthRequest="80"
                                                  HeightRequest="50"
-                                                 HorizontalOptions="CenterAndExpand"
-                                                 VerticalOptions="CenterAndExpand">
+                                                 HorizontalOptions="StartAndExpand"
+                                                 VerticalOptions="StartAndExpand">
                                             
                                             <Label Text="{Binding PackagePrice}" 
                                                    TextColor="White"
