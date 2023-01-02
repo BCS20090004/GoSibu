@@ -38,7 +38,7 @@
         <Entry Placeholder="Package Name" Text="{Binding PackageDetail.PackageName}" />
 
         <Label Text="Departuren Location:"></Label>
-        <Entry Placeholder="Departure Location" Text="{Binding PackageDetail.Departure}"  />
+        <Label Text="Refer to Location 1" />
 
             <StackLayout BindableLayout.ItemsSource="{Binding Pins}">
                 <BindableLayout.ItemTemplate>
@@ -75,8 +75,8 @@
         <Label Text="Date and Time:"></Label>
         <Entry Placeholder="Date and Time" Text="{Binding PackageDetail.DateandTIme}"  />
 
-        <Label Text="Discription:"></Label>
-        <Entry Placeholder="Discription" Text="{Binding PackageDetail.Discription}"   />
+        <Label Text="Description:"></Label>
+        <Entry Placeholder="Description" Text="{Binding PackageDetail.Discription}"   />
 
         <Label Text="Attention:"></Label>
         <Entry Placeholder="Attention" Text="{Binding PackageDetail.Attention}"  />
