@@ -26,7 +26,8 @@
                         <maps:Pin
                             x:DataType="Pin"
                             Location="{Binding Location}"
-                            Label="{Binding Label}">
+                            Label="{Binding Label}"
+                            MarkerClicked="Map_PinClicked">
                         </maps:Pin>
                     </DataTemplate>
                 </maps:Map.ItemTemplate>

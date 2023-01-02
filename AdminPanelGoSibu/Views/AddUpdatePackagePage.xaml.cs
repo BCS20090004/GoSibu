@@ -23,40 +23,26 @@ public partial class AddUpdatePackagePage : ContentPage
 
     async void OnMapClicked(Object sender, MapClickedEventArgs e)
     {
-        //mappy.Pins.Clear();
-        //mappy.Pins.Remove();
-        //mappy.MapElements.Add(new Polyline() );
-
         var pin = new Pin() {
-            Label = $"MapClick: {e.Location.Latitude}, {e.Location.Longitude}",
+            Label = $"Location {_viewModel.Pins.Count+1}",
             Location = new Location(e.Location.Latitude, e.Location.Longitude),
         };
-
         _viewModel.Pins.Add(pin);
-        //mappy.Pins.Add(pin);
-
-        pin.MarkerClicked += async (s, args) =>
-        {
-            args.HideInfoWindow = true;
-            string pinName = ((Pin)s).Label;
-            var response = await DisplayActionSheet("Pin Clicked", "OK", "Remove Button", $"{pinName}" );
-            if(response == "Remove Button")
-            {
-                _viewModel.Pins.Remove(pin);
-                BuildPath();
-            }
-        };
-
         BuildPath();
-        //ClearPins
     }
 
-    //private void Map_PinClicked(Object sender, PinClickedEventArgs e)
-    //{
-    //    var pin = sender as Pin;
-    //    mappy.Pins.Remove(pin);
-    //    BuildPath();
-    //}
+    private async void Map_PinClicked(Object sender, PinClickedEventArgs args)
+    {
+        args.HideInfoWindow = true;
+        var pin = sender as Pin;
+        string pinName = pin.Label;
+        var response = await DisplayActionSheet("Pin Clicked", "OK", "Remove Button", $"{pinName}");
+        if (response == "Remove Button")
+        {
+            _viewModel.Pins.Remove(pin);
+            BuildPath();
+        }
+    }
 
     private void BuildPath()
     {
