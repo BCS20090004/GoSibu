@@ -22,7 +22,7 @@
             
             <VerticalStackLayout>
                 
-                <Frame HasShadow="True" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="150" Margin="5">
+                <Frame HasShadow="True" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="350" HeightRequest="150" Margin="5">
                     <HorizontalStackLayout>
                         <Image Source="location.png"></Image>
                         <VerticalStackLayout Grid.Row="1" Margin="0,0,0,0" HorizontalOptions="Start">
@@ -31,11 +31,11 @@
                             <Label Text="Date: 11/11/2022 11:11am" FontSize="13" Margin="20,0,0,0"></Label>
                             <Label Text="Status: Done" FontSize="13" Margin="20,0,0,0"></Label>
                         </VerticalStackLayout>
-                        <Label Text="RM100.00" FontSize="15" Margin="50,45,0,0"></Label>
+                        <Label Text="RM100" FontSize="15" Margin="35,45,0,0"></Label>
                     </HorizontalStackLayout>
                 </Frame>
 
-                <Frame HasShadow="True" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="150" Margin="5">
+                <Frame HasShadow="True" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="350" HeightRequest="150" Margin="5">
                     <HorizontalStackLayout>
                         <Image Source="location.png"></Image>
                         <VerticalStackLayout Grid.Row="1" Margin="0,0,0,0" HorizontalOptions="Start">
@@ -44,11 +44,11 @@
                             <Label Text="Date: 11/11/2022 11:11am" FontSize="13" Margin="20,0,0,0"></Label>
                             <Label Text="Status: Done" FontSize="13" Margin="20,0,0,0"></Label>
                         </VerticalStackLayout>
-                        <Label Text="RM100.00" FontSize="15" Margin="50,45,0,0"></Label>
+                        <Label Text="RM100" FontSize="15" Margin="35,45,0,0"></Label>
                     </HorizontalStackLayout>
                 </Frame>
 
-                <Frame HasShadow="True" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="150" Margin="5">
+                <Frame HasShadow="True" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="350" HeightRequest="150" Margin="5">
                     <HorizontalStackLayout>
                         <Image Source="location.png"></Image>
                         <VerticalStackLayout Grid.Row="1" Margin="0,0,0,0" HorizontalOptions="Start">
@@ -57,11 +57,11 @@
                             <Label Text="Date: 11/11/2022 11:11am" FontSize="13" Margin="20,0,0,0"></Label>
                             <Label Text="Status: Done" FontSize="13" Margin="20,0,0,0"></Label>
                         </VerticalStackLayout>
-                        <Label Text="RM100.00" FontSize="15" Margin="50,45,0,0"></Label>
+                        <Label Text="RM100" FontSize="15" Margin="35,45,0,0"></Label>
                     </HorizontalStackLayout>
                 </Frame>
 
-                <Frame HasShadow="True" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="380" HeightRequest="150" Margin="5">
+                <Frame HasShadow="True" CornerRadius="50" HorizontalOptions="StartAndExpand" WidthRequest="350" HeightRequest="150" Margin="5">
                     <HorizontalStackLayout>
                         <Image Source="location.png"></Image>
                         <VerticalStackLayout Grid.Row="1" Margin="0,0,0,0" HorizontalOptions="Start">
@@ -70,7 +70,7 @@
                             <Label Text="Date: 11/11/2022 11:11am" FontSize="13" Margin="20,0,0,0"></Label>
                             <Label Text="Status: Done" FontSize="13" Margin="20,0,0,0"></Label>
                         </VerticalStackLayout>
-                        <Label Text="RM100.00" FontSize="15" Margin="50,45,0,0"></Label>
+                        <Label Text="RM100" FontSize="15" Margin="35,45,0,0"></Label>
                     </HorizontalStackLayout>
                 </Frame>
 

@@ -11,7 +11,6 @@ namespace GoSibu.ViewModels
         private readonly PackageService _packageService;
 
         private PackageModel _packageDetail = new PackageModel();
-        public ObservableCollection<Pin> Pins { get; set; } = new();
 
         public PackageModel PackageDetail
         {

@@ -5,38 +5,49 @@ using AndroidX.Lifecycle;
 
 namespace GoSibu.Views;
 
+[XamlCompilation(XamlCompilationOptions.Compile)]
+
 public partial class PurchasePage : ContentPage
 {
-    private ShowPackagePageViewModel _viewModel;
+
     public PurchasePage(PackageModel package)
     {
         InitializeComponent();
-        this.BindingContext = _viewModel=new ShowPackagePageViewModel(package);
+        this.BindingContext = new ShowPackagePageViewModel(package);
+
 
     }
     async void OnMapClicked(Object sender, MapClickedEventArgs e)
     {
+        //mappy.Pins.Clear();
+        //mappy.Pins.Remove();
+        //mappy.MapElements.Add(new Polyline() );
+
         var pin = new Pin()
         {
-            Label = $"Location {_viewModel.Pins.Count + 1}",
+            Label = $"MapClick: {e.Location.Latitude}, {e.Location.Longitude}",
             Location = new Location(e.Location.Latitude, e.Location.Longitude),
         };
-        _viewModel.Pins.Add(pin);
+
+        mappy.Pins.Add(pin);
+        //mappy.Pins.Add(pin);
+
+        pin.MarkerClicked += async (s, args) =>
+        {
+            args.HideInfoWindow = true;
+            string pinName = ((Pin)s).Label;
+            var response = await DisplayActionSheet("Pin Clicked", "OK", "Remove Button", $"{pinName}");
+            if (response == "Remove Button")
+            {
+                mappy.Pins.Remove(pin);
+                BuildPath();
+            }
+        };
+
         BuildPath();
     }
-    private async void Map_PinClicked(Object sender, PinClickedEventArgs args)
-    {
-        args.HideInfoWindow = true;
-        var pin = sender as Pin;
-        string pinName = pin.Label;
-        var response = await DisplayActionSheet("Pin Clicked", "OK", "Remove Button", $"{pinName}");
-        if (response == "Remove Button")
-        {
-            _viewModel.Pins.Remove(pin);
-            BuildPath();
-        }
-    }
-    private void BuildPath()
+
+        private void BuildPath()
     {
         mappy.MapElements.Clear();
         if (mappy.Pins.Count > 1)
@@ -54,6 +65,8 @@ public partial class PurchasePage : ContentPage
             // Add the Polyline to the map's MapElements collection
             mappy.MapElements.Add(polyline);
         }
+        //mappy.Pins.Remove();
+
     }
     protected async override void OnAppearing()
     {

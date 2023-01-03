@@ -109,5 +109,14 @@
 	  </MauiXaml>
 	</ItemGroup>
 
-	
+
+		<PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
+			<AndroidKeyStore>True</AndroidKeyStore>
+			<AndroidSigningKeyStore>..\scm</AndroidSigningKeyStore>
+			<AndroidSigningStorePass>SCM1234</AndroidSigningStorePass>
+			<AndroidSigningKeyAlias>SCM</AndroidSigningKeyAlias>
+			<AndroidSigningKeyPass>SCM1234</AndroidSigningKeyPass>
+		</PropertyGroup>
+		
+		
 	</Project>

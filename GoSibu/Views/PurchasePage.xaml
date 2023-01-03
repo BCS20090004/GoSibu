@@ -33,25 +33,13 @@
             </Grid.Background>
             <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
 
-            <maps:Map x:Name="mappy"
-                      IsShowingUser="True"
+            <maps:Map x:Name="mappy" 
+                      IsShowingUser="True" 
                       IsTrafficEnabled="True" 
                       MapType="Hybrid"
                       Grid.Row="0"
                       Grid.ColumnSpan="2"
-                      MapClicked="OnMapClicked"
-                      HeightRequest="500"
-                      ItemsSource="{Binding Pins}">
-                <maps:Map.ItemTemplate>
-                    <DataTemplate>
-                        <maps:Pin
-                            x:DataType="Pin"
-                            Location="{Binding Location}"
-                            Label="{Binding Label}"
-                            MarkerClicked="Map_PinClicked">
-                        </maps:Pin>
-                    </DataTemplate>
-                </maps:Map.ItemTemplate>
+                      MapClicked="OnMapClicked">
             </maps:Map>
 
             <Grid Grid.Row="1"
@@ -125,54 +113,57 @@
                                  Spacing="20"
                                  Grid.ColumnSpan="2">
             <VerticalStackLayout Padding="10"
-                                 Grid.ColumnSpan="2"
-                                 BindableLayout.ItemsSource="{Binding Pins}">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <Frame>
-                                <StackLayout x:DataType="Pin">
-                                    
-                                    <HorizontalStackLayout Spacing="20">
-                                        <Label Text="Location Name:"
+                                 Grid.ColumnSpan="2">
+                    <HorizontalStackLayout Spacing="20">
+                        <Label Text="• Departure "
                            FontFamily="Roboto"
                            FontAttributes="Bold"
                            FontSize="20"></Label>
-                                        <Entry 
-                                    Text="{Binding Label}"
-                                            FontFamily="Roboto"
+                        <Label Text="{Binding PackageDetail.Departure}" 
+                           FontFamily="Roboto"
                            FontSize="20"/>
-                                    </HorizontalStackLayout>
-                                    
-                                    <HorizontalStackLayout Spacing="20" >
-                                        <Label Text="Latitude:"
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="20">
+                    <Label Text="• Destination 1"
+                           FontFamily="Roboto"
+                           FontAttributes="Bold"
+                           FontSize="20"></Label>
+                <Label Text="{Binding PackageDetail.Destination1}" 
+                           FontFamily="Roboto"
+                           FontSize="20"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="20" >
+                    <Label Text="• Destination 2"
                              FontFamily="Roboto"
                              FontAttributes="Bold"
                              FontSize="20"></Label>
-                                        <Entry 
-                                    Text="{Binding Location.Latitude}"
-                                            FontFamily="Roboto"
+                <Label Text="{Binding PackageDetail.Destination2}"
+                            FontFamily="Roboto"
                             FontSize="20"/>
-                                    </HorizontalStackLayout>
-                                    
-                                    <HorizontalStackLayout Spacing="20">
-                                        <Label Text="• Longitude"
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="20">
+                    <Label Text="• Destination 3"
                             FontFamily="Roboto"
                             FontAttributes="Bold"
                             FontSize="20"></Label>
-                                        <Entry 
-                                    Text="{Binding Location.Longitude}"
-                                            FontFamily="Roboto"
+                <Label Text="{Binding PackageDetail.Destination3}"
+                            FontFamily="Roboto"
                             FontSize="20"/>
-                                    </HorizontalStackLayout>
-                                </StackLayout>
-                            </Frame>
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
+            </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="20">
+                        <Label Text="• Destination 4"
+                            FontFamily="Roboto"
+                            FontAttributes="Bold"
+                            FontSize="20"></Label>
+                        <Label Text="{Binding PackageDetail.Destination4}"
+                            FontFamily="Roboto"
+                            FontSize="20"/>
+                    </HorizontalStackLayout>
                 </VerticalStackLayout>
 
             <VerticalStackLayout Grid.Row="3" Grid.ColumnSpan="2" Padding="20,0">
                 <HorizontalStackLayout HorizontalOptions="Start">
-                    <Label Text="Person Limit"
+                    <Label Text="Person Limit    "
                             FontFamily="Roboto"
                            FontAttributes="Bold"
                             FontSize="20"></Label>
@@ -186,7 +177,7 @@
             <VerticalStackLayout 
                                  HorizontalOptions="Start"
                                  Padding="20,0">
-                <Label Text="Discription"
+                <Label Text="Description"
                        FontFamily="Roboto"
                        FontSize="20"
                        FontAttributes="Bold"
@@ -215,6 +206,7 @@
             <Button Text="PURCHASE"
                     BackgroundColor="White"
                     TextColor="Black"
+                    FontAttributes="Bold"
                     Grid.Row="6"
                     Grid.ColumnSpan="2"
                     Margin="20"

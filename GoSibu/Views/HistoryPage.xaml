@@ -55,7 +55,7 @@
                                    FontSize="13" 
                                    Margin="20,5,0,0"></Label>
                         </VerticalStackLayout>
-                        <Label Text="RM100.00" 
+                        <Label Text="RM100" 
                                FontAttributes="Bold" 
                                FontSize="15"
                                Margin="50,10,0,0"></Label>
@@ -82,7 +82,7 @@
                                    FontSize="13" 
                                    Margin="20,5,0,0"></Label>
                         </VerticalStackLayout>
-                        <Label Text="RM100.00" 
+                        <Label Text="RM100" 
                                FontAttributes="Bold" 
                                FontSize="15" 
                                Margin="50,10,0,0"></Label>
@@ -109,7 +109,7 @@
                                    FontSize="13" 
                                    Margin="20,5,0,0"></Label>
                         </VerticalStackLayout>
-                        <Label Text="RM100.00" 
+                        <Label Text="RM100" 
                                FontAttributes="Bold" 
                                FontSize="15" 
                                Margin="50,10,0,0"></Label>
@@ -136,7 +136,7 @@
                                    FontSize="13" 
                                    Margin="20,5,0,0"></Label>
                         </VerticalStackLayout>
-                        <Label Text="RM100.00"
+                        <Label Text="RM100"
                                FontAttributes="Bold" 
                                FontSize="15" 
                                Margin="50,10,0,0"></Label>

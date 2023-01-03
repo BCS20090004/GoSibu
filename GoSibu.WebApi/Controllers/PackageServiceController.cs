@@ -81,6 +81,7 @@ namespace GoSibu.WebApi.Controllers
                 Destination3 = f.Object.Destination3,
                 Destination4 = f.Object.Destination4,
                 Duration = f.Object.Duration,
+                Attention = f.Object.Attention,
                 PackagePrice = f.Object.PackagePrice,
                 PersonLimit = f.Object.PersonLimit,
                 DateandTIme = f.Object.DateandTIme,
