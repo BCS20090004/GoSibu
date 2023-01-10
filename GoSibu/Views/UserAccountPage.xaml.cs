@@ -1,3 +1,4 @@
+using Android.Widget;
 using static GoSibu.Models.EditProfile;
 
 namespace GoSibu.Views;
@@ -35,5 +36,30 @@ public partial class UserAccountPage : ContentPage
         Preferences.Clear();
     }
 
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
 
+        if (this.AnimationIsRunning("TransitionAnimation"))
+            return;
+
+        var parentAnimation = new Animation();
+
+        //Planets Animation
+        parentAnimation.Add(0.2, 0.5, new Animation(v => image.Opacity = v, 0, 1, Easing.CubicIn));
+        parentAnimation.Add(0.1, 0.6, new Animation(v => username.Opacity = v, 0, 1, Easing.CubicIn));
+        parentAnimation.Add(0.1, 0.6, new Animation(v => UserNameEdit.Opacity = v, 0, 1, Easing.CubicIn));
+        parentAnimation.Add(0.1, 0.5, new Animation(v => gender.Opacity = v, 0, 1, Easing.CubicIn));
+        parentAnimation.Add(0.1, 0.5, new Animation(v => UserGender.Opacity = v, 0, 1, Easing.CubicIn));
+        parentAnimation.Add(0.1, 0.4, new Animation(v => email.Opacity = v, 0, 1, Easing.CubicIn));
+        parentAnimation.Add(0.1, 0.4, new Animation(v => UserEmail.Opacity = v, 0, 1, Easing.CubicIn));
+        parentAnimation.Add(0.1, 0.3, new Animation(v => phonenumber.Opacity = v, 0, 1, Easing.CubicIn));
+        parentAnimation.Add(0.1, 0.3, new Animation(v => UserPhoneNumber.Opacity = v, 0, 1, Easing.CubicIn));
+        parentAnimation.Add(0.1, 0.2, new Animation(v => time.Opacity = v, 0, 1, Easing.CubicIn));
+        parentAnimation.Add(0.1, 0.2, new Animation(v => lblname.Opacity = v, 0, 1, Easing.CubicIn));
+        parentAnimation.Add(0.2, 0.3, new Animation(v => btn1.Opacity = v, 0, 1, Easing.CubicIn));
+        parentAnimation.Add(0.2, 0.3, new Animation(v => btn2.Opacity = v, 0, 1, Easing.CubicIn));
+        //Commit the animation
+        parentAnimation.Commit(this, "TransitionAnimation", 16, 3000, null, null);
+    }
 }

@@ -23,7 +23,7 @@
                 <ColumnDefinition Width=".5*"></ColumnDefinition>
                 <ColumnDefinition Width=".6*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-                <Image Source="ellipse11.png" 
+            <Image Source="ellispe11.png"
                        HeightRequest="900"
                        WidthRequest="1500"
                        Aspect="AspectFit"
@@ -37,7 +37,9 @@
                                       NumberOfTapsRequired="2" />
                     </Image.GestureRecognizers>
                 </Image>
-                <Border Stroke="#1C375C"
+                <Border 
+                    x:Name="image"
+                    Stroke="#1C375C"
                     StrokeThickness="4"
                     StrokeShape="Ellipse"
                     HeightRequest="200"
@@ -52,7 +54,7 @@
                     HeightRequest="200"
                     VerticalOptions="Center"></Image>
             </Border>
-            <Label 
+            <Label  x:Name="username"
                     Text="UserName"
                     Grid.Row="1"
                     Grid.Column="0"
@@ -64,6 +66,7 @@
                     VerticalOptions="Center"></Entry>
             
             <Label Text="Gender"
+                   x:Name="gender"
                     Grid.Row="2"
                     Grid.Column="0"
                     FontSize="Small"
@@ -75,7 +78,7 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center"></Entry>
             
-            <Label
+            <Label  x:Name="email"
                     Text="Email"
                     Grid.Row="3"
                     Grid.Column="0"
@@ -88,7 +91,7 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center"></Entry>
 
-            <Label  
+            <Label  x:Name="phonenumber"
                     Text="PhoneNumber"
                     Grid.Row="4"
                     Grid.Column="0"
@@ -101,7 +104,8 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center"
                     Keyboard="Numeric"></Entry>
-            <Label  
+            
+            <Label  x:Name="time"
                     Text="Latest LogIn Time"
                     Grid.Row="5"
                     Grid.Column="0"
@@ -113,7 +117,7 @@
                     FontSize="Small"
                     VerticalOptions="Center"></Label>
 
-            <Button 
+            <Button x:Name="btn1"
                     BackgroundColor="#1C375C"
                     Clicked="Button_Clicked"
                     Text="Save Profile"
@@ -122,7 +126,8 @@
                     Margin="0,20,0,20">
             </Button>
 
-            <Button BackgroundColor="#1C375C"
+            <Button x:Name="btn2"
+                    BackgroundColor="#1C375C"
                     Clicked="Button_Clicked_1"
                     Text="Clear Profile"
                     Grid.Row="7"

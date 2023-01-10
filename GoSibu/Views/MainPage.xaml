@@ -32,14 +32,17 @@
         </Image>
         <VerticalStackLayout Grid.Row="0" Margin="16,16,0,0">
             <Label 
-                HorizontalOptions="Start" 
+                HorizontalOptions="Start"
+                Opacity="0"
+                x:Name="Welcome"
                 Text="Welcome Back ," 
                 TextColor="Black"
                 FontSize="26" 
                 FontFamily="PoetsenOne"/>
         </VerticalStackLayout>
         
-        <VerticalStackLayout Grid.Row="1" Margin="0,0,0,0">
+        <VerticalStackLayout Grid.Row="1" x:Name="ad"
+                             Opacity="0">
             <CarouselView Position="{Binding Position}" 
                       IndicatorView="indicatorView" 
                       Loop="False"
@@ -70,13 +73,17 @@
         <VerticalStackLayout Grid.Row="2">
             <Label
                 HorizontalOptions="CenterAndExpand" 
+                Opacity="0"
+                x:Name="purhcase"
                 Text="Purchase by Clicking the Package" 
                 FontSize="15"
                 TextColor="#222222"
                 FontAttributes="Bold"></Label>
         </VerticalStackLayout>
 
-        <ScrollView Grid.Row="3" Margin="10,20,10,0" >
+        <ScrollView Grid.Row="3" Margin="10,20,10,0" 
+                    Opacity="0"
+                    x:Name="scroll">
                 <StackLayout >
                     <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True" />
 

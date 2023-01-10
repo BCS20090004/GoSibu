@@ -37,7 +37,7 @@
             <Label Text="Package Name:"></Label>
         <Entry Placeholder="Package Name" Text="{Binding PackageDetail.PackageName}" />
 
-        <Label Text="Departuren Location:"></Label>
+        <Label Text="Departure Location:"></Label>
             <Entry Placeholder="Location" Text="{Binding PackageDetail.Departure}"  />
 
             <StackLayout BindableLayout.ItemsSource="{Binding Pins}">
@@ -63,14 +63,14 @@
                 </BindableLayout.ItemTemplate>
             </StackLayout>
 
-            <Label Text="Duration 1:"></Label>
-            <Entry Placeholder="Duration 1" Text="{Binding PackageDetail.Destination1}"  />
-            <Label Text="Duration 2:"></Label>
-            <Entry Placeholder="Duration 2" Text="{Binding PackageDetail.Destination2}"  />
-            <Label Text="Duration 3:"></Label>
-            <Entry Placeholder="Duration 3" Text="{Binding PackageDetail.Destination3}"  />
-            <Label Text="Duration 4:"></Label>
-            <Entry Placeholder="Duration 4" Text="{Binding PackageDetail.Destination4}"  />
+            <Label Text="Destination 1:"></Label>
+            <Entry Placeholder="Destination 1" Text="{Binding PackageDetail.Destination1}"  />
+            <Label Text="Destination 2:"></Label>
+            <Entry Placeholder="Destination1 2" Text="{Binding PackageDetail.Destination2}"  />
+            <Label Text="Destination 3:"></Label>
+            <Entry Placeholder="Destination 3" Text="{Binding PackageDetail.Destination3}"  />
+            <Label Text="Destination 4:"></Label>
+            <Entry Placeholder="Destination 4" Text="{Binding PackageDetail.Destination4}"  />
 
             <Label Text="Package Price:"></Label>
             <Entry Placeholder="Package Price" Text="{Binding PackageDetail.PackagePrice}"  />
